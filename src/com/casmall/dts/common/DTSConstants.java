@@ -27,6 +27,7 @@ public interface DTSConstants {
 	public static final String CD_ATTR_FLAG_BOX = "BO";
 	public static final String CD_ATTR_FLAG_LINE = "LN";
 	public static final String CD_ATTR_FLAG_IMAGE = "IM";
+	public static final String CD_ATTR_FLAG_QRCODE = "QR";
 	
 	/** 데이터 타입 코드 */
 	public static final String CD_DATA_TYPE_NUM = "NM";

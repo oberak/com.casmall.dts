@@ -167,6 +167,12 @@ public class PrintUtil {
 				new PLine(doc, dto.getStyle(),area.get(0)+prtDto.getBss_cdnt_x(), area.get(1)+prtDto.getBss_cdnt_y(), x, y, lineColor);
 			}else if(DTSConstants.CD_ATTR_FLAG_IMAGE.equals(dto.getAttr_flg_cd())){
 				// TODO LOW 이미지 출력 구현
+				
+			}else if(DTSConstants.CD_ATTR_FLAG_QRCODE.equals(dto.getAttr_flg_cd())){
+				// TODO QR Code print
+				// 가로x세로
+				// 데이터
+				// 위치 x,y
 			}else{
 				if(logger.isErrorEnabled())
 					logger.error("field type error:"+dto.getAttr_flg_cd());
