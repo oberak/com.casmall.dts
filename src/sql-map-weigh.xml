@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 계량 정보 관리 -->
+<mapper namespace="com.casmall.dts.biz.dao.TsWgtInfDAO">
+    <!-- 계량 정보 조회: 메인화면 Display 용 -->
+    <select id="selectTsWgtInf" parameterType="com.casmall.dts.biz.domain.TsWgtInfDTO" resultType="com.casmall.dts.biz.domain.TsWgtInfDTO">
+        SELECT w.wgt_cd, w.car_cd, c.car_num, w.fst_wgt_dt, w.fst_wgh, 
+		       w.wgt_num, w.cst_cd, cs.cst_nm, w.prdt_cd, p.prdt_nm,
+		       w.scnd_wgt_dt, w.scnd_wgh, w.dscnt_bss_cd, w.dscnt_val, w.dscnt, 
+		       w.rl_wgh, w.io_flg, (SELECT io.cd_nm FROM cm_cd io WHERE w.io_flg = io.cd_val AND io.cd_id = 'IO_FLG') AS io_flg_nm, w.nt, w.wgt_flg_cd,  
+		       w.wgt_stat_cd, w.del_yn, w.unt_prc, w.amt, w.trn_dt,  
+		        w.rgn_dt, w.rgn_id, w.edt_dt, w.edt_id
+		       , w.drvr, w.ext_1, w.ext_2, w.ext_3, w.ext_4, 
+		       w.ext_5, w.ext_6
+		       , (SELECT usr_nm FROM cm_usr_inf u WHERE u.lgn_id = w.edt_id) edt_nm
+		  FROM ts_wgt_inf w
+		       LEFT OUTER JOIN ts_cst_mst cs ON (cs.cst_cd = w.cst_cd)
+		       LEFT OUTER JOIN ts_prdt_mst p ON (p.prdt_cd = w.prdt_cd),
+		       ts_car_mst c
+		 WHERE w.car_cd = c.car_cd
+		   AND w.del_yn = 'N'
+		<if test=" wgt_cd != null ">
+		   AND w.wgt_cd = #{wgt_cd}
+		</if>
+        <if test="wgt_stat_cd == '10'">
+            <!-- 1차 계량 조회 시 -->
+           AND w.wgt_stat_cd = #{wgt_stat_cd}
+           AND w.fst_wgt_dt >= DATE_ADD(CURRENT_DATE, -30)
+        </if>
+        <if test="wgt_stat_cd == '50'">
+           <!-- 2차 계량 조회 시 -->
+           AND w.wgt_stat_cd = #{wgt_stat_cd}
+           AND w.scnd_wgt_dt >= CURRENT_DATE
+        </if>
+        <if test=" wgt_flg_cd != null ">
+           AND w.wgt_flg_cd = #{wgt_flg_cd}
+        </if>
+        <if test=" car_cd != null ">
+           AND w.car_cd = #{car_cd}
+        </if>
+        <if test=" car_num != null ">
+           AND c.car_num LIKE '%'||#{car_num}||'%'
+        </if>
+        <if test=" cst_cd != null ">
+           AND w.cst_cd = #{cst_cd}
+        </if>
+        <if test=" cst_nm != null ">
+           AND cs.cst_nm LIKE '%'||#{cst_nm}||'%'
+        </if>
+        <if test=" prdt_cd != null ">
+           AND w.prdt_cd = #{prdt_cd}
+        </if>
+        <if test=" prdt_nm != null ">
+           AND p.prdt_nm LIKE '%'||#{prdt_nm}||'%'
+        </if>
+        <if test=" ext_5 != null ">
+           AND w.scnd_wgt_dt BETWEEN CAST(#{ext_5} AS DATE) AND CAST(#{ext_6} AS TIMESTAMP)
+        </if>
+        <if test=" io_flg != null ">
+           AND w.io_flg = #{io_flg}
+        </if>
+    </select>
+    
+    <!-- 월간 계량 요약 정보 조회 -->
+    <select id="selectTsWgtInfMonth" resultType="com.casmall.dts.biz.domain.TsWgtInfDTO">
+        SELECT COUNT(0) AS scnd_wgh, SUM(rl_wgh) AS rl_wgh
+          FROM ts_wgt_inf
+         WHERE del_yn = 'N'
+           AND wgt_stat_cd = '50'
+           AND scnd_wgt_dt >= DATE_ADD(CURRENT_DATE, -1 * (DAYOFMONTH(CURRENT_DATE) + 1))
+    </select>
+    
+    <!-- 계량정보 등록 -->
+    <insert id="insertTsWgtInf" parameterType="com.casmall.dts.biz.domain.TsWgtInfDTO">
+        INSERT INTO ts_wgt_inf(
+		       wgt_cd, car_cd, fst_wgt_dt, fst_wgh, fst_wgt_image_path, 
+		       wgt_num, cst_cd, prdt_cd, scnd_wgt_dt, scnd_wgh, 
+		       scnd_wgt_image_path, dscnt_bss_cd, dscnt_val, dscnt, rl_wgh, 
+		       io_flg, nt, wgt_flg_cd, wgt_stat_cd, ext_1,
+		       ext_2, ext_3, ext_4, ext_5, ext_6,
+		       drvr, unt_prc, amt, card_cd, del_yn,
+		       trn_dt, rgn_dt, rgn_id, edt_dt, edt_id)
+		VALUES (#{wgt_cd}, #{car_cd}, #{fst_wgt_dt}, #{fst_wgh}, #{fst_wgt_image_path}, 
+			   #{wgt_num}, #{cst_cd}, #{prdt_cd}, #{scnd_wgt_dt}, #{scnd_wgh}, 
+			   #{scnd_wgt_image_path}, #{dscnt_bss_cd}, #{dscnt_val}, #{dscnt}, #{rl_wgh}, 
+			   #{io_flg}, #{nt}, #{wgt_flg_cd}, #{wgt_stat_cd}, #{ext_1}, 
+			   #{ext_2}, #{ext_3}, #{ext_4}, #{ext_5}, #{ext_6}, 
+			   #{drvr}, #{unt_prc}, #{amt}, #{card_cd}, #{del_yn}, 
+			   #{trn_dt}, #{rgn_dt}, #{rgn_id}, #{edt_dt}, #{edt_id}) 
+    </insert>
+    
+    <!-- 계량정보 수정 -->
+    <update id="updateTsWgtInf" parameterType="com.casmall.dts.biz.domain.TsWgtInfDTO">
+        UPDATE ts_wgt_inf
+           SET 
+           <if test="car_cd != null ">
+               car_cd = #{car_cd},
+           </if>
+           <if test="fst_wgt_dt != null "> 
+               fst_wgt_dt = #{fst_wgt_dt}, 
+           </if>
+           <if test="fst_wgh != null "> 
+               fst_wgh = #{fst_wgh}, 
+           </if>
+           <if test="fst_wgt_image_path != null "> 
+               fst_wgt_image_path = #{fst_wgt_image_path}, 
+           </if>
+           <if test="wgt_num != null "> 
+               wgt_num = #{wgt_num}, 
+           </if>
+           <if test="cst_cd != null "> 
+               cst_cd = #{cst_cd}, 
+           </if>
+           <if test="prdt_cd != null "> 
+               prdt_cd = #{prdt_cd}, 
+           </if>
+           <if test="scnd_wgt_dt != null "> 
+               scnd_wgt_dt = #{scnd_wgt_dt}, 
+           </if>
+           <if test="scnd_wgh != null "> 
+               scnd_wgh = #{scnd_wgh}, 
+           </if>
+           <if test="scnd_wgt_image_path != null "> 
+               scnd_wgt_image_path = #{scnd_wgt_image_path}, 
+           </if>
+           <if test="dscnt_bss_cd != null "> 
+               dscnt_bss_cd = #{dscnt_bss_cd}, 
+           </if>
+           <if test="dscnt_val != null "> 
+               dscnt_val = #{dscnt_val}, 
+           </if>
+           <if test="dscnt != null "> 
+               dscnt = #{dscnt}, 
+           </if>
+           <if test="rl_wgh != null "> 
+               rl_wgh = #{rl_wgh}, 
+           </if>
+           <if test="io_flg != null "> 
+               io_flg = #{io_flg}, 
+           </if>
+           <if test="nt != null "> 
+               nt = #{nt}, 
+           </if>
+           <if test="wgt_flg_cd != null "> 
+               wgt_flg_cd = #{wgt_flg_cd}, 
+           </if>
+           <if test="wgt_stat_cd != null "> 
+               wgt_stat_cd = #{wgt_stat_cd}, 
+           </if>
+           <if test="ext_1 != null "> 
+               ext_1 = #{ext_1}, 
+           </if>
+           <if test="ext_2 != null "> 
+               ext_2 = #{ext_2}, 
+           </if>
+           <if test="ext_3 != null "> 
+               ext_3 = #{ext_3}, 
+           </if>
+           <if test="ext_4 != null "> 
+               ext_4 = #{ext_4}, 
+           </if>
+           <if test="ext_5 != null "> 
+               ext_5 = #{ext_5}, 
+           </if>
+           <if test="ext_6 != null "> 
+               ext_6 = #{ext_6}, 
+           </if>
+           <if test="drvr != null "> 
+               drvr = #{drvr},
+           </if>
+           <if test="unt_prc > 0 "> 
+               unt_prc = #{unt_prc}, 
+           </if>
+           <if test="amt > 0 "> 
+               amt = #{amt}, 
+           </if>
+           <if test="card_cd != null "> 
+               card_cd = #{card_cd}, 
+           </if>
+           <if test="del_yn != null "> 
+               del_yn = #{del_yn}, 
+           </if>
+           <if test="trn_dt != null "> 
+               trn_dt = #{trn_dt}, 
+           </if>               
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE wgt_cd = #{wgt_cd}
+    </update>
+    
+    <!-- 계량코드 채번 -->
+    <select id="selectTsWgtInfKey" resultType="String">
+        SELECT COALESCE(MAX(wgt_cd),0)+1
+          FROM ts_wgt_inf
+    </select>
+    
+    <!-- 계량관리번호 채번 -->
+    <select id="selectTsWgtInfWgtNum" parameterType="com.casmall.dts.biz.domain.TsWgtInfDTO" resultType="String">
+        SELECT MAX(wgt_num)
+          FROM ts_wgt_inf
+          <if test="ext_1 == 'yyyy' ">
+         WHERE fst_wgt_dt >= CAST(EXTRACT(YEAR FROM CURRENT_DATE)||'-01-01' AS DATE)
+          </if>
+          <if test="ext_1 == 'yyyyMM' ">
+         WHERE fst_wgt_dt >= CURRENT_DATE - EXTRACT(DAY FROM CURRENT_DATE) + 1 
+          </if>
+          <if test="ext_1 == 'yyyyMMdd' ">
+         WHERE fst_wgt_dt >= CURRENT_DATE 
+          </if>
+          <if test="ext_2 == 'yyyy' ">
+         WHERE scnd_wgt_dt >= CAST(EXTRACT(YEAR FROM CURRENT_DATE)||'-01-01' AS DATE)
+          </if>
+          <if test="ext_2 == 'yyyyMM' ">
+         WHERE scnd_wgt_dt >= CURRENT_DATE - EXTRACT(DAY FROM CURRENT_DATE) + 1 
+          </if>
+          <if test="ext_2 == 'yyyyMMdd' ">
+         WHERE scnd_wgt_dt >= CURRENT_DATE
+          </if>
+    </select>
+    
+    <!-- 월간 계량 요약 정보 조회 -->
+    <select id="selectTsWgtInfCount" parameterType="string" resultType="int">
+        SELECT COUNT(0)+1 AS scnd_wgh
+          FROM ts_wgt_inf
+         WHERE del_yn = 'N'
+           AND fst_wgt_dt >= DECODE(#{0},'DAY',CURRENT_DATE,'MONTH', CURRENT_DATE - EXTRACT(DAY FROM CURRENT_DATE) + 1, CAST(EXTRACT(YEAR FROM CURRENT_DATE)||'-01-01' AS DATE))
+    </select>
+</mapper>

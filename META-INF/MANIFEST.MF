@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 달구지 II
+Bundle-SymbolicName: com.casmall.dts; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: 카스 메카트로닉스
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-NativeCode: lib/rxtxSerial.dll
+Bundle-ClassPath: .,
+ lib/commons-lang-2.5.jar,
+ lib/commons-logging-1.1.1.jar,
+ lib/jaybird-full-2.1.6.jar,
+ lib/log4j-1.2.16.jar,
+ lib/mybatis-3.0.3-SNAPSHOT.jar,
+ lib/RXTXcomm.jar,
+ lib/miglayout-3.5.5.jar,
+ lib/casmall-common-1.0.jar,
+ lib/casmall-common-ui-1.0.jar,
+ lib/grid-1.0.0.jar,
+ lib/formattedtext-1.0.0.jar,
+ lib/jxl.jar,
+ lib/calendarcombo-1.0.0.jar,
+ lib/datechooser-1.0.0.jar,
+ lib/radiogroup-0.1.0.jar,
+ lib/jasypt-1.7.jar,
+ lib/cdatetime-0.14.0.jar,
+ lib/cwt-0.9.0.jar,
+ lib/hsqldb.jar

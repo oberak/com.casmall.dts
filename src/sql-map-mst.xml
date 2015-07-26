@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 마스터 관리 -->
+<mapper namespace="com.casmall.dts.biz.dao.TsMstDAO">
+    <!-- 차량정보 조회 -->
+    <select id="selectTsCarMst" parameterType="com.casmall.dts.biz.domain.TsCarMstDTO" resultType="com.casmall.dts.biz.domain.TsCarMstDTO">
+        SELECT car_cd, car_mgt_cd, car_num, drvr, emtcar_wgh,
+		       prdt_cd, cst_cd, nt, mgt_yn, del_yn,
+		       trn_dt, rgn_dt, rgn_id, edt_dt, edt_id
+		  FROM ts_car_mst
+		 WHERE del_yn = 'N'
+        <if test="car_cd != null ">
+           AND car_cd = #{car_cd}
+        </if>
+        <if test="car_mgt_cd != null ">
+           AND car_mgt_cd = #{car_mgt_cd}
+        </if>
+        <if test="car_num != null ">
+           AND car_num = #{car_num}
+        </if>
+        <if test="mgt_yn != null ">
+           AND mgt_yn = #{mgt_yn}
+        </if>
+        <if test="search != null ">
+           AND (car_mgt_cd LIKE '%'||#{search}||'%'
+                OR car_num LIKE '%'||#{search}||'%'
+                OR nt LIKE '%'||#{search}||'%'
+               )
+        </if>
+         ORDER BY DECODE(COALESCE(car_mgt_cd,'#~'),'#~',1,DECODE(car_mgt_cd,'',1,0)), car_num
+    </select>
+    
+    <!-- 차량코드 채번 -->
+    <select id="selectTsCarMstKey" resultType="String">
+        SELECT COALESCE(MAX(car_cd),0)+1
+          FROM ts_car_mst
+    </select>
+    
+    <!-- 차량 관리코드 중복체크 -->
+    <select id="selectTsCarMstMgtCd" parameterType="com.casmall.dts.biz.domain.TsCarMstDTO" resultType="com.casmall.dts.biz.domain.TsCarMstDTO">
+        SELECT car_mgt_cd
+          FROM ts_car_mst
+         WHERE del_yn = 'N'
+           AND car_mgt_cd = #{car_mgt_cd}
+       <if test="car_cd != null ">
+           AND car_cd != #{car_cd}
+       </if>
+    </select>
+    
+    <!-- 차량정보 등록 -->
+    <insert id="insertTsCarMst" parameterType="com.casmall.dts.biz.domain.TsCarMstDTO">
+        INSERT INTO ts_car_mst
+		( car_cd, car_mgt_cd, car_num, drvr, emtcar_wgh, 
+		  prdt_cd, cst_cd, nt, mgt_yn, del_yn, trn_dt, 
+		  rgn_dt, rgn_id, edt_dt, edt_id
+		) VALUES (
+		  #{car_cd}, #{car_mgt_cd}, #{car_num}, #{drvr}, #{emtcar_wgh}, 
+		  #{prdt_cd}, #{cst_cd}, #{nt}, #{mgt_yn}, #{del_yn}, 
+		  #{trn_dt}, #{rgn_dt}, #{rgn_id}, #{edt_dt}, #{edt_id})
+    </insert>
+    
+    <!-- 차량정보 수정 -->
+    <update id="updateTsCarMst" parameterType="com.casmall.dts.biz.domain.TsCarMstDTO">
+        UPDATE ts_car_mst 
+           SET 
+           <if test="car_num != null ">
+               car_num = #{car_num}, 
+           </if>
+           <if test="car_mgt_cd != null ">
+               car_mgt_cd = #{car_mgt_cd},
+           </if>
+           <if test="drvr != null ">
+               drvr = #{drvr}, 
+           </if>
+           <if test="emtcar_wgh != null ">
+               emtcar_wgh = #{emtcar_wgh}, 
+           </if>
+           <if test="prdt_cd != null ">
+               prdt_cd = #{prdt_cd}, 
+           </if>
+           <if test="cst_cd != null ">
+               cst_cd = #{cst_cd},
+           </if>
+           <if test="nt != null ">
+               nt = #{nt}, 
+           </if>
+           <if test="mgt_yn != null ">
+               mgt_yn = #{mgt_yn},
+           </if>
+           <if test="del_yn != null ">
+               del_yn = #{del_yn},
+           </if>
+           <if test="trn_dt != null ">
+               trn_dt = #{trn_dt}, 
+           </if>
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE car_cd = #{car_cd}
+    </update>
+    
+    <!-- 거래처 정보 조회 -->
+    <select id="selectTsCstMst" parameterType="com.casmall.dts.biz.domain.TsCstMstDTO" resultType="com.casmall.dts.biz.domain.TsCstMstDTO">
+        SELECT cst_cd, cst_mgt_cd, cst_nm, rpr_nm, tel, nt, 
+		       mgt_yn, del_yn, trn_dt, rgn_dt,
+		       rgn_id, edt_dt, edt_id
+		  FROM ts_cst_mst
+         WHERE del_yn = 'N'
+        <if test="cst_cd != null ">
+           AND cst_cd = #{cst_cd}
+        </if>
+        <if test="cst_mgt_cd != null ">
+           AND cst_mgt_cd = #{cst_mgt_cd}
+        </if>
+        <if test="cst_nm != null ">
+           AND cst_nm = #{cst_nm}
+        </if>
+        <if test="mgt_yn != null ">
+           AND mgt_yn = #{mgt_yn}
+        </if>
+        <if test="search != null ">
+           AND (cst_mgt_cd LIKE '%'||#{search}||'%'
+                OR cst_nm LIKE '%'||#{search}||'%'
+                OR nt LIKE '%'||#{search}||'%'
+                OR tel LIKE '%'||#{search}||'%'
+                OR rpr_nm LIKE '%'||#{search}||'%'
+               )
+        </if>
+        ORDER BY DECODE(COALESCE(cst_mgt_cd,'#~'),'#~',1,DECODE(cst_mgt_cd,'',1,0)), cst_nm
+    </select>
+    
+    <!-- 거래처 코드 채번 -->
+    <select id="selectTsCstMstKey" resultType="String">
+        SELECT COALESCE(MAX(cst_cd),0)+1
+          FROM ts_cst_mst
+    </select>
+    
+    <!-- 거래처 관리코드 중복체크 -->
+    <select id="selectTsCstMstMgtCd" parameterType="com.casmall.dts.biz.domain.TsCstMstDTO" resultType="com.casmall.dts.biz.domain.TsCstMstDTO">
+        SELECT cst_mgt_cd
+          FROM ts_cst_mst
+         WHERE del_yn = 'N'
+           AND cst_mgt_cd = #{cst_mgt_cd}
+       <if test="cst_cd != null ">
+           AND cst_cd != #{cst_cd}
+       </if>
+    </select>
+    
+    <!-- 거래처 정보 등록 -->
+    <insert id="insertTsCstMst" parameterType="com.casmall.dts.biz.domain.TsCstMstDTO">
+        INSERT INTO ts_cst_mst
+		       (cst_cd, cst_mgt_cd, cst_nm, rpr_nm, tel, 
+		       nt, mgt_yn, del_yn, trn_dt, rgn_dt,
+		       rgn_id, edt_dt, edt_id)
+		VALUES (#{cst_cd}, #{cst_mgt_cd}, #{cst_nm}, #{rpr_nm}, #{tel}, 
+               #{nt}, #{mgt_yn}, #{del_yn}, #{trn_dt}, #{rgn_dt}, 
+               #{rgn_id}, #{edt_dt}, #{edt_id})
+    </insert>
+
+     <!-- 거래처 정보 수정 -->
+    <update id="updateTsCstMst" parameterType="com.casmall.dts.biz.domain.TsCstMstDTO">
+        UPDATE ts_cst_mst
+           SET 
+           <if test="cst_nm != null ">
+               cst_nm = #{cst_nm},
+           </if>
+           <if test="cst_mgt_cd != null ">
+               cst_mgt_cd = #{cst_mgt_cd}, 
+           </if>
+           <if test="rpr_nm != null ">
+               rpr_nm = #{rpr_nm},
+           </if>
+           <if test="tel != null ">
+               tel = #{tel}, 
+           </if>
+           <if test="nt != null ">
+               nt = #{nt}, 
+           </if>
+           <if test="mgt_yn != null ">
+                mgt_yn = #{mgt_yn},
+           </if>
+           <if test="del_yn != null ">
+               del_yn = #{del_yn}, 
+           </if>
+           <if test="trn_dt != null ">
+               trn_dt = #{trn_dt}, 
+           </if>
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE cst_cd = #{cst_cd}
+    </update>
+
+    <!-- 제품 정보 조회 -->
+    <select id="selectTsPrdtMst" parameterType="com.casmall.dts.biz.domain.TsPrdtMstDTO" resultType="com.casmall.dts.biz.domain.TsPrdtMstDTO">
+       SELECT prdt_cd, prdt_mgt_cd, prdt_nm, unt_prc, nt,
+			  mgt_yn, del_yn, trn_dt, rgn_dt, rgn_id,
+			  edt_dt, edt_id
+		 FROM ts_prdt_mst
+        WHERE del_yn = 'N'
+        <if test="prdt_cd != null ">
+           AND prdt_cd = #{prdt_cd}
+        </if>
+        <if test="prdt_mgt_cd != null ">
+           AND prdt_mgt_cd = #{prdt_mgt_cd}
+        </if>
+        <if test="prdt_nm != null ">
+           AND prdt_nm = #{prdt_nm}
+        </if>
+        <if test="mgt_yn != null ">
+           AND mgt_yn = #{mgt_yn}
+        </if>
+        <if test="search != null ">
+           AND (prdt_mgt_cd LIKE '%'||#{search}||'%'
+                OR prdt_nm LIKE '%'||#{search}||'%'
+                OR nt LIKE '%'||#{search}||'%'
+               )
+        </if>
+        ORDER BY DECODE(COALESCE(prdt_mgt_cd,'#~'),'#~',1,DECODE(prdt_mgt_cd,'',1,0)), prdt_nm
+    </select>
+    
+    <!-- 제품 코드 채번 -->
+    <select id="selectTsPrdtMstKey" resultType="String">
+        SELECT COALESCE(MAX(prdt_cd),0)+1
+          FROM ts_prdt_mst
+    </select>
+    
+    <!-- 제품 관리코드 중복체크 -->
+    <select id="selectTsPrdtMstMgtCd" parameterType="com.casmall.dts.biz.domain.TsPrdtMstDTO" resultType="com.casmall.dts.biz.domain.TsPrdtMstDTO">
+        SELECT prdt_mgt_cd
+          FROM ts_prdt_mst
+         WHERE del_yn = 'N'
+           AND prdt_mgt_cd = #{prdt_mgt_cd}
+       <if test="prdt_cd != null ">
+           AND prdt_cd != #{prdt_cd}
+       </if>
+    </select>
+    
+    <!-- 제품 정보 등록 -->
+    <insert id="insertTsPrdtMst" parameterType="com.casmall.dts.biz.domain.TsPrdtMstDTO">
+        INSERT INTO ts_prdt_mst 
+		       (prdt_cd, prdt_mgt_cd, prdt_nm, unt_prc, nt, 
+		       mgt_yn, del_yn, trn_dt, rgn_dt, rgn_id, 
+		       edt_dt, edt_id )
+		VALUES (#{prdt_cd}, #{prdt_mgt_cd}, #{prdt_nm}, #{unt_prc}, #{nt}, 
+                #{mgt_yn}, #{del_yn}, #{trn_dt}, #{rgn_dt}, #{rgn_id}, 
+                #{edt_dt}, #{edt_id})
+    </insert>
+    
+    <!-- 제품 정보 수정 -->
+    <update id="updateTsPrdtMst" parameterType="com.casmall.dts.biz.domain.TsPrdtMstDTO">
+        UPDATE ts_prdt_mst 
+           SET 
+           <if test="prdt_nm != null ">
+               prdt_nm = #{prdt_nm}, 
+           </if>
+           <if test="prdt_mgt_cd != null ">
+               prdt_mgt_cd = #{prdt_mgt_cd}, 
+           </if>
+           <if test="unt_prc != null ">
+               unt_prc = #{unt_prc},
+           </if>
+           <if test="nt != null ">
+               nt = #{nt}, 
+           </if>
+           <if test="mgt_yn != null ">
+               mgt_yn = #{mgt_yn},
+           </if>
+           <if test="del_yn != null ">
+               del_yn = #{del_yn}, 
+           </if>
+           <if test="trn_dt != null ">
+               trn_dt = #{trn_dt}, 
+           </if>
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE prdt_cd = #{prdt_cd}
+    </update>
+</mapper>

@@ -1,0 +1,12 @@
+
+
+
+* 참고
+- jdbc url 부분 수정 필요(TODO 손봐야 함)
+  -> 상대경로를 사용하게끔 수정. 
+* error
+  - java.lang.RuntimeException: No application id has been found.
+    > Run -> Run Configurations > Plug-ins tab > "Add Required Plug-ins" > Apply
+  - java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: CM_OS_MC
+    > db.properties path 확인
+    > dts2.db.script 내용확인

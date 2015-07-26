@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 마스터 관리 -->
+<mapper namespace="com.casmall.dts.biz.dao.TsPrtDAO">
+    <!-- 출력 정보 조회 -->
+    <select id="selectTsPrtInf" parameterType="com.casmall.dts.biz.domain.TsPrtInfDTO" resultType="com.casmall.dts.biz.domain.TsPrtInfDTO">
+        SELECT prt_seq, prt_nm, paper_width, paper_height, bss_cdnt_x, 
+		       bss_cdnt_y, wdt_prt_yn, bss_font, del_yn, trn_dt, 
+		       rgn_dt, rgn_id, edt_dt, edt_id
+		   FROM ts_prt_inf
+		  WHERE del_yn = 'N'
+		  <if test="prt_nm != null ">
+            AND prt_nm LIKE '%'||#{prt_nm}||'%'
+          </if>
+          <if test="prt_seq != 0 ">
+            AND prt_seq = #{prt_seq}
+          </if>
+    </select>
+    
+    <!-- 출력 일련번호 채번 -->
+    <select id="selectTsPrtInfKey" resultType="long">
+        SELECT COALESCE(MAX(prt_seq),0)+1
+          FROM ts_prt_inf
+    </select>
+    
+    <!-- 출력정보 등록 -->
+    <insert id="insertTsPrtInf" parameterType="com.casmall.dts.biz.domain.TsPrtInfDTO">
+        INSERT INTO ts_prt_inf
+		       (prt_seq, prt_nm, paper_width, paper_height, bss_cdnt_x, 
+		       bss_cdnt_y, wdt_prt_yn, bss_font, del_yn, trn_dt, 
+		       rgn_dt, rgn_id, edt_dt, edt_id) 
+		VALUES (#{prt_seq}, #{prt_nm}, #{paper_width}, #{paper_height}, #{bss_cdnt_x}, 
+		       #{bss_cdnt_y}, #{wdt_prt_yn}, #{bss_font}, #{del_yn}, #{trn_dt}, 
+		       #{rgn_dt}, #{rgn_id}, #{edt_dt}, #{edt_id})
+    </insert>
+    
+    <!-- 출력정보 수정 -->
+    <update id="updateTsPrtInf" parameterType="com.casmall.dts.biz.domain.TsPrtInfDTO">
+        UPDATE ts_prt_inf 
+           SET 
+           <if test="prt_nm != null ">
+               prt_nm = #{prt_nm}, 
+           </if>
+               paper_width = #{paper_width},
+               paper_height = #{paper_height}, 
+               bss_cdnt_x = #{bss_cdnt_x}, 
+               bss_cdnt_y = #{bss_cdnt_y}, 
+           <if test="wdt_prt_yn != null ">
+               wdt_prt_yn = #{wdt_prt_yn}, 
+           </if>
+           <if test="bss_font != null ">
+               bss_font = #{bss_font},
+           </if>
+           <if test="del_yn != null ">
+               del_yn = #{del_yn},
+           </if>
+           <if test="trn_dt != null ">
+               trn_dt = #{trn_dt}, 
+           </if>
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE prt_seq = #{prt_seq}
+    </update>
+    
+    <!-- 출력항목 조회 -->
+    <select id="selectTsPrtAttr" parameterType="com.casmall.dts.biz.domain.TsPrtAttrDTO" resultType="com.casmall.dts.biz.domain.TsPrtAttrDTO">
+	     SELECT prt_seq, attr_seq, attr_flg_cd, attr_cd, attr_nm, 
+	            data_type_cd, data_fmt, font, font_color, bg_color, 
+	            line_color, area, style, tkn, prt_yn,  
+	            del_yn, trn_dt, rgn_dt, rgn_id, edt_dt, 
+	            edt_id
+		   FROM ts_prt_attr
+          WHERE del_yn = 'N'
+        <if test=" prt_yn != null ">
+            AND prt_yn = #{prt_yn}
+        </if>
+        <if test=" prt_seq != 0 ">
+            AND prt_seq = #{prt_seq}
+        </if>
+        <if test=" attr_seq != 0 ">
+            AND attr_seq = #{attr_seq}
+        </if>
+    </select>
+    
+    <!-- 출력항목 일련번호 채번 -->
+    <select id="selectTsPrtAttrKey" parameterType="com.casmall.dts.biz.domain.TsPrtAttrDTO" resultType="long">
+        SELECT COALESCE(MAX(attr_seq),0)+1
+          FROM ts_prt_attr
+         WHERE prt_seq = #{prt_seq}
+    </select>
+    
+    <!-- 출력항목 정보 등록 -->
+    <insert id="insertTsPrtAttr" parameterType="com.casmall.dts.biz.domain.TsPrtAttrDTO">
+        INSERT INTO ts_prt_attr
+		       (prt_seq, attr_seq, attr_flg_cd, attr_cd, attr_nm, 
+		       data_type_cd, data_fmt, font, font_color, bg_color, 
+		       line_color, area, style, tkn, prt_yn,  
+		       del_yn, trn_dt, rgn_dt, rgn_id, edt_dt, 
+		       edt_id) 
+		VALUES (#{prt_seq}, #{attr_seq}, #{attr_flg_cd}, #{attr_cd}, #{attr_nm}, 
+		       #{data_type_cd}, #{data_fmt}, #{font}, #{font_color}, #{bg_color}, 
+		       #{line_color}, #{area}, #{style}, #{tkn}, #{prt_yn},  
+		       #{del_yn}, #{trn_dt}, #{rgn_dt}, #{rgn_id}, #{edt_dt}, 
+		       #{edt_id})
+    </insert>
+    
+    <!-- 출력항목 정보 수정 -->
+    <update id="updateTsPrtAttr" parameterType="com.casmall.dts.biz.domain.TsPrtAttrDTO">
+        UPDATE ts_prt_attr 
+           SET 
+           <if test=" attr_flg_cd != null ">
+                attr_flg_cd= #{attr_flg_cd}, 
+           </if>
+           <if test=" attr_cd != null ">
+               attr_cd = #{attr_cd}, 
+           </if>
+           <if test=" attr_nm != null ">
+               attr_nm = #{attr_nm}, 
+           </if>
+           <if test=" data_type_cd != null ">
+                data_type_cd= #{data_type_cd}, 
+           </if>
+           <if test=" data_fmt != null ">
+               data_fmt = #{data_fmt}, 
+           </if>
+           <if test=" font != null ">
+               font = #{font}, 
+           </if>
+           <if test=" font_color != null ">
+               font_color = #{font_color}, 
+           </if>
+           <if test=" bg_color != null ">
+               bg_color = #{bg_color}, 
+           </if>
+           <if test=" line_color != null ">
+               line_color = #{line_color}, 
+           </if>
+           <if test=" area != null ">
+               area = #{area}, 
+           </if>
+               style = #{style}, 
+               tkn = #{tkn}, 
+           <if test=" prt_yn != null ">
+               prt_yn = #{prt_yn}, 
+           </if>
+           <if test=" del_yn != null ">
+               del_yn = #{del_yn},
+           </if>
+           <if test=" trn_dt != null ">
+               trn_dt = #{trn_dt}, 
+           </if>
+               edt_dt = #{edt_dt}, 
+               edt_id = #{edt_id}
+         WHERE prt_seq = #{prt_seq}
+           AND attr_seq = #{attr_seq}
+    </update>
+</mapper>

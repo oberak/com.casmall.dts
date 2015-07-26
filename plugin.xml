@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.casmall.dts.ui.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.casmall.dts.ui.Perspective"
+            id="com.casmall.dts.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.casmall.dts.application"
+            name="달구지 II">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+                  <property
+               name="appName"
+               value="달구지 II">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/alt_about.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
+         </property>
+         
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.casmall.dts.ui.HomeView"
+            icon="icons/home.png"
+            id="com.casmall.dts.ui.HomeView"
+            name="Home"
+            restorable="true">
+      </view>
+      <view
+            class="com.casmall.dts.ui.view.CarMgtView"
+            icon="icons/menu/menu_weigh_scnd.png"
+            id="com.casmall.dts.ui.view.CarMgtView"
+            name="차량 정보 관리"
+            restorable="true">
+      </view>
+      <view
+            class="com.casmall.dts.ui.view.PrdtMgtView"
+            icon="icons/menu/menu_prdt_mgt.png"
+            id="com.casmall.dts.ui.view.PrdtMgtView"
+            name="제품 정보 관리"
+            restorable="true">
+      </view>
+      <view
+            class="com.casmall.dts.ui.view.CstMgtView"
+            icon="icons/menu/menu_cst_mgt.png"
+            id="com.casmall.dts.ui.view.CstMgtView"
+            name="거래처 정보 관리"
+            restorable="true">
+      </view>
+      <view
+            class="com.casmall.dts.ui.view.UsrInfMgtView"
+            icon="icons/menu/menu_usr_mgt.png"
+            id="com.casmall.dts.ui.view.UsrInfMgtView"
+            name="사용자 관리"
+            restorable="true">
+      </view>
+      <view
+            class="com.casmall.dts.ui.view.WeighListView"
+            icon="icons/menu/menu_weigh_list.png"
+            id="com.casmall.dts.ui.view.WeighListView"
+            name="계량 자료 조회"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="com.casmall.dts.splashHandlers.InteractiveSplashHandler"
+            id="com.casmall.dts.splashHandlers.interactive">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="com.casmall.dts.product"
+            splashId="com.casmall.dts.splashHandlers.interactive">
+      </splashHandlerProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.casmall.dts.ui.preferences.GeneralPrePage"
+            id="com.casmall.dts.ui.preferences.GeneralPrePage"
+            name="General">
+      </page>
+      <page
+            class="com.casmall.dts.ui.preferences.DataPrePage"
+            id="com.casmall.dts.ui.preferences.DataPrePage"
+            name="Data">
+      </page>
+   </extension>
+   <extension
+         id="dts"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.casmall.common.ui.application"
+            name="달구지 II">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/alt_about.gif">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

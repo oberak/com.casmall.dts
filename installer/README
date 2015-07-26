@@ -1,0 +1,27 @@
+0. 실행파일 생성 전 준비사항
+  - db.properties 파일 수정 : 
+    url=jdbc:hsqldb:file:../db/dts2.db
+  - MANIFEST.MF 수정 : Bundle-NativeCode 삭제
+    Bundle-NativeCode: lib/rxtxSerial.dll
+  - preferences.ini 내 테스트 용도 필드 삭제
+  #Test 용도
+com.casmall.dts/general.auto_login.flag=true
+com.casmall.dts/general.auto_login.pw=8f7ba41e3d8d88d7
+com.casmall.dts/ext.auth.serial=5f690a6664bc420a0582e2c25747bee3
+#com.casmall.dts/ext.auth.serial=dc8620dcf942640c0205797d14c34947
+
+1. export
+  install/Dts2 폴더 삭제
+  product > overview > Eclipse product export wizard
+
+2. installer 컴파일(NSIS 필요)
+  2.1 Dts2Installer.nsi 컴파일
+    - dll 등은 copy 폴더에 있음.
+  2.2 Dts2Installer.exe 테스트
+  노트북 인증번호: GHBQ-LJTT-X9C3
+        Dell: 3S9Z-SBHG-XQ9G
+계정
+ root / happy
+ manager / 6183500
+ user / casmall
+ 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-lang-2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mybatis-3.0.3-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/RXTXcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/miglayout-3.5.5.jar"/>
+	<classpathentry kind="lib" path="lib/casmall-common-1.0.jar" sourcepath="/com.casmall.common/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/casmall-common-ui-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/grid-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/formattedtext-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jxl.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/datechooser-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/radiogroup-0.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jasypt-1.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/cdatetime-0.14.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/cwt-0.9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
