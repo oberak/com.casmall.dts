@@ -114,17 +114,17 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 
 		compWeightCdLen = new Composite(gGeneral, SWT.NONE);
 		GridData gd_composite = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
-		gd_composite.widthHint = 150;
+		gd_composite.widthHint = 210;
 		compWeightCdLen.setLayoutData(gd_composite);
 		compWeightCdLen.setFont(defaultLabelFont );
-		weighCdLen = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD_LENGTH, "일련번호 자리수", compWeightCdLen);
-		weighCdLen.setValidRange(2, 10);
+		weighCdLen = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD_LENGTH, "일련번호 자리수(2~10)", compWeightCdLen);
+		weighCdLen.setValidRange(2, 10); // 2~10 사이
 		addField(weighCdLen);
 		
 		compDataWeighCd = new Composite(gGeneral, SWT.NONE);
 		compDataWeighCd.setFont(defaultLabelFont );
 		GridData gd_compDataWeighCd = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
-		gd_compDataWeighCd.widthHint = 150;
+		gd_compDataWeighCd.widthHint = 90;
 		compDataWeighCd.setLayoutData(gd_compDataWeighCd);
 		weighCd = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD, "다음 일련번호", compDataWeighCd);
 		addField(weighCd);

@@ -103,14 +103,14 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="com.casmall.dts.ui.preferences.GeneralPrePage"
-            id="com.casmall.dts.ui.preferences.GeneralPrePage"
-            name="General">
-      </page>
-      <page
             class="com.casmall.dts.ui.preferences.DataPrePage"
             id="com.casmall.dts.ui.preferences.DataPrePage"
             name="Data">
+      </page>
+      <page
+            class="com.casmall.dts.ui.preferences.GeneralPrePage"
+            id="com.casmall.dts.ui.preferences.GeneralPrePage"
+            name="General">
       </page>
    </extension>
    <extension
