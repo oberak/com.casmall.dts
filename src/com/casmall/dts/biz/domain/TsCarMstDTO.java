@@ -3,34 +3,34 @@ package com.casmall.dts.biz.domain;
 import com.casmall.common.BaseObject;
 
 /**
- * Â÷·® ¸¶½ºÅÍ
+ * ì°¨ëŸ‰ ë§ˆìŠ¤í„°
  * @author OBERAK
  */
 public class TsCarMstDTO extends BaseObject {
     private static final long serialVersionUID = -3202946365455705562L;
     
-    /** Â÷·® ÄÚµå */
+    /** ì°¨ëŸ‰ ì½”ë“œ */
 	private String car_cd;
-	/** Â÷·® °ü¸® ÄÚµå */
+	/** ì°¨ëŸ‰ ê´€ë¦¬ ì½”ë“œ */
 	private String car_mgt_cd;
-	/** Â÷·® ¹øÈ£ */
+	/** ì°¨ëŸ‰ ë²ˆí˜¸ */
 	private String car_num;
-	/** ºñ°í */
+	/** ë¹„ê³  */
 	private String nt;
-	/** °ü¸® ¿©ºÎ */
+	/** ê´€ë¦¬ ì—¬ë¶€ */
 	private String mgt_yn;
 
     private int no;
     private String search;
 	
-	// --------- ÇöÀç ¹Ì»ç¿ë ---------------------
-	/** ¿îÀüÀÚ */
+	// --------- í˜„ì¬ ë¯¸ì‚¬ìš© ---------------------
+	/** ìš´ì „ì */
 	private String drvr;
-	/** °øÂ÷Áß·® */
+	/** ê³µì°¨ì¤‘ëŸ‰ */
 	private String emtcar_wgh;
-	/** Á¦Ç° ÄÚµå */
+	/** ì œí’ˆ ì½”ë“œ */
 	private String prdt_cd;
-	/** °Å·¡Ã³ ÄÚµå */
+	/** ê±°ë˜ì²˜ ì½”ë“œ */
 	private String cst_cd;
 	
 	public String getCar_cd() {

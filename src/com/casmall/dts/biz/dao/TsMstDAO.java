@@ -7,104 +7,104 @@ import com.casmall.dts.biz.domain.TsCstMstDTO;
 import com.casmall.dts.biz.domain.TsPrdtMstDTO;
 
 /**
- * ¸¶½ºÅÍ Á¤º¸ °ü¸® DAO
+ * ë§ˆìŠ¤í„° ì •ë³´ ê´€ë¦¬ DAO
  * @author OBERAK
  */
 public interface TsMstDAO {
 	/**
-	 * Â÷·® Á¤º¸ Á¶È¸
+	 * ì°¨ëŸ‰ ì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsCarMstDTO> selectTsCarMst(TsCarMstDTO dto);
 	
 	/**
-	 * Â÷·® ÄÚµå Ã¤¹ø
+	 * ì°¨ëŸ‰ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsCarMstKey();
 	
 	/**
-	 * Â÷·® °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ì°¨ëŸ‰ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public ArrayList<TsCarMstDTO> selectTsCarMstMgtCd(TsCarMstDTO dto);
 	
 	/**
-	 * Â÷·® Á¤º¸ µî·Ï
+	 * ì°¨ëŸ‰ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsCarMst(TsCarMstDTO dto);
 	
 	/**
-	 * Â÷·® Á¤º¸ ¼öÁ¤
+	 * ì°¨ëŸ‰ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */
 	public int updateTsCarMst(TsCarMstDTO dto);
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ Á¶È¸
+	 * ê±°ë˜ì²˜ ì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsCstMstDTO> selectTsCstMst(TsCstMstDTO dto);
 	
 	/**
-	 * °Å·¡Ã³ ÄÚµå Ã¤¹ø
+	 * ê±°ë˜ì²˜ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsCstMstKey();
 	
 	/**
-	 * °Å·¡Ã³ °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ê±°ë˜ì²˜ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public ArrayList<TsCstMstDTO> selectTsCstMstMgtCd(TsCstMstDTO dto);
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ µî·Ï
+	 * ê±°ë˜ì²˜ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsCstMst(TsCstMstDTO dto);
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ ¼öÁ¤
+	 * ê±°ë˜ì²˜ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */
 	public int updateTsCstMst(TsCstMstDTO dto);
 	
 	/**
-	 * Á¦Ç° Á¤º¸ Á¶È¸
+	 * ì œí’ˆ ì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsPrdtMstDTO> selectTsPrdtMst(TsPrdtMstDTO dto);
 
 	/**
-	 * Á¦Ç° ÄÚµå Ã¤¹ø
+	 * ì œí’ˆ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsPrdtMstKey();
 	
 	/**
-	 * Á¦Ç° °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ì œí’ˆ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public ArrayList<TsPrdtMstDTO> selectTsPrdtMstMgtCd(TsPrdtMstDTO dto);
 	
 	/**
-	 * Á¦Ç° Á¤º¸ µî·Ï
+	 * ì œí’ˆ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsPrdtMst(TsPrdtMstDTO dto);
 	
 	/**
-	 * Á¦Ç° Á¤º¸ ¼öÁ¤
+	 * ì œí’ˆ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */

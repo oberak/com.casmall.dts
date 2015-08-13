@@ -15,8 +15,8 @@ public class WeighListAction extends Action{
 	public WeighListAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("�跮 �ڷ� ��ȸ");
-		setToolTipText("�跮 �Ϸ�� �ڷḦ ��ȸ�մϴ�.");
+		setText("계량 자료 조회");
+		setToolTipText("계량 완료된 자료를 조회합니다.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_REPORT_WEIGH_LIST));
 	}
 

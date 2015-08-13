@@ -52,7 +52,7 @@ public class ObjectUtil {
 	}
 	
 	/**
-	 * °è·® ÄÚµå ¾ò±â
+	 * ê³„ëŸ‰ ì½”ë“œ ì–»ê¸°
 	 * @return
 	 */
 	public static String nextWeighCd(){
@@ -85,12 +85,12 @@ public class ObjectUtil {
 
 		String lastSeq = preferences.getString(DTSPreConstants.DATA_WEIGH_CD_NEXT);
 		if( ! DTSPreConstants.DATA_WEIGH_CD_TYPE_NONE.equals(cdType) ){
-			// ¸¶Áö¸· ÀÏ·Ã¹øÈ£¿Í ´Ù¸¦ °æ¿ì ÀÏ·Ã¹øÈ£ ÃÊ±âÈ­
+			// ë§ˆì§€ë§‰ ì¼ë ¨ë²ˆí˜¸ì™€ ë‹¤ë¥¼ ê²½ìš° ì¼ë ¨ë²ˆí˜¸ ì´ˆê¸°í™”
 			if(!lastSeq.startsWith(prefix)){
 				return 1;
 			}
 		}else{
-			// ÀÚ¸®¼ö¸¦ ÃÊ°úÇÒ °æ¿ì ÃÊ±âÈ­
+			// ìžë¦¬ìˆ˜ë¥¼ ì´ˆê³¼í•  ê²½ìš° ì´ˆê¸°í™”
 			if(currSeq >= Math.pow(10, seqLen) ){
 				currSeq = 1;
 			}
@@ -103,11 +103,11 @@ public class ObjectUtil {
 		String prefix = "";
 		if( ! DTSPreConstants.DATA_WEIGH_CD_TYPE_NONE.equals(cdType) ){
 			prefix = StringUtil.getDate(cdType);
-			// ¸¶Áö¸· ÀÏ·Ã¹øÈ£¿Í ´Ù¸¦ °æ¿ì ÀÏ·Ã¹øÈ£ ÃÊ±âÈ­
+			// ë§ˆì§€ë§‰ ì¼ë ¨ë²ˆí˜¸ì™€ ë‹¤ë¥¼ ê²½ìš° ì¼ë ¨ë²ˆí˜¸ ì´ˆê¸°í™”
 			if(withHyphen)
 				prefix += "-";
 		}else{
-			// ÀÚ¸®¼ö¸¦ ÃÊ°úÇÒ °æ¿ì ÃÊ±âÈ­
+			// ìžë¦¬ìˆ˜ë¥¼ ì´ˆê³¼í•  ê²½ìš° ì´ˆê¸°í™”
 			if(currSeq >= Math.pow(10, seqLen) ){
 				currSeq = 1;
 			}

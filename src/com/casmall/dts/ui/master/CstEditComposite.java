@@ -58,7 +58,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 	private Button btnSave;
 	private CallbackIF callback;
 
-	private Font defaultLabelFont = com.swtdesigner.SWTResourceManager.getFont("±¼¸²Ã¼", 14, SWT.BOLD);
+	private Font defaultLabelFont = com.swtdesigner.SWTResourceManager.getFont("êµ´ë¦¼ì²´", 14, SWT.BOLD);
 	private Font defaultInputFont = com.swtdesigner.SWTResourceManager.getFont("Arial", 14, SWT.NORMAL);
 
 	private TsMstManager mgr = new TsMstManager();
@@ -159,7 +159,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 								btnSaveMouseDown(e);
 							}
 						});
-						btnSave.setText("ÀúÀå");
+						btnSave.setText("ì €ì¥");
 						btnSave.setImage(ImageRepository.getImage(ImageRepository.BTN_SAVE));
 						btnSave.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -167,7 +167,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnDelete = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnDelete.setText("»èÁ¦");
+						btnDelete.setText("ì‚­ì œ");
 						btnDelete.setImage(ImageRepository.getImage(ImageRepository.BTN_DELETE));
 						btnDelete.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -180,7 +180,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnClear = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnClear.setText("ÃÊ±âÈ­");
+						btnClear.setText("ì´ˆê¸°í™”");
 						btnClear.setImage(ImageRepository.getImage(ImageRepository.BTN_CLEAR));
 						btnClear.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -209,7 +209,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				round.getControl().setLayout(cptBodyLayout);
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("°ü¸®ÄÚµå: ");
+					lblTag.setText("ê´€ë¦¬ì½”ë“œ: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -260,12 +260,12 @@ public class CstEditComposite extends Composite implements CallbackIF{
 							}
 						}
 					});
-					btnCheck.setText("°ü¸® µ¥ÀÌÅÍ");
+					btnCheck.setText("ê´€ë¦¬ ë°ì´í„°");
 					btnCheck.setFont(defaultInputFont);
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("°Å·¡Ã³¸í: ");
+					lblTag.setText("ê±°ë˜ì²˜ëª…: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -286,7 +286,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("´ëÇ¥ÀÚ¸í: ");
+					lblTag.setText("ëŒ€í‘œìëª…: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -307,7 +307,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ÀüÈ­¹øÈ£: ");
+					lblTag.setText("ì „í™”ë²ˆí˜¸: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -331,7 +331,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ºñ    °í: ");
+					lblTag.setText("ë¹„    ê³ : ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -362,7 +362,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 	}
 
 	/**
-	 * ÃÊ±âÈ­ ÇÔ¼ö
+	 * ì´ˆê¸°í™” í•¨ìˆ˜
 	 */
 	private void init() {
 		
@@ -372,9 +372,9 @@ public class CstEditComposite extends Composite implements CallbackIF{
 		if(!validate())
 			return;
 		
-		if(MessageDialog.openConfirm(getShell(), "ÀúÀåÈ®ÀÎ", "ÀúÀåÇÏ½Ã°Ú½À´Ï±î?")){
+		if(MessageDialog.openConfirm(getShell(), "ì €ì¥í™•ì¸", "ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 			try{
-				// µ¥ÀÌÅÍ ÀúÀå
+				// ë°ì´í„° ì €ì¥
 				TsCstMstDTO pdto = (TsCstMstDTO)ObjectUtil.getDefaultObject(TsCstMstDTO.class.getName());
 				pdto.setCst_nm(txtCstNm.getText().trim());
 				pdto.setCst_mgt_cd(txtCstMgtCd.getText().trim());
@@ -387,12 +387,12 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				else
 					pdto.setMgt_yn(DTSConstants.FLAG_N);
 				
-				// ½Å±ÔÀÏ °æ¿ì
+				// ì‹ ê·œì¼ ê²½ìš°
 				if(dto == null){
 					pdto.setCst_cd(mgr.selectTsCstMstKey());
 					mgr.insertTsCstMst(pdto);
 				}else{
-				// ¼öÁ¤ÀÏ °æ¿ì
+				// ìˆ˜ì •ì¼ ê²½ìš°
 					pdto.setCst_cd(dto.getCst_cd());
 					pdto.setRgn_dt(null);
 					pdto.setRgn_id(null);
@@ -400,10 +400,10 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				}
 				
 				callback.callback(CallbackIF.CMD_LIST, null);
-				MessageDialog.openInformation(getShell(), "ÀúÀå¿Ï·á", "Á¤»óÀûÀ¸·Î ÀúÀåµÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì €ì¥ì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				btnClearMouseDown(null);
 			}catch(Exception e){
-				MessageDialog.openError(getShell(), "ÀúÀå Error", e.getMessage());
+				MessageDialog.openError(getShell(), "ì €ì¥ Error", e.getMessage());
 				e.printStackTrace();
 				log.error(e.getMessage());
 			}
@@ -412,13 +412,13 @@ public class CstEditComposite extends Composite implements CallbackIF{
 
 	private boolean validate() {
 		if("".equals(txtCstNm.getText().trim())){
-			MessageDialog.openWarning(getShell(), "°Å·¡Ã³¸í ÀÔ·Â È®ÀÎ", "°Å·¡Ã³¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ê±°ë˜ì²˜ëª… ì…ë ¥ í™•ì¸", "ê±°ë˜ì²˜ëª…ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtCstNm.setFocus();
 			return false;
 		}
 		
 		if(btnCheck.getSelection() && "".equals(txtCstMgtCd.getText().trim())){
-			MessageDialog.openWarning(getShell(), "°ü¸®¹øÈ£ ÀÔ·Â È®ÀÎ", "°ü¸®¹øÈ£°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n\n°ü¸®ÄÚµå¸¦ ÀÔ·ÂÇÏ°Å³ª, °ü¸® µ¥ÀÌÅÍ¸¦ Ã¼Å©ÇØÁ¦ ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ê´€ë¦¬ë²ˆí˜¸ ì…ë ¥ í™•ì¸", "ê´€ë¦¬ë²ˆí˜¸ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n\nê´€ë¦¬ì½”ë“œë¥¼ ì…ë ¥í•˜ê±°ë‚˜, ê´€ë¦¬ ë°ì´í„°ë¥¼ ì²´í¬í•´ì œ í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.");
 			txtCstMgtCd.setFocus();
 			return false;
 		}
@@ -426,15 +426,15 @@ public class CstEditComposite extends Composite implements CallbackIF{
 		if(dto != null)
 			p.setCst_cd(dto.getCst_cd());
 		if(!"".equals(txtCstMgtCd.getText().trim())){
-			// °ü¸®¹øÈ£ Áßº¹ È®ÀÎ
+			// ê´€ë¦¬ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸
 			p.setCst_mgt_cd(txtCstMgtCd.getText().trim());
 			if(mgr.existTsCstMstMgtCd(p)){
-				MessageDialog.openWarning(getShell(), "°ü¸®¹øÈ£ Áßº¹ È®ÀÎ", "Áßº¹µÈ °ü¸®¹øÈ£ÀÔ´Ï´Ù. ¼öÁ¤ ÈÄ Ã³¸®¹Ù¶ø´Ï´Ù.");
+				MessageDialog.openWarning(getShell(), "ê´€ë¦¬ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸", "ì¤‘ë³µëœ ê´€ë¦¬ë²ˆí˜¸ì…ë‹ˆë‹¤. ìˆ˜ì • í›„ ì²˜ë¦¬ë°”ëë‹ˆë‹¤.");
 				txtCstMgtCd.setFocus();
 				return false;
 			}
 		}
-		// °Å·¡Ã³¸í Áßº¹ È®ÀÎ : Áßº¹ÀÏ °æ¿ì confirm!
+		// ê±°ë˜ì²˜ëª… ì¤‘ë³µ í™•ì¸ : ì¤‘ë³µì¼ ê²½ìš° confirm!
 		p.setCst_nm(txtCstNm.getText().trim());
 		ArrayList<TsCstMstDTO> list = mgr.selectTsCstMst(p);
 		boolean e = false;
@@ -450,7 +450,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 			}
 		}
 		if(e){
-			return MessageDialog.openConfirm(getShell(), "°Å·¡Ã³¸í Áßº¹ È®ÀÎ", "µ¿ÀÏÇÑ °Å·¡Ã³¸íÀÌ Á¸ÀçÇÕ´Ï´Ù.\n\n°è¼Ó ÁøÇàÇÏ½Ã°Ú½À´Ï±î?");
+			return MessageDialog.openConfirm(getShell(), "ê±°ë˜ì²˜ëª… ì¤‘ë³µ í™•ì¸", "ë™ì¼í•œ ê±°ë˜ì²˜ëª…ì´ ì¡´ì¬í•©ë‹ˆë‹¤.\n\nê³„ì† ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		}
 	    return true;
     }
@@ -461,15 +461,15 @@ public class CstEditComposite extends Composite implements CallbackIF{
 				this.btnClearMouseDown(null);
 				return;
 			}
-			if(MessageDialog.openConfirm(getShell(), "»èÁ¦È®ÀÎ", "µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?")){
+			if(MessageDialog.openConfirm(getShell(), "ì‚­ì œí™•ì¸", "ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 				dto = (TsCstMstDTO)ObjectUtil.getUpdateObject(dto);
 				mgr.deleteTsCstMst(dto);
 				callback.callback(CallbackIF.CMD_LIST, null);
 				btnClearMouseDown(null);
-				MessageDialog.openInformation(getShell(), "»èÁ¦¿Ï·á", "Á¤»óÀûÀ¸·Î »èÁ¦µÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì‚­ì œì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 		}catch(Exception e){
-			MessageDialog.openError(getShell(), "»èÁ¦ Error", e.getMessage());
+			MessageDialog.openError(getShell(), "ì‚­ì œ Error", e.getMessage());
 			log.error(e.getMessage());
 		}
 	}
@@ -494,7 +494,7 @@ public class CstEditComposite extends Composite implements CallbackIF{
 	private void select() {
 		ArrayList<TsCstMstDTO> list = mgr.selectTsCstMst(dto);
 		if(list == null || list.size()==0){
-			MessageDialog.openWarning(getShell(), "Á¶È¸ ¿À·ù", "Á¶È¸µÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ì¡°íšŒ ì˜¤ë¥˜", "ì¡°íšŒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		dto = list.get(0);

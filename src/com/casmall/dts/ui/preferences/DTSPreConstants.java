@@ -1,7 +1,7 @@
 package com.casmall.dts.ui.preferences;
 
 public interface DTSPreConstants {
-	/** general - ¿œπ› */
+	/** general - ÏùºÎ∞ò */
 	public static final String GN_PRINT_CONFIRM = "general.print.confirm";
 	public static final String GN_PRINT_COUNT = "general.print.count";
 	public static final String GN_PRINT_FORM = "general.print.form";
@@ -15,7 +15,7 @@ public interface DTSPreConstants {
 	public static final String GN_HOME_SUMMARY = "general.home.summary";
 	public static final String GN_HOME_SCND = "general.home.scnd";
 
-	/** Data - ∞®∑Æ */
+	/** Data - Í∞êÎüâ */
 	public static final String DATA_MINUS_FLAG = "data.minus.flag";
 	public static final String DATA_MINUS_POINT = "data.minus.point";
 	public static final String DATA_MINUS_TYPE = "data.minus.type";
@@ -24,15 +24,15 @@ public interface DTSPreConstants {
 	public static final String DATA_MINUS_TYPE_CEIL = "CEIL";
 	public static final String DATA_MINUS_DEFAULT = "data.minus.default";
 	
-	/** Data - ∞≈∑°√≥ */
+	/** Data - Í±∞ÎûòÏ≤ò */
 	public static final String DATA_CUST_FLAG = "data.cust.flag";
 	public static final String DATA_CUST_MUST = "data.cust.must";
 	
-	/** Data - ¡¶«∞ */
+	/** Data - Ï†úÌíà */
 	public static final String DATA_PRDT_FLAG = "data.prdt.flag";
 	public static final String DATA_PRDT_MUST = "data.prdt.must";
 	
-	/** Data - ¥‹∞° */
+	/** Data - Îã®Í∞Ä */
 	public static final String DATA_PRICE_FLAG = "data.price.flag";
 	public static final String DATA_PRICE_MUST = "data.price.must";
 	public static final String DATA_PRICE_LOAD = "data.price.load";
@@ -56,7 +56,7 @@ public interface DTSPreConstants {
 	public static final String DATA_WEIGH_CD_LENGTH = "data.weigh_cd.length";
 	public static final String DATA_WEIGH_CD_NEXT = "data.weigh_cd.next";
 	
-	/** ±‚≈∏ */
+	/** Í∏∞ÌÉÄ */
 	public static final String GN_EXT_AUTH_SERIAL = "ext.auth.serial";
 	public static final String GN_EXT_COM_ADD = "ext.com.add";
 	public static final String GN_EXT_COM_NAME = "ext.com.name";

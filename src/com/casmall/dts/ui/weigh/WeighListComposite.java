@@ -94,11 +94,11 @@ public class WeighListComposite extends Composite{
 
 	private GridTableViewer gridViewer;
 	private String[] colProp = { "no", "car_num", "fst_wgt_dt", "fst_wgt_dt", "fst_wgh", "scnd_wgt_dt", "scnd_wgh", "dscnt", "rl_wgh","cst_nm","prdt_nm","io_flg_nm" };
-	private String[] colName = { "No", "¬˜∑Æπ¯»£", "¿œ¿⁄", "Ω√∞£", "¡ﬂ∑Æ   ","Ω√∞£", "¡ﬂ∑Æ   ","∞®∑Æ","Ω«¡ﬂ∑Æ ","∞≈∑°√≥","¡¶«∞","±∏∫–" };
+	private String[] colName = { "No", "Ï∞®ÎüâÎ≤àÌò∏", "ÏùºÏûê", "ÏãúÍ∞Ñ", "Ï§ëÎüâ   ","ÏãúÍ∞Ñ", "Ï§ëÎüâ   ","Í∞êÎüâ","Ïã§Ï§ëÎüâ ","Í±∞ÎûòÏ≤ò","Ï†úÌíà","Íµ¨Î∂Ñ" };
 	private String[] colFormat = { "", "", "yyyy-MM-dd", "HH:mm", "","HH:mm", "","","","","","" };
 
-	// ±∏∫–, ∞≈∑°√≥, ¬˜∑Æ
-	/** ƒ√∑≥ ≥ ∫Ò : ∆€ºæ∆Æ */
+	// Íµ¨Î∂Ñ, Í±∞ÎûòÏ≤ò, Ï∞®Îüâ
+	/** Ïª¨Îüº ÎÑàÎπÑ : ÌçºÏÑºÌä∏ */
 	private int[] colWidth = { 5, 14, 11, 8, 7, 8, 7, 7, 7, 12, 8, 6 };
 	private int[] colAlign = { SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.RIGHT, SWT.CENTER, SWT.RIGHT, SWT.RIGHT, SWT.RIGHT, SWT.LEFT, SWT.LEFT, SWT.CENTER};
 
@@ -175,7 +175,7 @@ public class WeighListComposite extends Composite{
 			this.setSize(1010, 418);
 			{
 				final CLabel lblTitle = new CLabel(this, SWT.NONE);
-				lblTitle.setText("∞Ë∑Æ¡§∫∏ ¡∂»∏");
+				lblTitle.setText("Í≥ÑÎüâÏ†ïÎ≥¥ Ï°∞Ìöå");
 				lblTitle.setImage(ImageRepository.getImage(ImageRepository.ICO_SELECT));
 				lblTitle.setFont(titleFont);
 				lblTitle.setForeground(ColorRepository.getColor(ColorRepository.TEXT_TITLE));
@@ -235,7 +235,7 @@ public class WeighListComposite extends Composite{
 					{
 						CLabel lblTag = new CLabel(cSearchTerm, SWT.NONE);
 						lblTag.setFont(defaultFont);
-						lblTag.setText("±‚∞£: ");
+						lblTag.setText("Í∏∞Í∞Ñ: ");
 						lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					
 						FormattedText fmtFrom = new FormattedText(cSearchTerm, SWT.BORDER);
@@ -276,22 +276,22 @@ public class WeighListComposite extends Composite{
 					rdoToday = new RadioItem(rgTerm, SWT.NONE);
 					rdoToday.setFont(defaultFont);
 					rdoToday.setData(0);
-					rdoToday.setText("ø¿¥√");
+					rdoToday.setText("Ïò§Îäò");
 					
 					rdoThisWeek = new RadioItem(rgTerm, SWT.NONE);
 					rdoThisWeek.setFont(defaultFont);
 					rdoThisWeek.setData(1);
-					rdoThisWeek.setText("¿œ¡÷¿œ");
+					rdoThisWeek.setText("ÏùºÏ£ºÏùº");
 					
 					rdoThisMonth = new RadioItem(rgTerm, SWT.NONE);
 					rdoThisMonth.setFont(defaultFont);
 					rdoThisMonth.setData(2);
-					rdoThisMonth.setText("«—¥ﬁ");
+					rdoThisMonth.setText("ÌïúÎã¨");
 					
 					{
 						CLabel lblTag = new CLabel(cSearchTerm, SWT.NONE);
 						lblTag.setFont(defaultFont);
-						lblTag.setText("∞Ë∑Æ±∏∫–: ");
+						lblTag.setText("Í≥ÑÎüâÍµ¨Î∂Ñ: ");
 						lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 						
 						rgWgtFlag = new RadioGroup(cSearchTerm, SWT.NONE);
@@ -299,35 +299,35 @@ public class WeighListComposite extends Composite{
 						rdoFlag[0] = new RadioItem(rgWgtFlag, SWT.NONE);
 						rdoFlag[0].setFont(defaultFont);
 						rdoFlag[0].setData(null);
-						rdoFlag[0].setText("¿¸√º");
+						rdoFlag[0].setText("Ï†ÑÏ≤¥");
 						
 						rdoFlag[1] = new RadioItem(rgWgtFlag, SWT.NONE);
 						rdoFlag[1].setFont(defaultFont);
 						rdoFlag[1].setData(DTSConstants.WGT_FLAG_GEN);
-						rdoFlag[1].setText("¿œπ›∞Ë∑Æ");
+						rdoFlag[1].setText("ÏùºÎ∞òÍ≥ÑÎüâ");
 						
 						rdoFlag[2] = new RadioItem(rgWgtFlag, SWT.NONE);
 						rdoFlag[2].setFont(defaultFont);
 						rdoFlag[2].setData(DTSConstants.WGT_FLAG_ONE);
-						rdoFlag[2].setText("1»∏∞Ë∑Æ");
+						rdoFlag[2].setText("1ÌöåÍ≥ÑÎüâ");
 					}
 					car = new CarComposite(cSearch, SWT.NONE);
 					car.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 					car.setFont(defaultFont);
 					car.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
-					car.setTitle("¬˜∑Æπ¯»£:");
+					car.setTitle("Ï∞®ÎüâÎ≤àÌò∏:");
 					
 					cst = new CstComposite(cSearch, SWT.NONE);
 					cst.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 					cst.setFont(defaultFont);
 					cst.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
-					cst.setTitle("∞≈∑°√≥:");
+					cst.setTitle("Í±∞ÎûòÏ≤ò:");
 					
 					prdt = new PrdtComposite(cSearch, SWT.NONE);
 					prdt.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 					prdt.setFont(defaultFont);
 					prdt.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
-					prdt.setTitle("¡¶«∞:");
+					prdt.setTitle("Ï†úÌíà:");
 				}
 				{
 					Composite cBtn = new Composite(ctTop, SWT.NONE);
@@ -337,15 +337,15 @@ public class WeighListComposite extends Composite{
 						btnSelect = new Button(cBtn, SWT.PUSH | SWT.CENTER);
 						btnSelect.setImage(ImageRepository.getImage(ImageRepository.BTN_SELECT));
 						btnSelect.setFont(defaultFont);
-						btnSelect.setText("¡∂»∏");
+						btnSelect.setText("Ï°∞Ìöå");
 						Button btnExport = new Button(cBtn, SWT.PUSH | SWT.CENTER);
 						btnExport.setImage(ImageRepository.getImage(ImageRepository.BTN_EXPORT));
 						btnExport.setFont(defaultFont);
-						btnExport.setText("ø¢ºø");
+						btnExport.setText("ÏóëÏÖÄ");
 						Button btnClose = new Button(cBtn, SWT.PUSH | SWT.CENTER);
 						btnClose.setImage(ImageRepository.getImage(ImageRepository.BTN_CLOSE));
 						btnClose.setFont(defaultFont);
-						btnClose.setText("¥›±‚");
+						btnClose.setText("Îã´Í∏∞");
 						btnClose.addMouseListener(new MouseAdapter() {
 							public void mouseDown(MouseEvent evt) {
 								IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
@@ -408,10 +408,10 @@ public class WeighListComposite extends Composite{
 						| ColumnViewerEditor.KEYBOARD_ACTIVATION);
 				
 				GridColumnGroup cgFst = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-				cgFst.setText("        1¬˜ ∞Ë∑Æ");
+				cgFst.setText("        1Ï∞® Í≥ÑÎüâ");
 
 				GridColumnGroup cgScnd = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-				cgScnd.setText("        2¬˜ ∞Ë∑Æ");
+				cgScnd.setText("        2Ï∞® Í≥ÑÎüâ");
 				
 				for (int i = 0; i < colName.length; i++) {
 					GridColumn column = null;
@@ -569,18 +569,18 @@ public class WeighListComposite extends Composite{
 	}
 
 	/**
-	 * ¡∂»∏πˆ∆∞ ≈¨∏Ø
+	 * Ï°∞ÌöåÎ≤ÑÌäº ÌÅ¥Î¶≠
 	 * @param evt
 	 */
 	private void btnSelectMouseDown(MouseEvent evt) {
 		selectData();
 		if (listData == null || listData.size() == 0) {
-			MessageDialog.openInformation(getShell(), "¡∂»∏ ∞·∞˙", "¡∂»∏µ» ¿⁄∑·∞° æ¯Ω¿¥œ¥Ÿ.");
+			MessageDialog.openInformation(getShell(), "Ï°∞Ìöå Í≤∞Í≥º", "Ï°∞ÌöåÎêú ÏûêÎ£åÍ∞Ä ÏóÜÏäµÎãàÎã§.");
 		}
 	}
 	
 	/**
-	 * ¡∂»∏ √≥∏Æ
+	 * Ï°∞Ìöå Ï≤òÎ¶¨
 	 */
 	private void selectData(){
 		try{
@@ -611,28 +611,28 @@ public class WeighListComposite extends Composite{
 		}catch(Exception e){
 			log.error(e.getMessage());
 			e.printStackTrace();
-			MessageDialog.openError(getShell(), "¡∂»∏ Error", e.getMessage());
+			MessageDialog.openError(getShell(), "Ï°∞Ìöå Error", e.getMessage());
 		}
 	}
 	
 	private void btnExportMouseDown(MouseEvent evt){
 		if(listData == null){
-			MessageDialog.openInformation(this.getShell(), "ø¢ºø", "µ•¿Ã≈Õ∞° ¡∂»∏µ«¡ˆ æ æ“Ω¿¥œ¥Ÿ.");
+			MessageDialog.openInformation(this.getShell(), "ÏóëÏÖÄ", "Îç∞Ïù¥ÌÑ∞Í∞Ä Ï°∞ÌöåÎêòÏßÄ ÏïäÏïòÏäµÎãàÎã§.");
 			return;
 		}
 		FileDialog dialog = new FileDialog(this.getShell(), SWT.SAVE);
 	    dialog.setFilterNames(new String[] { "Excel Files", "All Files (*.*)" });
 	    dialog.setFilterExtensions(new String[] { "*.xls", "*.*"});
-	    dialog.setFileName("∞Ë∑Æ¡§∫∏ "+txtFrom.getText()+"~"+txtTo.getText()+".xls");
+	    dialog.setFileName("Í≥ÑÎüâÏ†ïÎ≥¥ "+txtFrom.getText()+"~"+txtTo.getText()+".xls");
 	    String saveFile = dialog.open();
 	    if (saveFile == null) {
 			return;
 		}
-	    saveExport(saveFile, "∞Ë∑Æ ¡§∫∏ ");
+	    saveExport(saveFile, "Í≥ÑÎüâ Ï†ïÎ≥¥ ");
 	}
 	
 	/**
-	 * Excel ¿˙¿Â
+	 * Excel Ï†ÄÏû•
 	 * @param saveFile
 	 */
 	private void saveExport(String saveFile, String... str) {
@@ -650,9 +650,9 @@ public class WeighListComposite extends Composite{
 
 		try {
 			w.write(export);
-			MessageDialog.openInformation(this.getShell(), "ø¢ºø", "Excel∑Œ ¿˙¿Âµ«æ˙Ω¿¥œ¥Ÿ.");
+			MessageDialog.openInformation(this.getShell(), "ÏóëÏÖÄ", "ExcelÎ°ú Ï†ÄÏû•ÎêòÏóàÏäµÎãàÎã§.");
 		} catch (IOException e) {
-			MessageDialog.openError(this.getShell(), "Export Fail", "[Error] ¿˙¿Âµ«¡ˆ æ æ“Ω¿¥œ¥Ÿ.\n\n"+e.getMessage());
+			MessageDialog.openError(this.getShell(), "Export Fail", "[Error] Ï†ÄÏû•ÎêòÏßÄ ÏïäÏïòÏäµÎãàÎã§.\n\n"+e.getMessage());
 		}
 	}
 }

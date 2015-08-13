@@ -62,7 +62,7 @@ public class PLine extends PBox {
 	}
 	
 	protected void draw(Point originOffset) {
-		// TODO LOW »ç¼± ÃßÈÄ ÇÊ¿ä ½Ã ±¸Çö
+		// TODO LOW ì‚¬ì„  ì¶”í›„ í•„ìš” ì‹œ êµ¬í˜„
 		/*if ((style & PBox.DIAGONAL) > 0) {
 			Point origin = getPoint();
 			Point originForDrawing = new Point(origin.x + originOffset.x, origin.y + originOffset.y);

@@ -6,23 +6,23 @@ import org.eclipse.swt.graphics.Color;
 import com.swtdesigner.SWTResourceManager;
 
 public class ColorRepository {
-	public static final int BG_MAIN = 10; // ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ¹ÙÅÁ»ö
-	public static final int BG_CONTENTS = 11; // ³»¿ë ¹ÙÅÁ»ö
-	public static final int BG_EDIT_CONTENTS = 12;// ÇÏ´Ü ¿¡µğÆ® View ¹è°æ
+	public static final int BG_MAIN = 10; // ì• í”Œë¦¬ì¼€ì´ì…˜ ë°”íƒ•ìƒ‰
+	public static final int BG_CONTENTS = 11; // ë‚´ìš© ë°”íƒ•ìƒ‰
+	public static final int BG_EDIT_CONTENTS = 12;// í•˜ë‹¨ ì—ë””íŠ¸ View ë°°ê²½
 	
-	public static final int TEXT_TITLE = 21; // È­¸é Á¦¸ñ
-	public static final int TEXT_TAB = 22; // ÅÜ Font
+	public static final int TEXT_TITLE = 21; // í™”ë©´ ì œëª©
+	public static final int TEXT_TAB = 22; // í… Font
 	
 	public static final int GRID_LINE = 31;
-	public static final int GRID_ODD_BG = 32; // Â¦¼öÁÙ ¹è°æ»ö
-	public static final int GRID_EVEN_BG = 33; // È¦¼öÁÙ ¹è°æ»ö
-	public static final int GRID_INPUT = 34; // ÀÎÇ² »ö»ó
-	public static final int GRID_SUM_BG = 35; // ÇÏ´Ü ÇÕ°è »ö»ó
-	public static final int GRID_SELECT_BG = 36; // ¼±ÅÃ ÁÙ ¹è°æ»ö
+	public static final int GRID_ODD_BG = 32; // ì§ìˆ˜ì¤„ ë°°ê²½ìƒ‰
+	public static final int GRID_EVEN_BG = 33; // í™€ìˆ˜ì¤„ ë°°ê²½ìƒ‰
+	public static final int GRID_INPUT = 34; // ì¸í’‹ ìƒ‰ìƒ
+	public static final int GRID_SUM_BG = 35; // í•˜ë‹¨ í•©ê³„ ìƒ‰ìƒ
+	public static final int GRID_SELECT_BG = 36; // ì„ íƒ ì¤„ ë°°ê²½ìƒ‰
 
-	public static final int HOME_WIGET_BG = 41; // Home À§Á¬ ¹è°æ
-	public static final int HOME_WIGET_LINE = 42; // Home ¶óÀÎ»ö
-	public static final int HOME_CAL_TITLE = 43; // Home ¶óÀÎ»ö
+	public static final int HOME_WIGET_BG = 41; // Home ìœ„ì ¯ ë°°ê²½
+	public static final int HOME_WIGET_LINE = 42; // Home ë¼ì¸ìƒ‰
+	public static final int HOME_CAL_TITLE = 43; // Home ë¼ì¸ìƒ‰
 	
 	// TABLE
 	public static final int TABLE_HEADER = 51;

@@ -49,7 +49,7 @@ public class PriceComposite extends Composite{
 
 		lblTitle = new Label(this, SWT.NONE);
 		lblTitle.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, true, 1, 1));
-		lblTitle.setText("¥‹∞°/±›æ◊");
+		lblTitle.setText("Îã®Í∞Ä/Í∏àÏï°");
 		
 		txtUnitPrice = new FormattedText(this, SWT.BORDER | style);
 		txtUnitPrice.setFormatter(new NumberFormatter("###,###,###"));
@@ -61,14 +61,14 @@ public class PriceComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ¿œ ∞ÊøÏ Tab √≥∏Æ
+					// Enter Ïùº Í≤ΩÏö∞ Tab Ï≤òÎ¶¨
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
 			}
 		});
 		lblSep = new Label(this, SWT.NONE);
-		lblSep.setText("ø¯ / ");
+		lblSep.setText("Ïõê / ");
 		
 		txtAmount = new FormattedText(this, SWT.BORDER | style);
 		txtAmount.setFormatter(new NumberFormatter("###,###,###"));
@@ -81,7 +81,7 @@ public class PriceComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ¿œ ∞ÊøÏ Tab √≥∏Æ
+					// Enter Ïùº Í≤ΩÏö∞ Tab Ï≤òÎ¶¨
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
@@ -89,7 +89,7 @@ public class PriceComposite extends Composite{
 		});
 		
 		lblUnit = new Label(this, SWT.NONE);
-		lblUnit.setText("ø¯ ");
+		lblUnit.setText("Ïõê ");
 	}// initGUI
 
 	@Override
@@ -132,7 +132,7 @@ public class PriceComposite extends Composite{
 	}
 	
 	/**
-	 * Font º≥¡§<br>
+	 * Font ÏÑ§Ï†ï<br>
 	 * 0 : title, 1 : label, 2 : input
 	 * @param font
 	 */

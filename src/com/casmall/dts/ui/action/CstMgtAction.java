@@ -15,8 +15,8 @@ public class CstMgtAction extends Action{
 	public CstMgtAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("°Å·¡Ã³ Á¤º¸ °ü¸®");
-		setToolTipText("°Å·¡Ã³ Á¤º¸¸¦ °ü¸®ÇÕ´Ï´Ù.");
+		setText("ê±°ëž˜ì²˜ ì •ë³´ ê´€ë¦¬");
+		setToolTipText("ê±°ëž˜ì²˜ ì •ë³´ë¥¼ ê´€ë¦¬í•©ë‹ˆë‹¤.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_BASIS_CSTMGT));
 	}
 

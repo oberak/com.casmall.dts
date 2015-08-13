@@ -3,24 +3,24 @@ package com.casmall.dts.biz.domain;
 import com.casmall.common.BaseObject;
 
 /**
- * °Å·¡Ã³ ¸¶½ºÅÍ
+ * ê±°ë˜ì²˜ ë§ˆìŠ¤í„°
  * @author OBERAK
  */
 public class TsCstMstDTO extends BaseObject {
     private static final long serialVersionUID = 883877737611367380L;
-	/** °Å·¡Ã³ ÄÚµå */
+	/** ê±°ë˜ì²˜ ì½”ë“œ */
 	private String cst_cd;
-	/** °Å·¡Ã³ °ü¸® ÄÚµå */
+	/** ê±°ë˜ì²˜ ê´€ë¦¬ ì½”ë“œ */
 	private String cst_mgt_cd;
-	/** °Å·¡Ã³ ¸í */
+	/** ê±°ë˜ì²˜ ëª… */
 	private String cst_nm;
-	/** ´ëÇ¥ÀÚ ¸í */
+	/** ëŒ€í‘œì ëª… */
 	private String rpr_nm;
-	/** ¿¬¶ôÃ³ */
+	/** ì—°ë½ì²˜ */
 	private String tel;
-	/** ºñ°í */
+	/** ë¹„ê³  */
 	private String nt;
-	/** °ü¸® ¿©ºÎ */
+	/** ê´€ë¦¬ ì—¬ë¶€ */
 	private String mgt_yn;
 	
     private int no;

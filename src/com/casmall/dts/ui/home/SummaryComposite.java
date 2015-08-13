@@ -28,7 +28,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
     private final Image innerCenter = ImageRepository.getImage(ImageRepository.HOME_INFO_INNER_BG_CENTER);
     private final Image innerRight = ImageRepository.getImage(ImageRepository.HOME_INFO_INNER_BG_RIGHT);
 
-    private final Font titleFont = SWTResourceManager.getFont("±¼¸²", 14, SWT.BOLD);
+    private final Font titleFont = SWTResourceManager.getFont("êµ´ë¦¼", 14, SWT.BOLD);
     private final Font contentsFont = SWTResourceManager.getFont("Arial", 15, SWT.BOLD);
     private final Color contentsColor = SWTResourceManager.getColor(SWT.COLOR_WHITE);
 
@@ -117,7 +117,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 	        label.setFont(titleFont);
 	        label.setLayoutData(new GridData(SWT.CENTER, SWT.BEGINNING, false, false));
 	        label.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
-	        label.setText("°è·® ¿ä¾à");
+	        label.setText("ê³„ëŸ‰ ìš”ì•½");
 	        
 	        // inner composite
 			final Composite infoComposite = new Composite(centerComposite, SWT.NONE);
@@ -149,7 +149,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 	        label = new Label(innerCenterComposite, SWT.NONE);
 	        label.setForeground(contentsColor);
 	        label.setFont(contentsFont);
-	        label.setText("¿À´Ã");
+	        label.setText("ì˜¤ëŠ˜");
 			
 	        lblCountToday = new Label(innerCenterComposite, SWT.RIGHT);
 	        lblCountToday.setForeground(contentsColor);
@@ -160,7 +160,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 	        label = new Label(innerCenterComposite, SWT.NONE);
 	        label.setForeground(contentsColor);
 	        label.setFont(contentsFont);
-	        label.setText("°Ç");
+	        label.setText("ê±´");
 	        
 	        lblSumToday = new Label(innerCenterComposite, SWT.RIGHT);
 	        lblSumToday.setForeground(contentsColor);
@@ -176,7 +176,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 	        lblMonth = new Label(innerCenterComposite, SWT.NONE);
 	        lblMonth.setForeground(contentsColor);
 	        lblMonth.setFont(contentsFont);
-	        lblMonth.setText("12¿ù");
+	        lblMonth.setText("12ì›”");
 			
 	        lblCountMonth = new Label(innerCenterComposite, SWT.RIGHT);
 	        lblCountMonth.setForeground(contentsColor);
@@ -187,7 +187,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 	        label = new Label(innerCenterComposite, SWT.NONE);
 	        label.setForeground(contentsColor);
 	        label.setFont(contentsFont);
-	        label.setText("°Ç");
+	        label.setText("ê±´");
 	        
 	        lblSumMonth = new Label(innerCenterComposite, SWT.RIGHT);
 	        lblSumMonth.setForeground(contentsColor);
@@ -228,7 +228,7 @@ public class SummaryComposite extends org.eclipse.swt.widgets.Composite {
 		NumberFormat nf = NumberFormat.getInstance();
 		lblCountToday.setText(nf.format(todayCount));
 		lblSumToday.setText(nf.format(todaySum));
-		lblMonth.setText(month+"¿ù");
+		lblMonth.setText(month+"ì›”");
 		lblCountMonth.setText(nf.format(monthCount));
 		lblSumMonth.setText(nf.format(monthSum));
 	}// setInfo

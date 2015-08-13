@@ -22,10 +22,10 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
 	@Override
 	public void initialize(IWorkbenchConfigurer configurer) {
-		//  À©µµ¿ì À§Ä¡¿Í Å©±â ÀúÀå
+		//  ìœˆë„ìš° ìœ„ì¹˜ì™€ í¬ê¸° ì €ì¥
 		configurer.setSaveAndRestore(true);
 
-		// »ö»óº¯°æ
+		// ìƒ‰ìƒë³€ê²½
 		IThemeManager themeManager = PlatformUI.getWorkbench().getThemeManager();
 		ITheme currentTheme = themeManager.getCurrentTheme();
 		ColorRegistry colorRegistry = currentTheme.getColorRegistry();

@@ -3,26 +3,26 @@ package com.casmall.dts.biz.domain;
 import com.casmall.common.BaseObject;
 
 /**
- * Á¦Ç° ¸¶½ºÅÍ
+ * ì œí’ˆ ë§ˆìŠ¤í„°
  * @author OBERAK
  */
 public class TsPrdtMstDTO extends BaseObject {
     private static final long serialVersionUID = 593222612229022508L;
-	/** Á¦Ç° ÄÚµå */
+	/** ì œí’ˆ ì½”ë“œ */
 	private String prdt_cd;
-	/** Á¦Ç° °ü¸® ÄÚµå */
+	/** ì œí’ˆ ê´€ë¦¬ ì½”ë“œ */
 	private String prdt_mgt_cd;
-	/** Á¦Ç° ¸í */
+	/** ì œí’ˆ ëª… */
 	private String prdt_nm;
-	/** ºñ°í */
+	/** ë¹„ê³  */
 	private String nt;
-	/** °ü¸® ¿©ºÎ */
+	/** ê´€ë¦¬ ì—¬ë¶€ */
 	private String mgt_yn;
 	
     private int no;
     private String search;
     
-	/** ´Ü°¡ */
+	/** ë‹¨ê°€ */
 	private int unt_prc;
 	
 	public String getPrdt_cd() {

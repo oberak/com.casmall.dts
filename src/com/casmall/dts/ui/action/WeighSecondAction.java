@@ -18,8 +18,8 @@ public class WeighSecondAction extends Action{
 	public WeighSecondAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("2Â÷ °è·®");
-		setToolTipText("2Â÷ °è·® ½ÃÀÛ.");
+		setText("2ì°¨ ê³„ëŸ‰");
+		setToolTipText("2ì°¨ ê³„ëŸ‰ ì‹œìž‘.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_WEIGH_SECOND));
 //		setHoverImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(RVConstants.PLUGIN_ID, IImageKeys.TOOL_01_ON));
 	}

@@ -45,7 +45,7 @@ import com.casmall.dts.ui.weigh.dialog.WeighSecondDialog;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * HomeView ∞Ë∑˘¬˜∑Æ ¡§∫∏ «•±‚
+ * HomeView Í≥ÑÎ•òÏ∞®Îüâ Ï†ïÎ≥¥ ÌëúÍ∏∞
  * 
  * @author OBERAK
  */
@@ -61,11 +61,11 @@ public class WeighFstInftComposite extends org.eclipse.swt.widgets.Composite {
 	private final Image gridLeftBottom = ImageRepository.getImage(ImageRepository.HOME_GRID_LEFT_BOTTOM);
 	private final Image gridRightBottom = ImageRepository.getImage(ImageRepository.HOME_GRID_RIGHT_BOTTOM);
 
-	private final Font titleFont = SWTResourceManager.getFont("±º∏≤", 14, SWT.BOLD);
+	private final Font titleFont = SWTResourceManager.getFont("Íµ¥Î¶º", 14, SWT.BOLD);
 
 	private String[] colProp = { "no", "car_num", "fst_wgt_dt", "fst_wgt_dt", "fst_wgh" };
-	private String[] colName = { "No", "¬˜∑Æπ¯»£", "¿œ¿⁄", "Ω√∞£", "¡ﬂ∑Æ   " };
-	/** ƒ√∑≥ ≥ ∫Ò : ∆€ºæ∆Æ */
+	private String[] colName = { "No", "Ï∞®ÎüâÎ≤àÌò∏", "ÏùºÏûê", "ÏãúÍ∞Ñ", "Ï§ëÎüâ   " };
+	/** Ïª¨Îüº ÎÑàÎπÑ : ÌçºÏÑºÌä∏ */
 	private int[] colWidth = { 10, 30, 27, 15, 18 };
 	private int[] colAlign = { SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.RIGHT };
 
@@ -154,7 +154,7 @@ public class WeighFstInftComposite extends org.eclipse.swt.widgets.Composite {
 			lblTitle = new Label(centerComposite, SWT.LEFT);
 			lblTitle.setFont(titleFont);
 			lblTitle.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-			lblTitle.setText("∞Ë∑˘ ¬˜∑Æ");
+			lblTitle.setText("Í≥ÑÎ•ò Ï∞®Îüâ");
 			lblTitle.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 
 			lblCount = new Label(centerComposite, SWT.RIGHT);
@@ -167,7 +167,7 @@ public class WeighFstInftComposite extends org.eclipse.swt.widgets.Composite {
 			label = new Label(centerComposite, SWT.NONE);
 			label.setFont(titleFont);
 			label.setLayoutData(new GridData(SWT.LEFT, SWT.BEGINNING, false, false));
-			label.setText(" ∞«");
+			label.setText(" Í±¥");
 
 			// title right part
 			label = new Label(this, SWT.NONE);
@@ -251,7 +251,7 @@ public class WeighFstInftComposite extends org.eclipse.swt.widgets.Composite {
 		        | ColumnViewerEditor.KEYBOARD_ACTIVATION);
 
 		GridColumnGroup cgSpot = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-		cgSpot.setText("        1¬˜ ∞Ë∑Æ");
+		cgSpot.setText("        1Ï∞® Í≥ÑÎüâ");
 
 		for (int i = 0; i < colName.length; i++) {
 			GridColumn column = null;

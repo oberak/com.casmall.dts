@@ -15,8 +15,8 @@ public class CarMgtAction extends Action{
 	public CarMgtAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("Â÷·®Á¤º¸ °ü¸®");
-		setToolTipText("Â÷·® Á¤º¸¸¦ °ü¸®ÇÕ´Ï´Ù.");
+		setText("ì°¨ëŸ‰ì •ë³´ ê´€ë¦¬");
+		setToolTipText("ì°¨ëŸ‰ ì •ë³´ë¥¼ ê´€ë¦¬í•©ë‹ˆë‹¤.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_BASIS_CARMGT));
 	}
 

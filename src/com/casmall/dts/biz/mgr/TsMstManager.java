@@ -20,7 +20,7 @@ public class TsMstManager {
 	private DBManager dbm = DBManager.getInstance();
 	
 	/**
-	 * Â÷·®Á¤º¸ Á¶È¸
+	 * ì°¨ëŸ‰ì •ë³´ ì¡°íšŒ
 	 * @param car
 	 * @return
 	 */
@@ -35,7 +35,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Â÷·® ÄÚµå Ã¤¹ø
+	 * ì°¨ëŸ‰ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsCarMstKey(){
@@ -49,7 +49,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Â÷·® °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ì°¨ëŸ‰ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public boolean existTsCarMstMgtCd(TsCarMstDTO dto){
@@ -67,7 +67,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Â÷·® Á¤º¸ µî·Ï
+	 * ì°¨ëŸ‰ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -78,7 +78,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.insertTsCarMst(dto);
 			if(chk == 0){
-				throw new IOException("Â÷·®  Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì°¨ëŸ‰  ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -90,7 +90,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Â÷·® Á¤º¸ ¼öÁ¤
+	 * ì°¨ëŸ‰ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -101,7 +101,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.updateTsCarMst(dto);
 			if(chk == 0){
-				throw new IOException("Â÷·®  Á¤º¸°¡ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì°¨ëŸ‰  ì •ë³´ê°€ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -113,7 +113,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Â÷·® Á¤º¸ ¼öÁ¤
+	 * ì°¨ëŸ‰ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -125,7 +125,7 @@ public class TsMstManager {
 			dto.setDel_yn(DTSConstants.FLAG_Y);
 			int chk = dao.updateTsCarMst(dto);
 			if(chk == 0){
-				throw new IOException("Â÷·®  Á¤º¸°¡ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì°¨ëŸ‰  ì •ë³´ê°€ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -137,7 +137,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ Á¶È¸
+	 * ê±°ë˜ì²˜ ì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
@@ -152,7 +152,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ ÄÚµå Ã¤¹ø
+	 * ê±°ë˜ì²˜ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsCstMstKey(){
@@ -166,7 +166,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ê±°ë˜ì²˜ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public boolean existTsCstMstMgtCd(TsCstMstDTO dto){
@@ -184,7 +184,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ µî·Ï
+	 * ê±°ë˜ì²˜ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -195,7 +195,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.insertTsCstMst(dto);
 			if(chk == 0){
-				throw new IOException("°Å·¡Ã³ Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ê±°ë˜ì²˜ ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -207,7 +207,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ ¼öÁ¤
+	 * ê±°ë˜ì²˜ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -218,7 +218,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.updateTsCstMst(dto);
 			if(chk == 0){
-				throw new IOException("°Å·¡Ã³ Á¤º¸°¡ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ê±°ë˜ì²˜ ì •ë³´ê°€ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -230,7 +230,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * °Å·¡Ã³ Á¤º¸ »èÁ¦
+	 * ê±°ë˜ì²˜ ì •ë³´ ì‚­ì œ
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -242,7 +242,7 @@ public class TsMstManager {
 			dto.setDel_yn(DTSConstants.FLAG_Y);
 			int chk = dao.updateTsCstMst(dto);
 			if(chk == 0){
-				throw new IOException("°Å·¡Ã³ Á¤º¸°¡ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ê±°ë˜ì²˜ ì •ë³´ê°€ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -254,7 +254,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * »óÇ°Á¤º¸ Á¶È¸
+	 * ìƒí’ˆì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
@@ -269,7 +269,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Á¦Ç° ÄÚµå Ã¤¹ø
+	 * ì œí’ˆ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsPrdtMstKey(){
@@ -283,7 +283,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Á¦Ç° °ü¸®ÄÚµå Áßº¹Ã¼Å©
+	 * ì œí’ˆ ê´€ë¦¬ì½”ë“œ ì¤‘ë³µì²´í¬
 	 * @return
 	 */
 	public boolean existTsPrdtMstMgtCd(TsPrdtMstDTO dto){
@@ -301,7 +301,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Á¦Ç° Á¤º¸ µî·Ï
+	 * ì œí’ˆ ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -312,7 +312,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.insertTsPrdtMst(dto);
 			if(chk == 0){
-				throw new IOException("Á¦Ç° Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì œí’ˆ ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -324,7 +324,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Á¦Ç° Á¤º¸ ¼öÁ¤
+	 * ì œí’ˆ ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -335,7 +335,7 @@ public class TsMstManager {
 		try{
 			int chk = dao.updateTsPrdtMst(dto);
 			if(chk == 0){
-				throw new IOException("Á¦Ç° Á¤º¸°¡¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì œí’ˆ ì •ë³´ê°€ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -347,7 +347,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * Á¦Ç° Á¤º¸ »èÁ¦
+	 * ì œí’ˆ ì •ë³´ ì‚­ì œ
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -359,7 +359,7 @@ public class TsMstManager {
 			dto.setDel_yn(DTSConstants.FLAG_Y);
 			int chk = dao.updateTsPrdtMst(dto);
 			if(chk == 0){
-				throw new IOException("Á¦Ç° Á¤º¸°¡ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì œí’ˆ ì •ë³´ê°€ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -371,7 +371,7 @@ public class TsMstManager {
 	}
 	
 	/**
-	 * ¸¶½ºÅÍÁ¤º¸ ÀÏ°ı µî·Ï
+	 * ë§ˆìŠ¤í„°ì •ë³´ ì¼ê´„ ë“±ë¡
 	 * @param carDto
 	 * @param cstDto
 	 * @param prdtDto
@@ -386,21 +386,21 @@ public class TsMstManager {
 			if(carDto!=null){
 				chk = dao.insertTsCarMst(carDto);
 				if(chk == 0){
-					throw new IOException("Â÷·® Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+					throw new IOException("ì°¨ëŸ‰ ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 				}
 				rtn++;
 			}
 			if(cstDto!=null){
 				chk = dao.insertTsCstMst(cstDto);
 				if(chk == 0){
-					throw new IOException("°Å·¡Ã³ Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+					throw new IOException("ê±°ë˜ì²˜ ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 				}
 				rtn++;
 			}
 			if(prdtDto!=null){
 				chk = dao.insertTsPrdtMst(prdtDto);
 				if(chk == 0){
-					throw new IOException("Á¦Ç° Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+					throw new IOException("ì œí’ˆ ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 				}
 				rtn++;
 			}

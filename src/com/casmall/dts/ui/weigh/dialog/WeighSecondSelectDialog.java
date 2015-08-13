@@ -68,17 +68,17 @@ import com.casmall.usr.mgr.SessionManager;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * 2Â÷ °è·® - 1Â÷°è·® ¸ñ·Ï¿¡¼­ ¼±ÅÃ
+ * 2ì°¨ ê³„ëŸ‰ - 1ì°¨ê³„ëŸ‰ ëª©ë¡ì—ì„œ ì„ íƒ
  * 
  * @author OBERAK
  */
 public class WeighSecondSelectDialog extends Dialog {
 	protected static Log logger = LogFactory.getLog(WeighSecondSelectDialog.class);
 			
-	protected final Font titleFont = SWTResourceManager.getFont("±¼¸²Ã¼", 23, SWT.BOLD);
-	protected final Font defaultFont = SWTResourceManager.getFont("±¼¸²Ã¼", 17, SWT.BOLD);
-	protected final Font helpFont = SWTResourceManager.getFont("±¼¸²Ã¼", 12, SWT.NONE);
-	protected final Font btnFont = SWTResourceManager.getFont("±¼¸²Ã¼", 15, SWT.BOLD);
+	protected final Font titleFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 23, SWT.BOLD);
+	protected final Font defaultFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 17, SWT.BOLD);
+	protected final Font helpFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 12, SWT.NONE);
+	protected final Font btnFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 15, SWT.BOLD);
 	
 	protected Object result;
 	protected Shell shell;
@@ -89,8 +89,8 @@ public class WeighSecondSelectDialog extends Dialog {
 	private ScopedPreferenceStore preferences;
 	
 	private String[] colProp = { "no", "car_num", "fst_wgt_dt", "fst_wgt_dt", "fst_wgh" };
-	private String[] colName = { "No", "Â÷·®¹øÈ£", "ÀÏÀÚ", "½Ã°£", "Áß·®   " };
-	/** ÄÃ·³ ³Êºñ : ÆÛ¼¾Æ® */
+	private String[] colName = { "No", "ì°¨ëŸ‰ë²ˆí˜¸", "ì¼ì", "ì‹œê°„", "ì¤‘ëŸ‰   " };
+	/** ì»¬ëŸ¼ ë„ˆë¹„ : í¼ì„¼íŠ¸ */
 	private int[] colWidth = { 10, 30, 27, 15, 18 };
 	private int[] colAlign = { SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.RIGHT };
 
@@ -108,7 +108,7 @@ public class WeighSecondSelectDialog extends Dialog {
 	public WeighSecondSelectDialog(Shell parent, int style) {
 		super(parent, style);
 		this.parent = parent;
-		setText("2Â÷ °è·® - ´ë»ó Â÷·® ¼±ÅÃ");
+		setText("2ì°¨ ê³„ëŸ‰ - ëŒ€ìƒ ì°¨ëŸ‰ ì„ íƒ");
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class WeighSecondSelectDialog extends Dialog {
 		lblTitle.setLayoutData(gd_lblTitle);
 		lblTitle.setFont(titleFont);
 		lblTitle.setBackgroundImage(ImageRepository.getImage(ImageRepository.POPUP_TITLE_BG));
-		lblTitle.setText("2Â÷ °è·® - ´ë»ó Â÷·® ¼±ÅÃ");
+		lblTitle.setText("2ì°¨ ê³„ëŸ‰ - ëŒ€ìƒ ì°¨ëŸ‰ ì„ íƒ");
 		
 		Composite compContents = new Composite(shell, SWT.NONE);
 		compContents.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
@@ -185,8 +185,8 @@ public class WeighSecondSelectDialog extends Dialog {
 		});
 		car.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 		car.setFont(defaultFont);
-		car.setTitle("Â÷·® ¹øÈ£: ");
-		car.addFocusListener(new HelpAdapter("Â÷·®¹øÈ£¸¦ ÀÔ·ÂÇÏ°Å³ª ¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ Enter."));
+		car.setTitle("ì°¨ëŸ‰ ë²ˆí˜¸: ");
+		car.addFocusListener(new HelpAdapter("ì°¨ëŸ‰ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ê±°ë‚˜ ëª©ë¡ì—ì„œ ì„ íƒ í›„ Enter."));
 		
 		Button btnSearch = new Button(compCenter, SWT.NONE);
 		btnSearch.addSelectionListener(new SelectionAdapter() {
@@ -196,7 +196,7 @@ public class WeighSecondSelectDialog extends Dialog {
 			}
 		});
 		btnSearch.setFont(btnFont);
-		btnSearch.setText(" Á¶ È¸ ");
+		btnSearch.setText(" ì¡° íšŒ ");
 		
 		initGird(compContents);
 		
@@ -216,7 +216,7 @@ public class WeighSecondSelectDialog extends Dialog {
 		gd_btnSave.widthHint = 130;
 		btnSave.setLayoutData(gd_btnSave);
 		btnSave.setFont(btnFont);
-		btnSave.setText("2Â÷ °è·®");
+		btnSave.setText("2ì°¨ ê³„ëŸ‰");
 		btnSave.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -230,13 +230,13 @@ public class WeighSecondSelectDialog extends Dialog {
 		gd_btnPrint.widthHint = 130;
 		btnPrint.setLayoutData(gd_btnPrint);
 		btnPrint.setFont(btnFont);
-		btnPrint.setText("ÀüÇ¥ Ãâ·Â");
+		btnPrint.setText("ì „í‘œ ì¶œë ¥");
 		btnPrint.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Grid g = gridViewer.getGrid();
 				if(g.getSelectionIndex() == -1){
-					MessageDialog.openInformation(shell, "µ¥ÀÌÅÍ ¼±ÅÃ ÇÊ¿ä", "¼±ÅÃµÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù. \n\n¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ ÀÛ¾÷ÇÏ¼¼¿ä.");
+					MessageDialog.openInformation(shell, "ë°ì´í„° ì„ íƒ í•„ìš”", "ì„ íƒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤. \n\nëª©ë¡ì—ì„œ ì„ íƒ í›„ ì‘ì—…í•˜ì„¸ìš”.");
 					return;
 				}else{
 					if (listData != null && listData.length > g.getSelectionIndex()) {
@@ -255,7 +255,7 @@ public class WeighSecondSelectDialog extends Dialog {
 			gd_btnDelete.widthHint = 130;
 			btnDelete.setLayoutData(gd_btnDelete);
 			btnDelete.setFont(btnFont);
-			btnDelete.setText("»è Á¦");
+			btnDelete.setText("ì‚­ ì œ");
 			btnDelete.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
@@ -275,14 +275,14 @@ public class WeighSecondSelectDialog extends Dialog {
 		gd_btnCancel.widthHint = 130;
 		btnCancel.setLayoutData(gd_btnCancel);
 		btnCancel.setFont(btnFont);
-		btnCancel.setText("Ãë  ¼Ò");
+		btnCancel.setText("ì·¨  ì†Œ");
 
 		lblHelp = new CLabel(shell, SWT.LEFT);
 		lblHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		GridData gd_lblHelp = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		gd_lblHelp.heightHint = 25;
 		lblHelp.setLayoutData(gd_lblHelp);
-		lblHelp.setText("µµ¿ò¸»:");
+		lblHelp.setText("ë„ì›€ë§:");
 		lblHelp.setFont(helpFont);
 		lblHelp.setBackgroundImage(ImageRepository.getImage(ImageRepository.POPUP_HELP_BG));
 		
@@ -298,11 +298,11 @@ public class WeighSecondSelectDialog extends Dialog {
 	protected void onClickDelete() {
 		Grid g = gridViewer.getGrid();
 		if(g.getSelectionIndex() == -1){
-			MessageDialog.openInformation(shell, "µ¥ÀÌÅÍ ¼±ÅÃ ÇÊ¿ä", "¼±ÅÃµÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù. \n\n¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ ÀÛ¾÷ÇÏ¼¼¿ä.");
+			MessageDialog.openInformation(shell, "ë°ì´í„° ì„ íƒ í•„ìš”", "ì„ íƒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤. \n\nëª©ë¡ì—ì„œ ì„ íƒ í›„ ì‘ì—…í•˜ì„¸ìš”.");
 			return;
 		}else{
 			if (listData != null && listData.length > g.getSelectionIndex()) {
-				boolean rtn = MessageDialog.openConfirm(shell, "»èÁ¦ È®ÀÎ", "1Â÷ °è·® Á¤º¸¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?\n\nÂ÷·®¹øÈ£-"+listData[g.getSelectionIndex()].getCar_num());
+				boolean rtn = MessageDialog.openConfirm(shell, "ì‚­ì œ í™•ì¸", "1ì°¨ ê³„ëŸ‰ ì •ë³´ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n\nì°¨ëŸ‰ë²ˆí˜¸-"+listData[g.getSelectionIndex()].getCar_num());
 				if(!rtn){
 					return;
 				}
@@ -312,13 +312,13 @@ public class WeighSecondSelectDialog extends Dialog {
 					dto.setDel_yn(DTSConstants.FLAG_Y);
 					dto.setWgt_cd(listData[g.getSelectionIndex()].getWgt_cd());
 	                wim.updateTsWgtInf(dto);
-	                // ¸ñ·Ï ÀçÁ¶È¸
+	                // ëª©ë¡ ì¬ì¡°íšŒ
 	                select();
 	                // HomeView refresh
 					HomeView hv = (HomeView)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView(HomeView.ID);
 					hv.refreshData();
                 } catch (IOException e) {
-                	MessageDialog.openError(shell, "»èÁ¦ ¿À·ù", "µ¥ÀÌÅÍ »èÁ¦ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù. \n\n"+e.getMessage());
+                	MessageDialog.openError(shell, "ì‚­ì œ ì˜¤ë¥˜", "ë°ì´í„° ì‚­ì œ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤. \n\n"+e.getMessage());
                 	return;
                 }
 			}
@@ -379,7 +379,7 @@ public class WeighSecondSelectDialog extends Dialog {
 	private void onClickOK(){
 		Grid g = gridViewer.getGrid();
 		if(g.getSelectionIndex() == -1){
-			MessageDialog.openInformation(shell, "µ¥ÀÌÅÍ ¼±ÅÃ ÇÊ¿ä", "¼±ÅÃµÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù. \n\n¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ ÀÛ¾÷ÇÏ¼¼¿ä.");
+			MessageDialog.openInformation(shell, "ë°ì´í„° ì„ íƒ í•„ìš”", "ì„ íƒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤. \n\nëª©ë¡ì—ì„œ ì„ íƒ í›„ ì‘ì—…í•˜ì„¸ìš”.");
 			return;
 		}else{
 			if (listData != null && listData.length > g.getSelectionIndex()) {
@@ -403,7 +403,7 @@ public class WeighSecondSelectDialog extends Dialog {
 		gridViewer.getGrid().setSelectionEnabled(true);
 		gridViewer.getGrid().setFont(SWTResourceManager.getFont("Arial", 16, SWT.NORMAL));
 		gridViewer.getGrid().setItemHeight(28);
-		gridViewer.getGrid().addFocusListener(new HelpAdapter("°è·ùÂ÷·® ¼±ÅÃ ÈÄ ´õºíÅ¬¸¯ ¶Ç´Â [2Â÷ °è·®] ¹öÆ° Å¬¸¯."));
+		gridViewer.getGrid().addFocusListener(new HelpAdapter("ê³„ë¥˜ì°¨ëŸ‰ ì„ íƒ í›„ ë”ë¸”í´ë¦­ ë˜ëŠ” [2ì°¨ ê³„ëŸ‰] ë²„íŠ¼ í´ë¦­."));
 		
 		gridViewer.setCellEditors(new CellEditor[] { new TextCellEditor(gridViewer.getGrid()),
 		        new TextCellEditor(gridViewer.getGrid()) });
@@ -434,7 +434,7 @@ public class WeighSecondSelectDialog extends Dialog {
 		        | ColumnViewerEditor.KEYBOARD_ACTIVATION);
 
 		GridColumnGroup cgSpot = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-		cgSpot.setText("        1Â÷ °è·®");
+		cgSpot.setText("        1ì°¨ ê³„ëŸ‰");
 
 		for (int i = 0; i < colName.length; i++) {
 			GridColumn column = null;
@@ -549,7 +549,7 @@ public class WeighSecondSelectDialog extends Dialog {
 	}// class ListGridContentProvider
 	
 	private void setMessage(String msg){
-		lblHelp.setText("µµ¿ò¸»:"+msg);
+		lblHelp.setText("ë„ì›€ë§:"+msg);
 	}
 	
 	class HelpAdapter extends FocusAdapter{

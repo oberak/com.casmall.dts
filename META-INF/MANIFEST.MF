@@ -7,7 +7,7 @@ Bundle-Vendor: 카스 메카트로닉스
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-NativeCode: lib/rxtxSerial.dll
 Bundle-ClassPath: .,
  lib/commons-lang-2.5.jar,
@@ -28,4 +28,6 @@ Bundle-ClassPath: .,
  lib/jasypt-1.7.jar,
  lib/cdatetime-0.14.0.jar,
  lib/cwt-0.9.0.jar,
- lib/hsqldb.jar
+ lib/hsqldb.jar,
+ lib/core-3.2.0.jar,
+ lib/javase-3.2.0.jar

@@ -3,24 +3,24 @@ package com.casmall.dts.common;
 public interface DTSConstants {
 	public static final String PLUGIN_ID = "com.casmall.dts";
 	
-	/** °è·® ±¸ºĞ ÄÚµå: ÀÏ¹İ°è·® */
+	/** ê³„ëŸ‰ êµ¬ë¶„ ì½”ë“œ: ì¼ë°˜ê³„ëŸ‰ */
 	public static final String WGT_FLAG_GEN = "10";
-	/** °è·® ±¸ºĞ ÄÚµå: 1È¸°è·® */
+	/** ê³„ëŸ‰ êµ¬ë¶„ ì½”ë“œ: 1íšŒê³„ëŸ‰ */
 	public static final String WGT_FLAG_ONE = "30";
-	/** °è·® »óÅÂ ÄÚµå: 1Â÷ °è·®*/
+	/** ê³„ëŸ‰ ìƒíƒœ ì½”ë“œ: 1ì°¨ ê³„ëŸ‰*/
 	public static final String WGT_STAT_FST = "10";
-	/** °è·® »óÅÂ ÄÚµå: 2Â÷ °è·® */
+	/** ê³„ëŸ‰ ìƒíƒœ ì½”ë“œ: 2ì°¨ ê³„ëŸ‰ */
 	public static final String WGT_STAT_SCND = "50";
 	
-	/** ÀÔÃâ°í ±¸ºĞÄÚµå */
+	/** ì…ì¶œê³  êµ¬ë¶„ì½”ë“œ */
 	public static final String CD_INOUT_IN = "10";
 	public static final String CD_INOUT_OUT = "30";
 	
-	/** °¨·® ±âÁØ ÄÚµå */
+	/** ê°ëŸ‰ ê¸°ì¤€ ì½”ë“œ */
 	public static final String CD_MINUS_PCT = "P";
 	public static final String CD_MINUS_KG = "K";
 	
-	/** Ãâ·Â Ç×¸ñ ±¸ºĞ ÄÚµå */
+	/** ì¶œë ¥ í•­ëª© êµ¬ë¶„ ì½”ë“œ */
 	public static final String CD_ATTR_FLAG_DB = "DB";
 	public static final String CD_ATTR_FLAG_TEXT = "TX";
 	public static final String CD_ATTR_FLAG_FIX = "FX";
@@ -29,12 +29,12 @@ public interface DTSConstants {
 	public static final String CD_ATTR_FLAG_IMAGE = "IM";
 	public static final String CD_ATTR_FLAG_QRCODE = "QR";
 	
-	/** µ¥ÀÌÅÍ Å¸ÀÔ ÄÚµå */
+	/** ë°ì´í„° íƒ€ì… ì½”ë“œ */
 	public static final String CD_DATA_TYPE_NUM = "NM";
 	public static final String CD_DATA_TYPE_DATE = "DT";
 	public static final String CD_DATA_TYPE_STR = "ST";
 	
-	/** °è·®¹øÈ£ Ã¤¹ø ±¸ºĞ */
+	/** ê³„ëŸ‰ë²ˆí˜¸ ì±„ë²ˆ êµ¬ë¶„ */
 	public static final String WGT_SEQ_YYYY = "yyyy";
 	public static final String WGT_SEQ_MM = "yyyyMM";
 	public static final String WGT_SEQ_DD = "yyyyMMdd";
@@ -42,29 +42,29 @@ public interface DTSConstants {
 	public static final String FLAG_Y = "Y";
 	public static final String FLAG_N = "N";
 	
-	/** °øÅë ÄÚµå */
+	/** ê³µí†µ ì½”ë“œ */
 	public static final String CD_SUP_INF = "SUP_INF";
 	public static final String CD_CUST_INF = "CUST_INF";
 	public static final String CD_BSS_CONF = "BSS_CONF";
 	
-	/** »ç¿ëÀÚ µî±Ş */
+	/** ì‚¬ìš©ì ë“±ê¸‰ */
 	public static final String CD_USR_GRD = "ATH_GRD";
 	public static final String CD_USR_GRD_USER = "10";
 	public static final String CD_USR_GRD_ADM = "30";
 	public static final String CD_USR_GRD_ROOT = "50";
 	
-	/** ±ÇÇÑ */
-	public static final int AUTH_EDT_FST_DT   = 1<<1; // 1Â÷ °è·®ÀÏ½Ã
-	public static final int AUTH_EDT_FST_WGH  = 1<<2; // 1Â÷ Áß·®
-	public static final int AUTH_EDT_SCND_DT  = 1<<3; // 2Â÷ °è·®ÀÏÀÚ
-	public static final int AUTH_EDT_SCND_WGH = 1<<4; // 2Â÷ Áß·®
-	public static final int AUTH_EDT_CAR      = 1<<5; // Â÷·®
-	public static final int AUTH_EDT_MINUS    = 1<<6; // °¨·®
-	public static final int AUTH_EDT_PRICE    = 1<<7; // ´Ü°¡
-	public static final int AUTH_EDT_SCND      = 1<<8; // 2Â÷ °è·® ¼öÁ¤
+	/** ê¶Œí•œ */
+	public static final int AUTH_EDT_FST_DT   = 1<<1; // 1ì°¨ ê³„ëŸ‰ì¼ì‹œ
+	public static final int AUTH_EDT_FST_WGH  = 1<<2; // 1ì°¨ ì¤‘ëŸ‰
+	public static final int AUTH_EDT_SCND_DT  = 1<<3; // 2ì°¨ ê³„ëŸ‰ì¼ì
+	public static final int AUTH_EDT_SCND_WGH = 1<<4; // 2ì°¨ ì¤‘ëŸ‰
+	public static final int AUTH_EDT_CAR      = 1<<5; // ì°¨ëŸ‰
+	public static final int AUTH_EDT_MINUS    = 1<<6; // ê°ëŸ‰
+	public static final int AUTH_EDT_PRICE    = 1<<7; // ë‹¨ê°€
+	public static final int AUTH_EDT_SCND      = 1<<8; // 2ì°¨ ê³„ëŸ‰ ìˆ˜ì •
 	
-	public static final int AUTH_INS_ONE      = 1<<9; // 1È¸°è·® µî·Ï 
+	public static final int AUTH_INS_ONE      = 1<<9; // 1íšŒê³„ëŸ‰ ë“±ë¡ 
 	
-	public static final int AUTH_DEL_FST      = 1<<10; // 1Â÷ Á¤º¸ »èÁ¦
-	public static final int AUTH_DEL_SCND     = 1<<11; // 2Â÷ Á¤º¸ »èÁ¦
+	public static final int AUTH_DEL_FST      = 1<<10; // 1ì°¨ ì •ë³´ ì‚­ì œ
+	public static final int AUTH_DEL_SCND     = 1<<11; // 2ì°¨ ì •ë³´ ì‚­ì œ
 }

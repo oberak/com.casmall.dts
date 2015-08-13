@@ -52,12 +52,12 @@ public class RvExcelWriter {
 	 * @exception WriteException
 	 */
 	public void write(ExportVO export) throws IOException {
-		// File »ı¼º
+		// File ìƒì„±
 		WorkbookSettings ws = new WorkbookSettings();
 		ws.setLocale(new Locale("ko", "KR"));
 		workbook = Workbook.createWorkbook(new File(filename), ws);
 
-		// Sheet Ãß°¡
+		// Sheet ì¶”ê°€
 		WritableSheet sheet = workbook.createSheet("DATA", 0);
 
 		workbook.setColourRGB(Colour.LIME, 0xff, 0, 0);
@@ -83,23 +83,23 @@ public class RvExcelWriter {
 		
 		WritableCellFormat dtFmtC = new WritableCellFormat();
 		
-		dtFmtC.setAlignment(Alignment.CENTRE);     // CENTRE´Â °¡¿îµ¥ Á¤·Ä
+		dtFmtC.setAlignment(Alignment.CENTRE);     // CENTREëŠ” ê°€ìš´ë° ì •ë ¬
 		dtFmtC.setVerticalAlignment(VerticalAlignment.CENTRE);
 		dtFmtC.setBorder(Border.ALL, BorderLineStyle.THIN);
 		
-		// ¼¿ Æ÷¸ä ÁöÁ¤
+		// ì…€ í¬ë©§ ì§€ì •
 		WritableCellFormat wrappedText = new WritableCellFormat(WritableWorkbook.ARIAL_10_PT);
 		wrappedText.setWrap(true);
 		wrappedText.setBorder(Border.ALL, BorderLineStyle.THIN);
 
-		// ¼¿ ³Êºñ ¼³Á¤
+		// ì…€ ë„ˆë¹„ ì„¤ì •
 		for(int i=0;i<cellWidth.length;i++){
 			s.setColumnView(i, cellWidth[i]); // No
 		}
 		
 		// Title
 		WritableCellFormat titleFmt = new WritableCellFormat();
-		titleFmt.setAlignment(Alignment.CENTRE);     // CENTRE´Â °¡¿îµ¥ Á¤·Ä
+		titleFmt.setAlignment(Alignment.CENTRE);     // CENTREëŠ” ê°€ìš´ë° ì •ë ¬
 		titleFmt.setVerticalAlignment(VerticalAlignment.CENTRE);
 		WritableFont arial18ptBoldItalicUnderline = new WritableFont(WritableFont.ARIAL,18,WritableFont.BOLD,true,UnderlineStyle.SINGLE);
 		titleFmt.setFont(arial18ptBoldItalicUnderline);
@@ -109,21 +109,21 @@ public class RvExcelWriter {
 		Label lblTitle = new Label(0, row++, export.getTitle(), titleFmt);
 		s.addCell(lblTitle);
 		
-		// Á¶È¸Á¶°Ç
+		// ì¡°íšŒì¡°ê±´
 		WritableCellFormat condFmt = new WritableCellFormat();
-		condFmt.setAlignment(Alignment.LEFT);     // CENTRE´Â °¡¿îµ¥ Á¤·Ä
+		condFmt.setAlignment(Alignment.LEFT);     // CENTREëŠ” ê°€ìš´ë° ì •ë ¬
 		WritableFont yearFont = new WritableFont(WritableFont.ARIAL,12,WritableFont.BOLD,true,UnderlineStyle.NO_UNDERLINE);
 		condFmt.setFont(yearFont);
 		s.mergeCells(0, row, header.length-1, row);
 		Label condLabel = new Label(0, row++, export.getCond(), condFmt);
 		s.addCell(condLabel);
 		
-		// Å×ÀÌºí Á¦¸ñ Ãâ·Â
+		// í…Œì´ë¸” ì œëª© ì¶œë ¥
 		WritableCellFormat ttlFmt = new WritableCellFormat();
-		ttlFmt.setAlignment(Alignment.CENTRE);     // CENTRE´Â °¡¿îµ¥ Á¤·Ä
+		ttlFmt.setAlignment(Alignment.CENTRE);     // CENTREëŠ” ê°€ìš´ë° ì •ë ¬
 		ttlFmt.setVerticalAlignment(VerticalAlignment.CENTRE);
 		ttlFmt.setBorder(Border.ALL, BorderLineStyle.THIN);
-		ttlFmt.setBackground(Colour.ICE_BLUE);     //ICE_BLUE´Â »ö±òÁßÀÇ ÇÏ³ª~
+		ttlFmt.setBackground(Colour.ICE_BLUE);     //ICE_BLUEëŠ” ìƒ‰ê¹”ì¤‘ì˜ í•˜ë‚˜~
 		WritableFont headerFont = new WritableFont(WritableFont.ARIAL,10,WritableFont.BOLD,true,UnderlineStyle.NO_UNDERLINE);
 		ttlFmt.setFont(headerFont);
 		

@@ -45,7 +45,7 @@ import com.casmall.dts.ui.weigh.dialog.WeighSecondDialog;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * HomeView ´çÀÏ °è·® ÀÚ·á Ç¥½Ã
+ * HomeView ë‹¹ì¼ ê³„ëŸ‰ ìë£Œ í‘œì‹œ
  * 
  * @author OBERAK
  */
@@ -61,11 +61,11 @@ public class WeighScndInftComposite extends org.eclipse.swt.widgets.Composite {
 	private final Image gridLeftBottom = ImageRepository.getImage(ImageRepository.HOME_GRID_LEFT_BOTTOM);
 	private final Image gridRightBottom = ImageRepository.getImage(ImageRepository.HOME_GRID_RIGHT_BOTTOM);
 
-	private final Font titleFont = SWTResourceManager.getFont("±¼¸²", 14, SWT.BOLD);
+	private final Font titleFont = SWTResourceManager.getFont("êµ´ë¦¼", 14, SWT.BOLD);
 
 	private String[] colProp = { "no", "car_num", "fst_wgt_dt", "fst_wgt_dt", "fst_wgh", "scnd_wgt_dt", "scnd_wgh", "dscnt", "rl_wgh" };
-	private String[] colName = { "No", "Â÷·®¹øÈ£", "ÀÏÀÚ", "½Ã°£", "Áß·®   ","½Ã°£", "Áß·®   ","°¨·®","½ÇÁß·® " };
-	/** ÄÃ·³ ³Êºñ : ÆÛ¼¾Æ® */
+	private String[] colName = { "No", "ì°¨ëŸ‰ë²ˆí˜¸", "ì¼ì", "ì‹œê°„", "ì¤‘ëŸ‰   ","ì‹œê°„", "ì¤‘ëŸ‰   ","ê°ëŸ‰","ì‹¤ì¤‘ëŸ‰ " };
+	/** ì»¬ëŸ¼ ë„ˆë¹„ : í¼ì„¼íŠ¸ */
 	private int[] colWidth = { 7, 18, 16, 10, 10, 10, 10, 9, 10 };
 	private int[] colAlign = { SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.CENTER, SWT.RIGHT, SWT.CENTER, SWT.RIGHT, SWT.RIGHT, SWT.RIGHT};
 
@@ -154,7 +154,7 @@ public class WeighScndInftComposite extends org.eclipse.swt.widgets.Composite {
 			lblTitle = new Label(centerComposite, SWT.LEFT);
 			lblTitle.setFont(titleFont);
 			lblTitle.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-			lblTitle.setText("±İÀÏ °è·® Â÷·®");
+			lblTitle.setText("ê¸ˆì¼ ê³„ëŸ‰ ì°¨ëŸ‰");
 			lblTitle.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 
 			lblCount = new Label(centerComposite, SWT.RIGHT);
@@ -167,7 +167,7 @@ public class WeighScndInftComposite extends org.eclipse.swt.widgets.Composite {
 			label = new Label(centerComposite, SWT.NONE);
 			label.setFont(titleFont);
 			label.setLayoutData(new GridData(SWT.LEFT, SWT.BEGINNING, false, false));
-			label.setText(" °Ç");
+			label.setText(" ê±´");
 
 			// title right part
 			label = new Label(this, SWT.NONE);
@@ -251,10 +251,10 @@ public class WeighScndInftComposite extends org.eclipse.swt.widgets.Composite {
 		        | ColumnViewerEditor.KEYBOARD_ACTIVATION);
 
 		GridColumnGroup cgFst = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-		cgFst.setText("        1Â÷ °è·®");
+		cgFst.setText("        1ì°¨ ê³„ëŸ‰");
 
 		GridColumnGroup cgScnd = new GridColumnGroup(gridViewer.getGrid(), SWT.CENTER);
-		cgScnd.setText("        2Â÷ °è·®");
+		cgScnd.setText("        2ì°¨ ê³„ëŸ‰");
 		
 		for (int i = 0; i < colName.length; i++) {
 			GridColumn column = null;

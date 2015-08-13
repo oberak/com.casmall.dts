@@ -22,7 +22,7 @@ public class TsWgtInfManager {
 	private DBManager dbm = DBManager.getInstance();
 	
 	/**
-	 * Home ¿ä¾àÁ¤º¸ Ç¥±â
+	 * Home ìš”ì•½ì •ë³´ í‘œê¸°
 	 * @return
 	 */
 	public HomeViewInfoVO selectHomeViewInfo() {
@@ -64,7 +64,7 @@ public class TsWgtInfManager {
 	}// selectMainDisplayInfo
 	
 	/**
-	 * °è·®Á¤º¸ µî·Ï
+	 * ê³„ëŸ‰ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
@@ -74,7 +74,7 @@ public class TsWgtInfManager {
 		try{
 			int chk = dao.insertTsWgtInf(dto);
 			if(chk == 0){
-				throw new IOException("°è·®  Á¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ê³„ëŸ‰  ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -86,7 +86,7 @@ public class TsWgtInfManager {
 	}
 	
 	/**
-	 * °è·®Á¤º¸ ¼öÁ¤
+	 * ê³„ëŸ‰ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class TsWgtInfManager {
 		try{
 			int chk = dao.updateTsWgtInf(dto);
 			if(chk == 0){
-				throw new IOException("°è·®  Á¤º¸°¡ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ê³„ëŸ‰  ì •ë³´ê°€ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -108,7 +108,7 @@ public class TsWgtInfManager {
 	}
 	
 	/**
-	 * °è·® ÄÚµå Ã¤¹ø
+	 * ê³„ëŸ‰ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsWgtInfKey(){
@@ -122,7 +122,7 @@ public class TsWgtInfManager {
 	}
 	
 	/**
-	 * °è·® °ü¸®¹øÈ£ Ã¤¹ø
+	 * ê³„ëŸ‰ ê´€ë¦¬ë²ˆí˜¸ ì±„ë²ˆ
 	 * @param str
 	 * @return
 	 */
@@ -156,7 +156,7 @@ public class TsWgtInfManager {
 	}
 	
 	/**
-	 * °è·® Á¤º¸ Á¶È¸(1Â÷,2Â÷)
+	 * ê³„ëŸ‰ ì •ë³´ ì¡°íšŒ(1ì°¨,2ì°¨)
 	 * @param dto
 	 * @return
 	 */
@@ -171,7 +171,7 @@ public class TsWgtInfManager {
 	}
 	
 	/**
-	 * °Ç¼ö Á¶È¸
+	 * ê±´ìˆ˜ ì¡°íšŒ
 	 * type : DAY, MONTH, YEAR
 	 * @param type
 	 * @return

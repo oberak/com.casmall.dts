@@ -15,8 +15,8 @@ public class UsrInfMgtAction extends Action{
 	public UsrInfMgtAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("»ç¿ëÀÚ °ü¸®");
-		setToolTipText("»ç¿ëÀÚ Á¤º¸¸¦ °ü¸®ÇÕ´Ï´Ù.");
+		setText("ì‚¬ìš©ì ê´€ë¦¬");
+		setToolTipText("ì‚¬ìš©ì ì •ë³´ë¥¼ ê´€ë¦¬í•©ë‹ˆë‹¤.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_BASIS_USRINF));
 	}
 

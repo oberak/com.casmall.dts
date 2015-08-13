@@ -1,27 +1,29 @@
-0. ½ÇÇàÆÄÀÏ »ı¼º Àü ÁØºñ»çÇ×
-  - db.properties ÆÄÀÏ ¼öÁ¤ : 
+0. ì‹¤í–‰íŒŒì¼ ìƒì„± ì „ ì¤€ë¹„ì‚¬í•­
+  - db.properties íŒŒì¼ ìˆ˜ì • : 
     url=jdbc:hsqldb:file:../db/dts2.db
-  - MANIFEST.MF ¼öÁ¤ : Bundle-NativeCode »èÁ¦
+  - MANIFEST.MF ìˆ˜ì • : Bundle-NativeCode ì‚­ì œ
     Bundle-NativeCode: lib/rxtxSerial.dll
-  - preferences.ini ³» Å×½ºÆ® ¿ëµµ ÇÊµå »èÁ¦
-  #Test ¿ëµµ
+  - preferences.ini ë‚´ í…ŒìŠ¤íŠ¸ ìš©ë„ í•„ë“œ ì‚­ì œ
+
+#Test ìš©ë„
 com.casmall.dts/general.auto_login.flag=true
 com.casmall.dts/general.auto_login.pw=8f7ba41e3d8d88d7
 com.casmall.dts/ext.auth.serial=5f690a6664bc420a0582e2c25747bee3
 #com.casmall.dts/ext.auth.serial=dc8620dcf942640c0205797d14c34947
 
 1. export
-  install/Dts2 Æú´õ »èÁ¦
+  install/Dts2 í´ë” ì‚­ì œ
   product > overview > Eclipse product export wizard
 
-2. installer ÄÄÆÄÀÏ(NSIS ÇÊ¿ä)
-  2.1 Dts2Installer.nsi ÄÄÆÄÀÏ
-    - dll µîÀº copy Æú´õ¿¡ ÀÖÀ½.
-  2.2 Dts2Installer.exe Å×½ºÆ®
-  ³ëÆ®ºÏ ÀÎÁõ¹øÈ£: KDQZ-GGW9-KZAG => GHBQ-LJTT-X9C3
+2. installer ì»´íŒŒì¼(NSIS í•„ìš”)
+  2.1 Dts2Installer.nsi ì»´íŒŒì¼
+    - dll ë“±ì€ copy í´ë”ì— ìˆìŒ.
+  2.2 Dts2Installer.exe í…ŒìŠ¤íŠ¸
+  ë…¸íŠ¸ë¶ ì¸ì¦ë²ˆí˜¸: KDQZ-GGW9-KZAG => GHBQ-LJTT-X9C3
         Dell: 3S9Z-SBHG-XQ9G
-°èÁ¤
+ê³„ì •
  root / happy
  manager / 6183500
  user / casmall
  
+ì„¤ì¹˜ í›„ ê´€ë¦¬ì ê¶Œí•œìœ¼ë¡œ ì‹¤í–‰!!

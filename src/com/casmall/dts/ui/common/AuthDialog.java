@@ -35,7 +35,7 @@ import com.casmall.dts.ui.preferences.DTSPreConstants;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * ÇÁ·Î±×·¥ »ç¿ë ÀÎÁõ
+ * í”„ë¡œê·¸ë¨ ì‚¬ìš© ì¸ì¦
  * 
  * @author OBERAK
  */
@@ -43,7 +43,7 @@ public class AuthDialog extends Dialog {
 	protected static Log logger = LogFactory.getLog(AuthDialog.class);
 
 	protected final Font titleFont = SWTResourceManager.getFont("Arial Black", 18, SWT.BOLD);
-	protected final Font defaultFont = SWTResourceManager.getFont("±¼¸²Ã¼", 16, SWT.BOLD);
+	protected final Font defaultFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 16, SWT.BOLD);
 
 	protected Object result;
 	protected Shell shell;
@@ -70,7 +70,7 @@ public class AuthDialog extends Dialog {
 	 */
 	public AuthDialog(Shell parent, int style) {
 		super(parent, style);
-		setText("ÇÁ·Î±×·¥ »ç¿ë ÀÎÁõ");
+		setText("í”„ë¡œê·¸ë¨ ì‚¬ìš© ì¸ì¦");
 	}
 
 	/**
@@ -109,22 +109,22 @@ public class AuthDialog extends Dialog {
 		lblTitle.setBackground(SWTResourceManager.getColor(65, 105, 225));
 		lblTitle.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 2, 1));
 		lblTitle.setFont(titleFont);
-		lblTitle.setText("ÇÁ·Î±×·¥ »ç¿ë ÀÎÁõ");
+		lblTitle.setText("í”„ë¡œê·¸ë¨ ì‚¬ìš© ì¸ì¦");
 
 		CLabel lbl = new CLabel(shell, SWT.NONE);
 		lbl.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 2, 1));
-		lbl.setFont(SWTResourceManager.getFont("±¼¸²", 12, SWT.NORMAL));
-		lbl.setText("ÇÁ·Î±×·¥ »ç¿ëÀÎÁõÀ» À§ÇØ ÀÎÁõ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.\n  - ÀÎÁõ¹øÈ£ ¹®ÀÇ: (ÁÖ)Ä«½º¸ŞÄ«Æ®·Î´Ğ½º. 031)618-3500");
+		lbl.setFont(SWTResourceManager.getFont("êµ´ë¦¼", 12, SWT.NORMAL));
+		lbl.setText("í”„ë¡œê·¸ë¨ ì‚¬ìš©ì¸ì¦ì„ ìœ„í•´ ì¸ì¦ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n  - ì¸ì¦ë²ˆí˜¸ ë¬¸ì˜: (ì£¼)ì¹´ìŠ¤ë©”ì¹´íŠ¸ë¡œë‹‰ìŠ¤. 031)618-3500");
 
 		grpAuth = new Group(shell, SWT.NONE);
-		grpAuth.setText("ÀÎÁõ Á¤º¸");
+		grpAuth.setText("ì¸ì¦ ì •ë³´");
 		grpAuth.setFont(defaultFont);
 		grpAuth.setLayout(new GridLayout(6, false));
 		grpAuth.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 
 		{
 			final CLabel lblTag = new CLabel(grpAuth, SWT.RIGHT);
-			lblTag.setText("ÀÎ Áõ Å°: ");
+			lblTag.setText("ì¸ ì¦ í‚¤: ");
 			lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lblTag.setFont(defaultFont);
@@ -135,7 +135,7 @@ public class AuthDialog extends Dialog {
 			txtBase.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 5, 1));
 
 			lbl = new CLabel(grpAuth, SWT.RIGHT);
-			lbl.setText("ÀÎÁõ¹øÈ£: ");
+			lbl.setText("ì¸ì¦ë²ˆí˜¸: ");
 			lbl.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lbl.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lbl.setFont(defaultFont);
@@ -188,7 +188,7 @@ public class AuthDialog extends Dialog {
 						txtSerial2.setFocus();
 					}
 					if (0x0D == e.keyCode) {
-						// Enter ÀÏ °æ¿ì Tab Ã³¸®
+						// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 						txtSerial2.traverse(SWT.TRAVERSE_TAB_NEXT);
 						return;
 					}
@@ -200,13 +200,13 @@ public class AuthDialog extends Dialog {
 		}
 
 		grpUsr = new Group(shell, SWT.NONE);
-		grpUsr.setText("°í°´»ç Á¤º¸");
+		grpUsr.setText("ê³ ê°ì‚¬ ì •ë³´");
 		grpUsr.setFont(defaultFont);
 		grpUsr.setLayout(new GridLayout(2, false));
 		grpUsr.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		{
 			CLabel lblTag = new CLabel(grpUsr, SWT.RIGHT);
-			lblTag.setText("È¸»ç»óÈ£: ");
+			lblTag.setText("íšŒì‚¬ìƒí˜¸: ");
 			lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lblTag.setFont(defaultFont);
@@ -216,7 +216,7 @@ public class AuthDialog extends Dialog {
 				@Override
 				public void keyReleased(KeyEvent e) {
 					if (0x0D == e.keyCode) {
-						// Enter ÀÏ °æ¿ì Tab Ã³¸®
+						// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 						txtSerial2.traverse(SWT.TRAVERSE_TAB_NEXT);
 						return;
 					}
@@ -227,7 +227,7 @@ public class AuthDialog extends Dialog {
 			txtCustNm.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 			lblTag = new CLabel(grpUsr, SWT.RIGHT);
-			lblTag.setText("È¸»çÁÖ¼Ò: ");
+			lblTag.setText("íšŒì‚¬ì£¼ì†Œ: ");
 			lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lblTag.setFont(defaultFont);
@@ -237,7 +237,7 @@ public class AuthDialog extends Dialog {
 				@Override
 				public void keyReleased(KeyEvent e) {
 					if (0x0D == e.keyCode) {
-						// Enter ÀÏ °æ¿ì Tab Ã³¸®
+						// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 						txtSerial2.traverse(SWT.TRAVERSE_TAB_NEXT);
 						return;
 					}
@@ -248,7 +248,7 @@ public class AuthDialog extends Dialog {
 			txtCustAdd.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 			lblTag = new CLabel(grpUsr, SWT.RIGHT);
-			lblTag.setText("ÀüÈ­¹øÈ£: ");
+			lblTag.setText("ì „í™”ë²ˆí˜¸: ");
 			lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lblTag.setFont(defaultFont);
@@ -258,7 +258,7 @@ public class AuthDialog extends Dialog {
 				@Override
 				public void keyReleased(KeyEvent e) {
 					if (0x0D == e.keyCode) {
-						// Enter ÀÏ °æ¿ì Tab Ã³¸®
+						// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 						txtSerial2.traverse(SWT.TRAVERSE_TAB_NEXT);
 						return;
 					}
@@ -269,7 +269,7 @@ public class AuthDialog extends Dialog {
 			txtCustTel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 			lblTag = new CLabel(grpUsr, SWT.RIGHT);
-			lblTag.setText("ÆÑ½º¹øÈ£: ");
+			lblTag.setText("íŒ©ìŠ¤ë²ˆí˜¸: ");
 			lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 			lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 			lblTag.setFont(defaultFont);
@@ -279,7 +279,7 @@ public class AuthDialog extends Dialog {
 				@Override
 				public void keyReleased(KeyEvent e) {
 					if (0x0D == e.keyCode) {
-						// Enter ÀÏ °æ¿ì Tab Ã³¸®
+						// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 						txtSerial2.traverse(SWT.TRAVERSE_TAB_NEXT);
 						return;
 					}
@@ -299,7 +299,7 @@ public class AuthDialog extends Dialog {
 		});
 		btnOK.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		btnOK.setFont(defaultFont);
-		btnOK.setText(" È® ÀÎ  ");
+		btnOK.setText(" í™• ì¸  ");
 
 		Button btnCancel = new Button(shell, SWT.NONE);
 		btnCancel.addSelectionListener(new SelectionAdapter() {
@@ -310,7 +310,7 @@ public class AuthDialog extends Dialog {
 		});
 		btnCancel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		btnCancel.setFont(defaultFont);
-		btnCancel.setText(" Ãë  ¼Ò ");
+		btnCancel.setText(" ì·¨  ì†Œ ");
 	}// createContents
 
 	protected void clickOK() {
@@ -318,9 +318,9 @@ public class AuthDialog extends Dialog {
 		if (!validate())
 			return;
 
-		// ÀÎÁõÈ®ÀÎ
+		// ì¸ì¦í™•ì¸
 		if (AuthUtil.genSerial().equals(txtSerial1.getText() + "-" + txtSerial2.getText() + "-" + txtSerial3.getText())) {
-			// data ÀúÀå
+			// data ì €ì¥
 			CommonManager cm = CommonManager.getInstance();
 			ArrayList<CmCdDTO> list = new ArrayList<CmCdDTO>();
 
@@ -358,7 +358,7 @@ public class AuthDialog extends Dialog {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				MessageDialog.openError(shell, "ÀúÀå¿À·ù", "µ¥ÀÌÅÍ ÀúÀå Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n" + e.getMessage());
+				MessageDialog.openError(shell, "ì €ì¥ì˜¤ë¥˜", "ë°ì´í„° ì €ì¥ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n" + e.getMessage());
 				return;
 			}
 
@@ -367,13 +367,13 @@ public class AuthDialog extends Dialog {
 				preferences.setValue(DTSPreConstants.GN_EXT_AUTH_SERIAL, CryptoUtil.encrypt3DES(AuthUtil.genSerial()));
 				preferences.save();
 			} catch (Exception e) {
-				MessageDialog.openError(shell, "¼³Á¤¿À·ù", "µ¥ÀÌÅÍ ¼³Á¤ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n" + e.getMessage());
+				MessageDialog.openError(shell, "ì„¤ì •ì˜¤ë¥˜", "ë°ì´í„° ì„¤ì • ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n" + e.getMessage());
 				e.printStackTrace();
 			}
 			result = new Object();
 			shell.close();
 		} else {
-			MessageDialog.openWarning(shell, "ÀÎÁõ¹øÈ£", "Á¤»óÀûÀÎ ÀÎÁõ¹øÈ£°¡ ¾Æ´Õ´Ï´Ù.\nÈ®ÀÎ ÈÄ ÀÔ·Â¹Ù¶ø´Ï´Ù.\n\nÀÎÁõ¹øÈ£¹®ÀÇ: Ä«½º¸ŞÄ«Æ®·Î´Ğ½º. 031)618-3500");
+			MessageDialog.openWarning(shell, "ì¸ì¦ë²ˆí˜¸", "ì •ìƒì ì¸ ì¸ì¦ë²ˆí˜¸ê°€ ì•„ë‹™ë‹ˆë‹¤.\ní™•ì¸ í›„ ì…ë ¥ë°”ëë‹ˆë‹¤.\n\nì¸ì¦ë²ˆí˜¸ë¬¸ì˜: ì¹´ìŠ¤ë©”ì¹´íŠ¸ë¡œë‹‰ìŠ¤. 031)618-3500");
 			txtSerial1.setFocus();
 			return;
 		}
@@ -381,41 +381,41 @@ public class AuthDialog extends Dialog {
 
 	protected boolean validate() {
 		if (txtSerial1.getText().trim().length() != 4) {
-			MessageDialog.openWarning(shell, "ÀÎÁõ¹øÈ£", "ÀÎÁõ¹øÈ£°¡ Àß¸ø ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "ì¸ì¦ë²ˆí˜¸", "ì¸ì¦ë²ˆí˜¸ê°€ ì˜ëª» ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			txtSerial1.setFocus();
 			return false;
 		}
 		if (txtSerial2.getText().trim().length() != 4) {
-			MessageDialog.openWarning(shell, "ÀÎÁõ¹øÈ£", "ÀÎÁõ¹øÈ£°¡ Àß¸ø ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "ì¸ì¦ë²ˆí˜¸", "ì¸ì¦ë²ˆí˜¸ê°€ ì˜ëª» ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			txtSerial2.setFocus();
 			return false;
 		}
 		if (txtSerial2.getText().trim().length() != 4) {
-			MessageDialog.openWarning(shell, "ÀÎÁõ¹øÈ£", "ÀÎÁõ¹øÈ£°¡ Àß¸ø ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "ì¸ì¦ë²ˆí˜¸", "ì¸ì¦ë²ˆí˜¸ê°€ ì˜ëª» ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			txtSerial2.setFocus();
 			return false;
 		}
 
 		if ("".equals(txtCustNm.getText().trim())) {
-			MessageDialog.openWarning(shell, "È¸»ç»óÈ£", "È¸»ç»óÈ£°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "íšŒì‚¬ìƒí˜¸", "íšŒì‚¬ìƒí˜¸ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			txtCustNm.setFocus();
 			return false;
 		}
 
 		if ("".equals(txtCustAdd.getText().trim())) {
-			MessageDialog.openWarning(shell, "È¸»çÁÖ¼Ò", "È¸»çÁÖ¼Ò°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "íšŒì‚¬ì£¼ì†Œ", "íšŒì‚¬ì£¼ì†Œê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			txtCustAdd.setFocus();
 			return false;
 		}
 
 		if ("".equals(txtCustTel.getText().trim())) {
-			MessageDialog.openWarning(shell, "È¸»ç¿¬¶ôÃ³", "È¸»ç¿¬¶ôÃ³°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "íšŒì‚¬ì—°ë½ì²˜", "íšŒì‚¬ì—°ë½ì²˜ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			txtCustTel.setFocus();
 			return false;
 		}
 
 		if ("".equals(txtCustFax.getText().trim())) {
-			MessageDialog.openWarning(shell, "È¸»çÆÑ½º", "È¸»çÆÑ½º°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openWarning(shell, "íšŒì‚¬íŒ©ìŠ¤", "íšŒì‚¬íŒ©ìŠ¤ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			txtCustFax.setFocus();
 			return false;
 		}

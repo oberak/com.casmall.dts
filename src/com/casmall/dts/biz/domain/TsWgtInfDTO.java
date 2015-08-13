@@ -5,85 +5,85 @@ import java.util.Date;
 import com.casmall.common.BaseObject;
 
 /**
- * °è·® Á¤º¸
+ * ê³„ëŸ‰ ì •ë³´
  * @author OBERAK
  */
 public class TsWgtInfDTO extends BaseObject {
     private static final long serialVersionUID = 2968442464630756815L;
 
-    /** °è·® ÄÚµå*/
+    /** ê³„ëŸ‰ ì½”ë“œ*/
     private String wgt_cd;
-    /** Â÷·® ÄÚµå */
+    /** ì°¨ëŸ‰ ì½”ë“œ */
     private String car_cd;
-    /** 1Â÷ °è·® ÀÏ½Ã */
+    /** 1ì°¨ ê³„ëŸ‰ ì¼ì‹œ */
     private Date fst_wgt_dt;
-    /** 1Â÷ Áß·® */
+    /** 1ì°¨ ì¤‘ëŸ‰ */
     private double fst_wgh;
-    /** °è·® ¹øÈ£ */
+    /** ê³„ëŸ‰ ë²ˆí˜¸ */
     private String wgt_num;
-    /** °Å·¡Ã³ ÄÚµå */
+    /** ê±°ë˜ì²˜ ì½”ë“œ */
     private String cst_cd;
-    /** Á¦Ç° ÄÚµå */
+    /** ì œí’ˆ ì½”ë“œ */
     private String prdt_cd;
-    /** 2Â÷ Áß·® ÀÏ½Ã */
+    /** 2ì°¨ ì¤‘ëŸ‰ ì¼ì‹œ */
     private Date scnd_wgt_dt;
-    /** 2Â÷ Áß·® */
+    /** 2ì°¨ ì¤‘ëŸ‰ */
     private double scnd_wgh;
-    /** °¨·® ±âÁØ ÄÚµå - WT:Á¤·®, PT:ºñÀ² */
+    /** ê°ëŸ‰ ê¸°ì¤€ ì½”ë“œ - WT:ì •ëŸ‰, PT:ë¹„ìœ¨ */
     private String dscnt_bss_cd;
-    /** °¨·® ÀÔ·Â °ª */
+    /** ê°ëŸ‰ ì…ë ¥ ê°’ */
     private double dscnt_val;
-    /** °¨·® */
+    /** ê°ëŸ‰ */
     private double dscnt;
-    /** ½ÇÁß·® */
+    /** ì‹¤ì¤‘ëŸ‰ */
     private double rl_wgh;
-    /** ÀÔÃâ°í ±¸ºĞ */
+    /** ì…ì¶œê³  êµ¬ë¶„ */
     private String io_flg;
-    /** ºñ°í */
+    /** ë¹„ê³  */
     private String nt;
-    /** °è·® ±¸ºĞ ÄÚµå - 10:ÀÏ¹İ°è·®, 30:ÀÏÈ¸°è·® */
+    /** ê³„ëŸ‰ êµ¬ë¶„ ì½”ë“œ - 10:ì¼ë°˜ê³„ëŸ‰, 30:ì¼íšŒê³„ëŸ‰ */
     private String wgt_flg_cd;
-    /** °è·® »óÅÂ ÄÚµå - 10:1Â÷ °è·®, 50:°è·® ¿Ï·á */
+    /** ê³„ëŸ‰ ìƒíƒœ ì½”ë“œ - 10:1ì°¨ ê³„ëŸ‰, 50:ê³„ëŸ‰ ì™„ë£Œ */
     private String wgt_stat_cd;
     
-    // Á¶È¸¿ë ÇÊµå -------------------------
+    // ì¡°íšŒìš© í•„ë“œ -------------------------
     /** No */
     private int no;
-    /** Â÷·® ¹øÈ£ */
+    /** ì°¨ëŸ‰ ë²ˆí˜¸ */
     private String car_num;
-    /** Á¦Ç° ¸í */
+    /** ì œí’ˆ ëª… */
     private String prdt_nm;
-    /** °Å·¡Ã³ ¸í */
+    /** ê±°ë˜ì²˜ ëª… */
     private String cst_nm;
-    /** ÀÔÃâ°í ±¸ºĞ */
+    /** ì…ì¶œê³  êµ¬ë¶„ */
     private String io_flg_nm;
-    /** ¼öÁ¤ÀÚ¸í */
+    /** ìˆ˜ì •ìëª… */
     private String edt_nm;
     
-    // --------- ÇöÀç ¹Ì»ç¿ë ---------------------
-    /** 1Â÷ Áß·® ÀÌ¹ÌÁö path */
+    // --------- í˜„ì¬ ë¯¸ì‚¬ìš© ---------------------
+    /** 1ì°¨ ì¤‘ëŸ‰ ì´ë¯¸ì§€ path */
     private String fst_wgt_image_path;
-    /** 2Â÷ Áß·® ÀÌ¹ÌÁö path */
+    /** 2ì°¨ ì¤‘ëŸ‰ ì´ë¯¸ì§€ path */
     private String scnd_wgt_image_path;
-    /** Ä«µå ÄÚµå */
+    /** ì¹´ë“œ ì½”ë“œ */
     private String card_cd;
-    /** ´Ü°¡ */
+    /** ë‹¨ê°€ */
     private int unt_prc;
-    /** ±İ¾× */
+    /** ê¸ˆì•¡ */
     private int amt;
-    /** ¿îÀüÀÚ */
+    /** ìš´ì „ì */
     private String drvr;
-    /** ±âÅ¸ 1*/
+    /** ê¸°íƒ€ 1*/
     private String ext_1;
-    /** ±âÅ¸ 2*/
+    /** ê¸°íƒ€ 2*/
     private String ext_2;
-    /** ±âÅ¸ 3*/
+    /** ê¸°íƒ€ 3*/
     private String ext_3;
-    /** ±âÅ¸ 4*/
+    /** ê¸°íƒ€ 4*/
     private String ext_4;
-    /** ±âÅ¸ 5*/
+    /** ê¸°íƒ€ 5*/
     private String ext_5;
-    /** ±âÅ¸ 6*/
+    /** ê¸°íƒ€ 6*/
     private String ext_6;
     
 	public Date getFst_wgt_dt() {
@@ -285,28 +285,28 @@ public class TsWgtInfDTO extends BaseObject {
     	this.ext_6 = ext_6;
     }
 	/**
-	 * ÁüÂ÷Áß·®
+	 * ì§ì°¨ì¤‘ëŸ‰
 	 * @return
 	 */
 	public double getFull_wgh() {
     	return (fst_wgh>scnd_wgh)?fst_wgh:scnd_wgh;
     }
 	/** 
-	 * °øÂ÷Áß·®
+	 * ê³µì°¨ì¤‘ëŸ‰
 	 * @return
 	 */
 	public double getEmpty_wgh() {
 		return (fst_wgh<scnd_wgh)?fst_wgh:scnd_wgh;
     }
 	/**
-	 * ÁüÂ÷ Áß·® ÀÏ½Ã
+	 * ì§ì°¨ ì¤‘ëŸ‰ ì¼ì‹œ
 	 * @return
 	 */
 	public Date getFull_wgt_dt() {
 		return (fst_wgh>scnd_wgh)?fst_wgt_dt:scnd_wgt_dt;
     }
 	/** 
-	 * °øÂ÷Áß·® ÀÏ½Ã
+	 * ê³µì°¨ì¤‘ëŸ‰ ì¼ì‹œ
 	 * @return
 	 */
 	public Date getEmpty_wgt_dt() {

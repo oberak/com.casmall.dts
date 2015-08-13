@@ -18,8 +18,8 @@ public class WeighOneAction extends Action{
 	public WeighOneAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("1ȸ �跮");
-		setToolTipText("1ȸ �跮 ó��.");
+		setText("1회 계량");
+		setToolTipText("1회 계량 처리.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_WEIGH_ONE));
 //		setHoverImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(RVConstants.PLUGIN_ID, IImageKeys.TOOL_01_ON));
 	}

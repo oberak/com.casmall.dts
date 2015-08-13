@@ -123,7 +123,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 	        CmSerial cm = CmSerial.getInstance();
 	        cm.addCallback(this);
         } catch (IOException e) {
-        	MessageDialog.openError(this.getShell(),"Serial error","Serail Á¶ÀÛ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n"+e.getMessage());
+        	MessageDialog.openError(this.getShell(),"Serial error","Serail ì¡°ì‘ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n"+e.getMessage());
 			return;
         }
 		startTimer();
@@ -137,11 +137,11 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 	        cm.open();
         } catch (IOException e) {
 	        e.printStackTrace();
-	        MessageDialog.openError(this.getShell(),"Serial error","Serail Á¶ÀÛ Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n"+e.getMessage());
+	        MessageDialog.openError(this.getShell(),"Serial error","Serail ì¡°ì‘ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n"+e.getMessage());
 			return;
         } catch (PortInUseException e) {
 	        e.printStackTrace();
-	        MessageDialog.openError(this.getShell(),"Port open error","Poar open Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\nÆ÷Æ®°¡ ÀÌ¹Ì »ç¿ë ÁßÀÔ´Ï´Ù.");
+	        MessageDialog.openError(this.getShell(),"Port open error","Poar open ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\ní¬íŠ¸ê°€ ì´ë¯¸ ì‚¬ìš© ì¤‘ì…ë‹ˆë‹¤.");
 			return;
         }
 		
@@ -227,7 +227,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			setLayout(gridLayout);
 			setBackgroundMode(SWT.INHERIT_FORCE);
 			
-			// ¿ŞÂÊ ¶óÀÎ
+			// ì™¼ìª½ ë¼ì¸
 			{
 				final Label lblLeftVLine = new Label(this, SWT.NONE);
 				lblLeftVLine.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
@@ -235,7 +235,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 				gd_lblLeftVLine.widthHint = 1;
 				lblLeftVLine.setLayoutData(gd_lblLeftVLine);
 			}
-			// ¿ŞÂÊ 
+			// ì™¼ìª½ 
 			Composite cpLeft = new Composite(this, SWT.NONE);
 			GridData gd_cpLeft = new GridData(SWT.LEFT, SWT.FILL, false, true);
 			gd_cpLeft.widthHint = 383;
@@ -247,14 +247,14 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			gl_cpLfet.marginHeight = 0;
 			cpLeft.setLayout(gl_cpLfet);
 			{
-				// ±¸ºĞÀÚ ¶óÀÎ
+				// êµ¬ë¶„ì ë¼ì¸
 				Label lblHline = new Label(cpLeft, SWT.NONE);
 				lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 				GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
 				gd_hline.heightHint = 1;
 				lblHline.setLayoutData(gd_hline);
 			}
-			// ·Î°í Ç¥½Ã ºÎ
+			// ë¡œê³  í‘œì‹œ ë¶€
 			Composite cpLogo = new Composite(cpLeft, SWT.NONE);
 			cpLogo.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 			GridLayout gl_cpLogo = new GridLayout(2, false);
@@ -274,7 +274,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 				lblCas.setImage(ImageRepository.getImage(ImageRepository.HOME_LOGO_CAS));
 			}
 			{
-				// ±¸ºĞÀÚ ¶óÀÎ
+				// êµ¬ë¶„ì ë¼ì¸
 				Label lblHline = new Label(cpLeft, SWT.NONE);
 				lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 				GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -282,7 +282,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 				lblHline.setLayoutData(gd_hline);
 			}
 			
-			// 1Â÷,2Â÷ ¹öÆ°
+			// 1ì°¨,2ì°¨ ë²„íŠ¼
 			Composite cpBtn = new Composite(cpLeft, SWT.NONE);
 			cpBtn.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 			final GridLayout cpBtnLayout = new GridLayout();
@@ -349,7 +349,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			}
 			
 			{
-				// ±¸ºĞÀÚ ¶óÀÎ
+				// êµ¬ë¶„ì ë¼ì¸
 				Label lblHline = new Label(cpLeft, SWT.NONE);
 				lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 				GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -357,7 +357,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 				lblHline.setLayoutData(gd_hline);
 			}
 			
-			// ´Ş·Â/½Ã°è
+			// ë‹¬ë ¥/ì‹œê³„
 			Composite cpCal = new Composite(cpLeft, SWT.NONE);
 			final GridLayout cpCalLayout = new GridLayout();
 			cpCalLayout.marginWidth = 0;
@@ -369,20 +369,20 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			cpCal.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 			{
 				final CLabel todayCLabel = new CLabel(cpCal, SWT.NONE);
-				todayCLabel.setFont(SWTResourceManager.getFont("±¼¸²Ã¼", 11, SWT.BOLD));
+				todayCLabel.setFont(SWTResourceManager.getFont("êµ´ë¦¼ì²´", 11, SWT.BOLD));
 				GridData gd_todayCLabel = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
 				gd_todayCLabel.heightHint = 31;
 				todayCLabel.setLayoutData(gd_todayCLabel);
 				todayCLabel.setBackgroundImage(ImageRepository.getImage(ImageRepository.HOME_CAL_BG));
 				
-				String[] dayOfWeek={"ÀÏ","¿ù","È­","¼ö","¸ñ","±İ","Åä"};
+				String[] dayOfWeek={"ì¼","ì›”","í™”","ìˆ˜","ëª©","ê¸ˆ","í† "};
 				Calendar cal = Calendar.getInstance();
-				todayCLabel.setText(" \uc624\ub298 : " + StringUtil.getDate("yyyy³â MM¿ù ddÀÏ "+dayOfWeek[cal.get(Calendar.DAY_OF_WEEK)-1]+"¿äÀÏ"));
+				todayCLabel.setText(" \uc624\ub298 : " + StringUtil.getDate("yyyyë…„ MMì›” ddì¼ "+dayOfWeek[cal.get(Calendar.DAY_OF_WEEK)-1]+"ìš”ì¼"));
 //				todayCLabel.setImage(ImageRepository.getImage(ImageRepository.ICO_SELECT));
 				todayCLabel.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 
 				{
-					// ±¸ºĞÀÚ ¶óÀÎ
+					// êµ¬ë¶„ì ë¼ì¸
 					Label lblHline = new Label(cpCal, SWT.NONE);
 					lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 					GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -425,7 +425,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 				}
 			}
 			{
-				// ±¸ºĞÀÚ ¶óÀÎ
+				// êµ¬ë¶„ì ë¼ì¸
 				Label lblHline = new Label(cpLeft, SWT.NONE);
 				lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 				GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -445,7 +445,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			cpInfo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 			{
 				final CLabel lblInfo = new CLabel(cpInfo, SWT.NONE);
-				lblInfo.setFont(SWTResourceManager.getFont("±¼¸²Ã¼", 11, SWT.BOLD));
+				lblInfo.setFont(SWTResourceManager.getFont("êµ´ë¦¼ì²´", 11, SWT.BOLD));
 				GridData gd_lblInfo = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
 				gd_lblInfo.heightHint = 31;
 				lblInfo.setLayoutData(gd_lblInfo);
@@ -454,7 +454,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 //				todayCLabel.setImage(ImageRepository.getImage(ImageRepository.ICO_SELECT));
 				lblInfo.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 				{
-					// ±¸ºĞÀÚ ¶óÀÎ
+					// êµ¬ë¶„ì ë¼ì¸
 					Label lblHline = new Label(cpInfo, SWT.NONE);
 					lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 					GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -479,7 +479,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 					lblCustNmImg.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 					
 					lblCustNm = new CLabel(cpCustInfo, SWT.NONE);
-					lblCustNm.setFont(SWTResourceManager.getFont("±¼¸²Ã¼", 10, SWT.BOLD));
+					lblCustNm.setFont(SWTResourceManager.getFont("êµ´ë¦¼ì²´", 10, SWT.BOLD));
 					lblCustNm.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 					lblCustNm.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 					
@@ -489,13 +489,13 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 					lblCustTelImg.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 					
 					lblCustTel = new CLabel(cpCustInfo, SWT.NONE);
-					lblCustTel.setFont(SWTResourceManager.getFont("±¼¸²Ã¼", 10, SWT.BOLD));
+					lblCustTel.setFont(SWTResourceManager.getFont("êµ´ë¦¼ì²´", 10, SWT.BOLD));
 					lblCustTel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 					lblCustTel.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 				}
 			}
 			{
-				// ±¸ºĞÀÚ ¶óÀÎ
+				// êµ¬ë¶„ì ë¼ì¸
 				Label lblHline = new Label(cpLeft, SWT.NONE);
 				lblHline.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 				GridData gd_hline = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 1, 1);
@@ -504,14 +504,14 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			}
 			
 			
-			// °¡¿îµ¥ ¶óÀÎ ------------------------------------------------------------------------------------
+			// ê°€ìš´ë° ë¼ì¸ ------------------------------------------------------------------------------------
 			final Label line = new Label(this, SWT.NONE);
 			line.setBackground(ColorRepository.getColor(ColorRepository.HOME_LINE));
 			GridData gd_line = new GridData(SWT.CENTER, SWT.FILL, false, true, 1, 1);
 			gd_line.widthHint = 1;
 			line.setLayoutData(gd_line);
 			
-			// ¿À¸¥ÂÊ ÆÄÆ®
+			// ì˜¤ë¥¸ìª½ íŒŒíŠ¸
 			Composite cpRight = new Composite(this, SWT.NONE);
 			GridData gd_cpRight = new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1);
 			gd_cpRight.horizontalIndent = 3;
@@ -523,7 +523,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			gl_cpRight.marginHeight = 0;
 			cpRight.setLayout(gl_cpRight);
 			
-			// Áß·®Ç¥±â ºÎ
+			// ì¤‘ëŸ‰í‘œê¸° ë¶€
 			Composite cpDisp = new Composite(cpRight, SWT.NONE);
 			GridData gd_cpDisp = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
 			gd_cpDisp.heightHint = 100;
@@ -550,7 +550,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 			}
 			
 			{
-				// °è·®ÀÚ·á Ç¥½Ã
+				// ê³„ëŸ‰ìë£Œ í‘œì‹œ
 				Composite cpWeigh = new Composite(cpRight, SWT.NONE);
 				cpWeigh.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 2));
 				GridLayout gl_cpWeigh = new GridLayout(1, false);
@@ -576,7 +576,7 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 	}// initGUI
 
 	/**
-	 * 1ÃÊ ¸¶´Ù Ã³¸®ÇÏ´Â Å¸ÀÌ¸Ó ½ÃÀÛ
+	 * 1ì´ˆ ë§ˆë‹¤ ì²˜ë¦¬í•˜ëŠ” íƒ€ì´ë¨¸ ì‹œì‘
 	 */
 	private void startTimer() {
 	    final Display display = this.getDisplay();

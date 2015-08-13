@@ -20,7 +20,7 @@ public class PDocument extends PContainer {
 	protected Point originOnFirstPage;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * @param pageWidth
 	 * @param pageHeight
 	 * @param top
@@ -46,7 +46,7 @@ public class PDocument extends PContainer {
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * @param docname
 	 */
 	public PDocument(String docname) {

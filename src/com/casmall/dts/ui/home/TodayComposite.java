@@ -17,7 +17,7 @@ import com.casmall.dts.common.ImageRepository;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * HomeView¿« ≥Ø¿⁄ π◊ Ω√∞£ display
+ * HomeViewÏùò ÎÇ†Ïûê Î∞è ÏãúÍ∞Ñ display
  * @author OBERAK
  */
 public class TodayComposite extends org.eclipse.swt.widgets.Composite {
@@ -29,7 +29,7 @@ public class TodayComposite extends org.eclipse.swt.widgets.Composite {
     private final Image innerCenter = ImageRepository.getImage(ImageRepository.HOME_INFO_INNER_BG_CENTER);
     private final Image innerRight = ImageRepository.getImage(ImageRepository.HOME_INFO_INNER_BG_RIGHT);
 
-    private final Font titleFont = SWTResourceManager.getFont("±º∏≤", 14, SWT.BOLD);
+    private final Font titleFont = SWTResourceManager.getFont("Íµ¥Î¶º", 14, SWT.BOLD);
     private final Font contentsFont = SWTResourceManager.getFont("Arial", 15, SWT.BOLD);
     private final Color contentsColor = SWTResourceManager.getColor(SWT.COLOR_WHITE);
 
@@ -112,7 +112,7 @@ public class TodayComposite extends org.eclipse.swt.widgets.Composite {
 	        label = new Label(centerComposite, SWT.CENTER);
 	        label.setFont(titleFont);
 	        label.setLayoutData(new GridData(SWT.CENTER, SWT.BEGINNING, false, false));
-	        label.setText("«ˆ¿Á Ω√∞¢");
+	        label.setText("ÌòÑÏû¨ ÏãúÍ∞Å");
 	        
 	        // inner composite
 			final Composite infoComposite = new Composite(centerComposite, SWT.NONE);

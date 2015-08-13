@@ -33,7 +33,7 @@ import com.swtdesigner.SWTResourceManager;
 
 public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbenchPreferencePage {
 	private ScopedPreferenceStore preferences;
-	private Font defaultLabelFont = SWTResourceManager.getFont("±¼¸²", 12, SWT.NORMAL);
+	private Font defaultLabelFont = SWTResourceManager.getFont("êµ´ë¦¼", 12, SWT.NORMAL);
 
 	private Composite compMinus;
 	private BooleanFieldEditor minusFlag;
@@ -90,25 +90,25 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		
 		Group gGeneral = new Group(container, SWT.NONE);
 		gGeneral.setFont(defaultLabelFont );
-		gGeneral.setText("°è·® ¹øÈ£");
+		gGeneral.setText("ê³„ëŸ‰ ë²ˆí˜¸");
 		gGeneral.setLayout(new GridLayout(3, false));
 		gGeneral.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		compWeighCdType = new Composite(gGeneral, SWT.NONE);
 		compWeighCdType.setFont(defaultLabelFont );
 		compWeighCdType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 3, 1));
-		weighCdType =new ComboFieldEditor(DTSPreConstants.DATA_WEIGH_CD_TYPE, "³¯Â¥ »ç¿ë", new String[][] {
-		        { "»ç¿ë ¾ÈÇÔ", DTSPreConstants.DATA_WEIGH_CD_TYPE_NONE },
-		        { "ÀüÃ¼ ³âµµ (¿¹: 2011)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY }, 
-		        { "ÂªÀº ³âµµ (¿¹: 11)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY }, 
-		        { "ÀüÃ¼³âµµ-¿ù, ÇÏÀÌÇÂ »ç¿ë(¿¹: 2011-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY_MM }, 
-		        { "ÂªÀº³âµµ-¿ù, ÇÏÀÌÇÂ »ç¿ë(¿¹: 11-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY_MM }, 
-		        { "ÀüÃ¼³âµµ+¿ù(¿¹: 201101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYYMM }, 
-		        { "ÂªÀº³âµµ+¿ù(¿¹: 1101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYMM }, 
-		        { "ÀüÃ¼³âµµ-¿ù-ÀÏ, ÇÏÀÌÇÂ »ç¿ë(¿¹: 2011-01-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY_MM_DD }, 
-		        { "ÂªÀº³âµµ-¿ù-ÀÏ, ÇÏÀÌÇÂ »ç¿ë(¿¹: 11-01-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY_MM_DD }, 
-		        { "ÀüÃ¼³âµµ+¿ù+ÀÏ(¿¹: 20110101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYYMMDD }, 
-		        { "ÂªÀº³âµµ+¿ù+ÀÏ(¿¹: 110101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYMMDD }}, 
+		weighCdType =new ComboFieldEditor(DTSPreConstants.DATA_WEIGH_CD_TYPE, "ë‚ ì§œ ì‚¬ìš©", new String[][] {
+		        { "ì‚¬ìš© ì•ˆí•¨", DTSPreConstants.DATA_WEIGH_CD_TYPE_NONE },
+		        { "ì „ì²´ ë…„ë„ (ì˜ˆ: 2011)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY }, 
+		        { "ì§§ì€ ë…„ë„ (ì˜ˆ: 11)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY }, 
+		        { "ì „ì²´ë…„ë„-ì›”, í•˜ì´í”ˆ ì‚¬ìš©(ì˜ˆ: 2011-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY_MM }, 
+		        { "ì§§ì€ë…„ë„-ì›”, í•˜ì´í”ˆ ì‚¬ìš©(ì˜ˆ: 11-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY_MM }, 
+		        { "ì „ì²´ë…„ë„+ì›”(ì˜ˆ: 201101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYYMM }, 
+		        { "ì§§ì€ë…„ë„+ì›”(ì˜ˆ: 1101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYMM }, 
+		        { "ì „ì²´ë…„ë„-ì›”-ì¼, í•˜ì´í”ˆ ì‚¬ìš©(ì˜ˆ: 2011-01-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYY_MM_DD }, 
+		        { "ì§§ì€ë…„ë„-ì›”-ì¼, í•˜ì´í”ˆ ì‚¬ìš©(ì˜ˆ: 11-01-01)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YY_MM_DD }, 
+		        { "ì „ì²´ë…„ë„+ì›”+ì¼(ì˜ˆ: 20110101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYYYMMDD }, 
+		        { "ì§§ì€ë…„ë„+ì›”+ì¼(ì˜ˆ: 110101)", DTSPreConstants.DATA_WEIGH_CD_TYPE_YYMMDD }}, 
 		        compWeighCdType); 
 		addField(weighCdType);
 
@@ -117,8 +117,8 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		gd_composite.widthHint = 210;
 		compWeightCdLen.setLayoutData(gd_composite);
 		compWeightCdLen.setFont(defaultLabelFont );
-		weighCdLen = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD_LENGTH, "ÀÏ·Ã¹øÈ£ ÀÚ¸®¼ö(2~10)", compWeightCdLen);
-		weighCdLen.setValidRange(2, 10); // 2~10 »çÀÌ
+		weighCdLen = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD_LENGTH, "ì¼ë ¨ë²ˆí˜¸ ìë¦¬ìˆ˜(2~10)", compWeightCdLen);
+		weighCdLen.setValidRange(2, 10); // 2~10 ì‚¬ì´
 		addField(weighCdLen);
 		
 		compDataWeighCd = new Composite(gGeneral, SWT.NONE);
@@ -126,7 +126,7 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		GridData gd_compDataWeighCd = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
 		gd_compDataWeighCd.widthHint = 90;
 		compDataWeighCd.setLayoutData(gd_compDataWeighCd);
-		weighCd = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD, "´ÙÀ½ ÀÏ·Ã¹øÈ£", compDataWeighCd);
+		weighCd = new IntegerFieldEditor(DTSPreConstants.DATA_WEIGH_CD, "ë‹¤ìŒ ì¼ë ¨ë²ˆí˜¸", compDataWeighCd);
 		addField(weighCd);
 		
 		btnResetSeq = new Button(gGeneral, SWT.NONE);
@@ -137,31 +137,31 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 				resetWeighSeq();
 			}
 		});
-		btnResetSeq.setText("Àç¼³Á¤");
+		btnResetSeq.setText("ì¬ì„¤ì •");
 		
 		compWeighCdWithHyphen = new Composite(gGeneral, SWT.NONE);
 		compWeighCdWithHyphen.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 3, 1));
 		compWeighCdWithHyphen.setFont(defaultLabelFont );
-		weighCdWithHyphen = new BooleanFieldEditor(DTSPreConstants.DATA_WEIGH_CD_WITH_HYPHEN, "ÀÏ·Ã¹øÈ£¿Í ³¯Â¥»çÀÌ¿¡ ÇÏÀÌÇÂ(-) »ç¿ë", BooleanFieldEditor.DEFAULT, compWeighCdWithHyphen);
+		weighCdWithHyphen = new BooleanFieldEditor(DTSPreConstants.DATA_WEIGH_CD_WITH_HYPHEN, "ì¼ë ¨ë²ˆí˜¸ì™€ ë‚ ì§œì‚¬ì´ì— í•˜ì´í”ˆ(-) ì‚¬ìš©", BooleanFieldEditor.DEFAULT, compWeighCdWithHyphen);
 		addField(weighCdWithHyphen);
 		
 		compWeighCdNext = new Composite(gGeneral, SWT.NONE);
 		compWeighCdNext.setEnabled(false);
 		compWeighCdNext.setFont(defaultLabelFont );
 		compWeighCdNext.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 3, 1));
-		weighCdNext = new StringFieldEditor(DTSPreConstants.DATA_WEIGH_CD_NEXT, "´ÙÀ½ °è·® ¹øÈ£", -1, StringFieldEditor.VALIDATE_ON_KEY_STROKE, compWeighCdNext);
+		weighCdNext = new StringFieldEditor(DTSPreConstants.DATA_WEIGH_CD_NEXT, "ë‹¤ìŒ ê³„ëŸ‰ ë²ˆí˜¸", -1, StringFieldEditor.VALIDATE_ON_KEY_STROKE, compWeighCdNext);
 		addField(weighCdNext);
 		
-		// °¨·® ===========================================================
+		// ê°ëŸ‰ ===========================================================
 		Group gMinus = new Group(container, SWT.NONE);
 		gMinus.setFont(defaultLabelFont );
-		gMinus.setText("°¨ ·®");
+		gMinus.setText("ê° ëŸ‰");
 		gMinus.setLayout(new GridLayout(2, false));
 		gMinus.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
 
 		compMinus = new Composite(gMinus, SWT.NONE);
 		compMinus.setFont(defaultLabelFont );
-		minusFlag = new BooleanFieldEditor(DTSPreConstants.DATA_MINUS_FLAG, "°¨·® »ç¿ë", BooleanFieldEditor.DEFAULT, compMinus);
+		minusFlag = new BooleanFieldEditor(DTSPreConstants.DATA_MINUS_FLAG, "ê°ëŸ‰ ì‚¬ìš©", BooleanFieldEditor.DEFAULT, compMinus);
 		compMinus.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 		addField(minusFlag);
 		
@@ -170,7 +170,7 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		GridData gd = new GridData(SWT.FILL, SWT.TOP, false, false, 1, 1);
 		gd.horizontalIndent = 15;
 		compMinusPoint.setLayoutData(gd);
-		minusPoint = new IntegerFieldEditor(DTSPreConstants.DATA_MINUS_POINT, "¼Ò¼öÁ¡", compMinusPoint);
+		minusPoint = new IntegerFieldEditor(DTSPreConstants.DATA_MINUS_POINT, "ì†Œìˆ˜ì ", compMinusPoint);
 		minusPoint.setTextLimit(2);
 		addField(minusPoint);
 		minusPoint.setEnabled(false, compMinusPoint);
@@ -178,71 +178,71 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		compMinusType = new Composite(gMinus, SWT.NONE);
 		compMinusType.setFont(defaultLabelFont );
 		compMinusType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		minusType = new RadioGroupFieldEditor(DTSPreConstants.DATA_MINUS_TYPE, "Â° ÀÚ¸®", 3, 
-				new String[][]{{"¹İ¿Ã¸²", DTSPreConstants.DATA_MINUS_TYPE_ROUND}, {"¿Ã¸²", DTSPreConstants.DATA_MINUS_TYPE_CEIL}, {"¹ö¸²", DTSPreConstants.DATA_MINUS_TYPE_FLOOR}}, compMinusType, false);
+		minusType = new RadioGroupFieldEditor(DTSPreConstants.DATA_MINUS_TYPE, "ì§¸ ìë¦¬", 3, 
+				new String[][]{{"ë°˜ì˜¬ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_ROUND}, {"ì˜¬ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_CEIL}, {"ë²„ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_FLOOR}}, compMinusType, false);
 		addField(minusType);
 		minusType.setEnabled(false, compMinusType);
 		
 		compMinusDefult = new Composite(gMinus, SWT.NONE);
 		compMinusDefult.setFont(defaultLabelFont );
-		minusDefult = new BooleanFieldEditor(DTSPreConstants.DATA_MINUS_DEFAULT, "±âº»°ªÀ» ºñÀ²(%)·Î ¼³Á¤", BooleanFieldEditor.DEFAULT, compMinusDefult);
+		minusDefult = new BooleanFieldEditor(DTSPreConstants.DATA_MINUS_DEFAULT, "ê¸°ë³¸ê°’ì„ ë¹„ìœ¨(%)ë¡œ ì„¤ì •", BooleanFieldEditor.DEFAULT, compMinusDefult);
 		addField(minusDefult);
 		minusDefult.setEnabled(false, compMinusDefult);
 
-		// °Å·¡Ã³ ===========================================================
+		// ê±°ë˜ì²˜ ===========================================================
 		Group gCust = new Group(container, SWT.NONE);
 		gCust.setFont(defaultLabelFont );
-		gCust.setText("°Å·¡Ã³");
+		gCust.setText("ê±°ë˜ì²˜");
 		gCust.setLayout(new GridLayout(2, false));
 		gCust.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		Composite compUseCust = new Composite(gCust, SWT.NONE);
 		compUseCust.setFont(defaultLabelFont );
-		custFlag = new BooleanFieldEditor(DTSPreConstants.DATA_CUST_FLAG, "°Å·¡Ã³ »ç¿ë", BooleanFieldEditor.DEFAULT, compUseCust);
+		custFlag = new BooleanFieldEditor(DTSPreConstants.DATA_CUST_FLAG, "ê±°ë˜ì²˜ ì‚¬ìš©", BooleanFieldEditor.DEFAULT, compUseCust);
 		compUseCust.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(custFlag);
 		
 		compCustMust = new Composite(gCust, SWT.NONE);
 		compCustMust.setFont(defaultLabelFont );
-		custMust = new BooleanFieldEditor(DTSPreConstants.DATA_CUST_MUST, "°Å·¡Ã³ ÇÊ¼ö ÀÔ·Â", BooleanFieldEditor.DEFAULT, compCustMust);
+		custMust = new BooleanFieldEditor(DTSPreConstants.DATA_CUST_MUST, "ê±°ë˜ì²˜ í•„ìˆ˜ ì…ë ¥", BooleanFieldEditor.DEFAULT, compCustMust);
 		compCustMust.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(custMust);
 		
-		// Á¦Ç° ===========================================================
+		// ì œí’ˆ ===========================================================
 		Group gPrdt = new Group(container, SWT.NONE);
 		gPrdt.setFont(defaultLabelFont );
-		gPrdt.setText("Á¦Ç°");
+		gPrdt.setText("ì œí’ˆ");
 		gPrdt.setLayout(new GridLayout(2, false));
 		gPrdt.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		Composite compUsePrdt = new Composite(gPrdt, SWT.NONE);
 		compUsePrdt.setFont(defaultLabelFont );
-		prdtFlag = new BooleanFieldEditor(DTSPreConstants.DATA_PRDT_FLAG, "Á¦Ç° »ç¿ë", BooleanFieldEditor.DEFAULT, compUsePrdt);
+		prdtFlag = new BooleanFieldEditor(DTSPreConstants.DATA_PRDT_FLAG, "ì œí’ˆ ì‚¬ìš©", BooleanFieldEditor.DEFAULT, compUsePrdt);
 		compUsePrdt.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(prdtFlag);
 		
 		compPrdtMust = new Composite(gPrdt, SWT.NONE);
 		compPrdtMust.setFont(defaultLabelFont );
-		prdtMust = new BooleanFieldEditor(DTSPreConstants.DATA_PRDT_MUST, "Á¦Ç° ÇÊ¼ö ÀÔ·Â", BooleanFieldEditor.DEFAULT, compPrdtMust);
+		prdtMust = new BooleanFieldEditor(DTSPreConstants.DATA_PRDT_MUST, "ì œí’ˆ í•„ìˆ˜ ì…ë ¥", BooleanFieldEditor.DEFAULT, compPrdtMust);
 		compPrdtMust.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(prdtMust);
 		
-		// ´Ü°¡/±İ¾×  ===========================================================
+		// ë‹¨ê°€/ê¸ˆì•¡  ===========================================================
 		Group gPrice = new Group(container, SWT.NONE);
 		gPrice.setFont(defaultLabelFont );
-		gPrice.setText("´Ü°¡/±İ¾×");
+		gPrice.setText("ë‹¨ê°€/ê¸ˆì•¡");
 		gPrice.setLayout(new GridLayout(2, false));
 		gPrice.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		Composite compUsePrice = new Composite(gPrice, SWT.NONE);
 		compUsePrice.setFont(defaultLabelFont );
-		priceFlag = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_FLAG, "´Ü°¡/±İ¾× »ç¿ë", BooleanFieldEditor.DEFAULT, compUsePrice);
+		priceFlag = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_FLAG, "ë‹¨ê°€/ê¸ˆì•¡ ì‚¬ìš©", BooleanFieldEditor.DEFAULT, compUsePrice);
 		compUsePrice.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		addField(priceFlag);
 		
 		compPriceMust = new Composite(gPrice, SWT.NONE);
 		compPriceMust.setFont(defaultLabelFont );
-		priceMust = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_MUST, "´Ü°¡ ÇÊ¼ö ÀÔ·Â", BooleanFieldEditor.DEFAULT, compPriceMust);
+		priceMust = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_MUST, "ë‹¨ê°€ í•„ìˆ˜ ì…ë ¥", BooleanFieldEditor.DEFAULT, compPriceMust);
 		compPriceMust.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(priceMust);
 		priceMust.setEnabled(false, compPriceMust);
@@ -252,7 +252,7 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		GridData gdAmt = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
 		gdAmt.horizontalIndent = 15;
 		compAmtPoint.setLayoutData(gdAmt);
-		amtPoint = new IntegerFieldEditor(DTSPreConstants.DATA_AMOUNT_POINT, "±İ¾×", compAmtPoint);
+		amtPoint = new IntegerFieldEditor(DTSPreConstants.DATA_AMOUNT_POINT, "ê¸ˆì•¡", compAmtPoint);
 		amtPoint.setTextLimit(2);
 		addField(amtPoint);
 		amtPoint.setEnabled(false, compAmtPoint);
@@ -260,14 +260,14 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 		compAmtType = new Composite(gPrice, SWT.NONE);
 		compAmtType.setFont(defaultLabelFont );
 		compAmtType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		amtType = new RadioGroupFieldEditor(DTSPreConstants.DATA_AMOUNT_TYPE, "Â° ÀÚ¸®", 3, 
-				new String[][]{{"¹İ¿Ã¸²", DTSPreConstants.DATA_MINUS_TYPE_ROUND}, {"¿Ã¸²", DTSPreConstants.DATA_MINUS_TYPE_CEIL}, {"¹ö¸²", DTSPreConstants.DATA_MINUS_TYPE_FLOOR}}, compAmtType, false);
+		amtType = new RadioGroupFieldEditor(DTSPreConstants.DATA_AMOUNT_TYPE, "ì§¸ ìë¦¬", 3, 
+				new String[][]{{"ë°˜ì˜¬ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_ROUND}, {"ì˜¬ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_CEIL}, {"ë²„ë¦¼", DTSPreConstants.DATA_MINUS_TYPE_FLOOR}}, compAmtType, false);
 		addField(amtType);
 		amtType.setEnabled(false, compAmtType);
 		
 		compPriceLoad = new Composite(gPrice, SWT.NONE);
 		compPriceLoad.setFont(defaultLabelFont );
-		priceLoad = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_LOAD, "Á¦Ç° ¼±ÅÃ ½Ã ´Ü°¡ Á¶È¸", BooleanFieldEditor.DEFAULT, compPriceLoad);
+		priceLoad = new BooleanFieldEditor(DTSPreConstants.DATA_PRICE_LOAD, "ì œí’ˆ ì„ íƒ ì‹œ ë‹¨ê°€ ì¡°íšŒ", BooleanFieldEditor.DEFAULT, compPriceLoad);
 		compPriceLoad.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		addField(priceLoad);
 		priceLoad.setEnabled(false, compPriceLoad);
@@ -277,7 +277,7 @@ public class DataPrePage extends FieldLayoutPreferencePage implements IWorkbench
 	}
 
 	protected void resetWeighSeq() {
-		boolean prtRtn = MessageDialog.openConfirm(this.getShell(), "ÀÏ·Ã¹øÈ£ Àç¼³Á¤", "½Ç µ¥ÀÌÅÍ(DB) ±â¹İÀ¸·Î ÀÏ·Ã¹øÈ£¸¦ Àç¼³Á¤ ÇÏ½Ã°Ú½À´Ï±î?");
+		boolean prtRtn = MessageDialog.openConfirm(this.getShell(), "ì¼ë ¨ë²ˆí˜¸ ì¬ì„¤ì •", "ì‹¤ ë°ì´í„°(DB) ê¸°ë°˜ìœ¼ë¡œ ì¼ë ¨ë²ˆí˜¸ë¥¼ ì¬ì„¤ì • í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
     	if(prtRtn){
     		Combo cbo = weighCdType.getComboBoxControl(compWeighCdNext);
     		String cdType = weighCdType.getValueForName(cbo.getItem(cbo.getSelectionIndex()));

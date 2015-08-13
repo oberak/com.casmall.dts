@@ -1,7 +1,7 @@
 package com.casmall.dts.ui.weigh.compsite;
 
 import org.eclipse.swt.graphics.Font;
-// TODO LOW FieldIF »ó¼Ó ¹× ÄÚµå Á¤¸®
+// TODO LOW FieldIF ìƒì† ë° ì½”ë“œ ì •ë¦¬
 public interface FieldIF {
 	public static final String KEY_ID = "ID";
 	public static final String KEY_VAL = "VAL";

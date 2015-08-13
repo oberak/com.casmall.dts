@@ -6,19 +6,19 @@ import com.casmall.common.BaseObject;
 
 public class HomeViewInfoVO extends BaseObject{
     private static final long serialVersionUID = -5047052189870029643L;
-    /** °è·ùÂ÷·® ¼ö */
+    /** ê³„ë¥˜ì°¨ëŸ‰ ìˆ˜ */
 	private int fstCnt;
-	/** °è·ùÂ÷·® ¸ñ·Ï */
+	/** ê³„ë¥˜ì°¨ëŸ‰ ëª©ë¡ */
 	private ArrayList<TsWgtInfDTO> fstList;
-	/** ´çÀÏ °è·® ¼ö */
+	/** ë‹¹ì¼ ê³„ëŸ‰ ìˆ˜ */
 	private int scdCnt;
-	/** ´çÀÏ °è·® ÇÕ°è */
+	/** ë‹¹ì¼ ê³„ëŸ‰ í•©ê³„ */
 	private double scdWeigh;
-	/** ´çÀÏ °è·® ¸ñ·Ï */
+	/** ë‹¹ì¼ ê³„ëŸ‰ ëª©ë¡ */
 	private ArrayList<TsWgtInfDTO> scdList;
-	/** ¿ù °è·® ¼ö */
+	/** ì›” ê³„ëŸ‰ ìˆ˜ */
 	private int monthCnt;
-	/** ¿ù °è·® ÇÕ°è */
+	/** ì›” ê³„ëŸ‰ í•©ê³„ */
 	private double monthWeigh;
 	
 	public int getFstCnt() {

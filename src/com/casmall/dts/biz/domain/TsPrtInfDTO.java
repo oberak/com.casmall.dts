@@ -3,26 +3,26 @@ package com.casmall.dts.biz.domain;
 import com.casmall.common.BaseObject;
 
 /**
- * Ãâ·ÂÁ¤º¸ DTO
+ * ì¶œë ¥ì •ë³´ DTO
  * @author OBERAK
  */
 public class TsPrtInfDTO extends BaseObject {
     private static final long serialVersionUID = 4655794995021275637L;
-    /** ÀÏ·Ã¹øÈ£ key */
+    /** ì¼ë ¨ë²ˆí˜¸ key */
     private long prt_seq;
-    /** ¼³¸í */
+    /** ì„¤ëª… */
     private String prt_nm;
-    /** ¿ëÁö ³Êºñ : CM */
+    /** ìš©ì§€ ë„ˆë¹„ : CM */
     private double paper_width;
-    /** ¿ëÁö ³ôÀÌ : CM */
+    /** ìš©ì§€ ë†’ì´ : CM */
     private double paper_height;
-    /** ±âÁØÁÂÇ¥ x : CM */
+    /** ê¸°ì¤€ì¢Œí‘œ x : CM */
     private double bss_cdnt_x;
-    /** ±âÁØÁÂÇ¥ y : CM */
+    /** ê¸°ì¤€ì¢Œí‘œ y : CM */
     private double bss_cdnt_y;
-    /** °¡·Î Ãâ·Â ¿©ºÎ */
+    /** ê°€ë¡œ ì¶œë ¥ ì—¬ë¶€ */
     private String wdt_prt_yn;
-    /** ±âº» ÆùÆ® */
+    /** ê¸°ë³¸ í°íŠ¸ */
     private String bss_font;
     
 	public long getPrt_seq() {

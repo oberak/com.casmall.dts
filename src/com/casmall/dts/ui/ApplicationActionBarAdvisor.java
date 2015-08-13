@@ -97,22 +97,22 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     	fileMenu.add(homeAction);
     	fileMenu.add(exitAction);
 
-    	MenuManager weighMenu = new MenuManager("°è·®", "°è·®");
+    	MenuManager weighMenu = new MenuManager("ê³„ëŸ‰", "ê³„ëŸ‰");
     	weighMenu.add(weighFirstAction);
     	weighMenu.add(weighSecondAction);
     	weighMenu.add(weighOneAction);
     	weighMenu.add(weighListAction);
 
-    	MenuManager masterMenu = new MenuManager("±âÃÊ Á¤º¸", "±âÃÊ Á¤º¸");
+    	MenuManager masterMenu = new MenuManager("ê¸°ì´ˆ ì •ë³´", "ê¸°ì´ˆ ì •ë³´");
     	masterMenu.add(carMgtAction);
     	masterMenu.add(cstMgtAction);
     	masterMenu.add(prdtMgtAction);
     	masterMenu.add(usrInfMgtAction);
 
-//    	MenuManager reportMenu = new MenuManager("&Report", "º¸°í¼­");
+//    	MenuManager reportMenu = new MenuManager("&Report", "ë³´ê³ ì„œ");
 //    	reportMenu.add(weighListAction);
     	
-    	MenuManager optionMenu = new MenuManager("&Option", "È¯°æ ¼³Á¤");
+    	MenuManager optionMenu = new MenuManager("&Option", "í™˜ê²½ ì„¤ì •");
     	
 		if( DTSConstants.CD_USR_GRD_ROOT.equals(SessionManager.getInstance().getUsr().getAth_grd()) ){
 	    	optionMenu.add(serialConfigAction);

@@ -30,7 +30,7 @@ import com.casmall.dts.common.DTSConstants;
 import com.swtdesigner.SWTResourceManager;
 
 /**
- * ∞®∑Æ Composite
+ * Í∞êÎüâ Composite
  * @author OBERAK
  */
 public class MinusWeighComposite extends Composite{
@@ -115,7 +115,7 @@ public class MinusWeighComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ¿œ ∞ÊøÏ Tab √≥∏Æ
+					// Enter Ïùº Í≤ΩÏö∞ Tab Ï≤òÎ¶¨
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
@@ -172,7 +172,7 @@ public class MinusWeighComposite extends Composite{
 		txtWeigh.getControl().addKeyListener(listener);
 	}
 	/**
-	 * Font º≥¡§<br>
+	 * Font ÏÑ§Ï†ï<br>
 	 * 0 : title, 1 : label, 2 : input
 	 * @param font
 	 */
@@ -211,7 +211,7 @@ public class MinusWeighComposite extends Composite{
     }
     
     /**
-     * Data setting (0:¡ﬂ∑Æ, 1:¡ﬂ∑Æ ±∏∫–)
+     * Data setting (0:Ï§ëÎüâ, 1:Ï§ëÎüâ Íµ¨Î∂Ñ)
      * @param val
      */
     public void setValue(String... val){

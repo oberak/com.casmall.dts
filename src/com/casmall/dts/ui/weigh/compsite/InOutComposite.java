@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Text;
 import com.casmall.dts.common.DTSConstants;
 
 /**
- * ¿‘√‚∞Ì ±∏∫–
+ * ÏûÖÏ∂úÍ≥† Íµ¨Î∂Ñ
  * 
  * @author OBERAK
  */
@@ -47,7 +47,7 @@ public class InOutComposite extends Composite{
 		
 		btnRdo[0] = new Button(this, SWT.RADIO);
 		btnRdo[0].setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, true));
-		btnRdo[0].setText("¿‘∞Ì");
+		btnRdo[0].setText("ÏûÖÍ≥†");
 		btnRdo[0].setData(DTSConstants.CD_INOUT_IN);
 		btnRdo[0].setSelection(true);
 		btnRdo[0].addKeyListener(new KeyAdapter() {
@@ -56,7 +56,7 @@ public class InOutComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ¿œ ∞ÊøÏ Tab √≥∏Æ
+					// Enter Ïùº Í≤ΩÏö∞ Tab Ï≤òÎ¶¨
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
@@ -65,7 +65,7 @@ public class InOutComposite extends Composite{
 		
 		btnRdo[1] = new Button(this, SWT.RADIO);
 		btnRdo[1].setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, true));
-		btnRdo[1].setText("√‚∞Ì");
+		btnRdo[1].setText("Ï∂úÍ≥†");
 		btnRdo[1].setData(DTSConstants.CD_INOUT_OUT);
 		
 		btnRdo[1].addKeyListener(new KeyAdapter() {
@@ -74,7 +74,7 @@ public class InOutComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ¿œ ∞ÊøÏ Tab √≥∏Æ
+					// Enter Ïùº Í≤ΩÏö∞ Tab Ï≤òÎ¶¨
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
@@ -118,7 +118,7 @@ public class InOutComposite extends Composite{
 	}
 	
 	/**
-	 * Font º≥¡§<br>
+	 * Font ÏÑ§Ï†ï<br>
 	 * 0 : title, 1 : label, 2 : input
 	 * @param font
 	 */

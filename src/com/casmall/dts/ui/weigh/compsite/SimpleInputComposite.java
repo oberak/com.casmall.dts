@@ -58,7 +58,7 @@ public class SimpleInputComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ÀÏ °æ¿ì Tab Ã³¸®
+					// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}

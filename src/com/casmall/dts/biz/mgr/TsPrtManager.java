@@ -19,7 +19,7 @@ public class TsPrtManager {
 	private DBManager dbm = DBManager.getInstance();
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ Á¶È¸
+	 * ì¶œë ¥ì •ë³´ ì¡°íšŒ
 	 * @param car
 	 * @return
 	 */
@@ -34,7 +34,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 *Ãâ·ÂÁ¤º¸ ÀÏ·Ã¹øÈ£ Ã¤¹ø
+	 *ì¶œë ¥ì •ë³´ ì¼ë ¨ë²ˆí˜¸ ì±„ë²ˆ
 	 * @return
 	 */
 	public long selectTsPrtInfKey(){
@@ -48,7 +48,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ µî·Ï
+	 * ì¶œë ¥ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -59,7 +59,7 @@ public class TsPrtManager {
 		try{
 			int chk = dao.insertTsPrtInf(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÁ¤º¸°¡ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥ì •ë³´ê°€ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -71,7 +71,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ ¼öÁ¤
+	 * ì¶œë ¥ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -82,7 +82,7 @@ public class TsPrtManager {
 		try{
 			int chk = dao.updateTsPrtInf(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÁ¤º¸°¡ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥ì •ë³´ê°€ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -94,7 +94,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ »èÁ¦
+	 * ì¶œë ¥ì •ë³´ ì‚­ì œ
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -106,7 +106,7 @@ public class TsPrtManager {
 			dto.setDel_yn(DTSConstants.FLAG_Y);
 			int chk = dao.updateTsPrtInf(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÁ¤º¸°¡ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥ì •ë³´ê°€ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -118,7 +118,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ Á¶È¸
+	 * ì¶œë ¥í•­ëª© ì¡°íšŒ
 	 * @param car
 	 * @return
 	 */
@@ -133,7 +133,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 *Ãâ·ÂÇ×¸ñ ÀÏ·Ã¹øÈ£ Ã¤¹ø
+	 *ì¶œë ¥í•­ëª© ì¼ë ¨ë²ˆí˜¸ ì±„ë²ˆ
 	 * @return
 	 */
 	public long selectTsPrtAttrKey(TsPrtAttrDTO dto){
@@ -147,7 +147,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ µî·Ï
+	 * ì¶œë ¥í•­ëª© ë“±ë¡
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -158,7 +158,7 @@ public class TsPrtManager {
 		try{
 			int chk = dao.insertTsPrtAttr(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÇ×¸ñÀÌ µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥í•­ëª©ì´ ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -170,7 +170,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ ¼öÁ¤
+	 * ì¶œë ¥í•­ëª© ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -181,7 +181,7 @@ public class TsPrtManager {
 		try{
 			int chk = dao.updateTsPrtAttr(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÇ×¸ñÀÌ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥í•­ëª©ì´ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;
@@ -193,7 +193,7 @@ public class TsPrtManager {
 	}
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ »èÁ¦
+	 * ì¶œë ¥í•­ëª© ì‚­ì œ
 	 * @param dto
 	 * @return
 	 * @throws IOException 
@@ -205,7 +205,7 @@ public class TsPrtManager {
 			dto.setDel_yn(DTSConstants.FLAG_Y);
 			int chk = dao.updateTsPrtAttr(dto);
 			if(chk == 0){
-				throw new IOException("Ãâ·ÂÇ×¸ñÀÌ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+				throw new IOException("ì¶œë ¥í•­ëª©ì´ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			}
 			session.commit();
 			return chk;

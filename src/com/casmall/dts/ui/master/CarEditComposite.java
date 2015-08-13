@@ -58,7 +58,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 	private Button btnSave;
 	private CallbackIF callback;
 
-	private Font defaultLabelFont = com.swtdesigner.SWTResourceManager.getFont("±¼¸²Ã¼", 14, SWT.BOLD);
+	private Font defaultLabelFont = com.swtdesigner.SWTResourceManager.getFont("êµ´ë¦¼ì²´", 14, SWT.BOLD);
 	private Font defaultInputFont = com.swtdesigner.SWTResourceManager.getFont("Arial", 14, SWT.NORMAL);
 
 	private TsMstManager mgr = new TsMstManager();
@@ -157,7 +157,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 								btnSaveMouseDown(e);
 							}
 						});
-						btnSave.setText("ÀúÀå");
+						btnSave.setText("ì €ì¥");
 						btnSave.setImage(ImageRepository.getImage(ImageRepository.BTN_SAVE));
 						btnSave.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -165,7 +165,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnDelete = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnDelete.setText("»èÁ¦");
+						btnDelete.setText("ì‚­ì œ");
 						btnDelete.setImage(ImageRepository.getImage(ImageRepository.BTN_DELETE));
 						btnDelete.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -178,7 +178,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnClear = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnClear.setText("ÃÊ±âÈ­");
+						btnClear.setText("ì´ˆê¸°í™”");
 						btnClear.setImage(ImageRepository.getImage(ImageRepository.BTN_CLEAR));
 						btnClear.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -207,7 +207,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 				round.getControl().setLayout(cptBodyLayout);
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("°ü¸®ÄÚµå: ");
+					lblTag.setText("ê´€ë¦¬ì½”ë“œ: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -258,12 +258,12 @@ public class CarEditComposite extends Composite implements CallbackIF{
 							}
 						}
 					});
-					btnCheck.setText("°ü¸® µ¥ÀÌÅÍ");
+					btnCheck.setText("ê´€ë¦¬ ë°ì´í„°");
 					btnCheck.setFont(defaultInputFont);
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("Â÷·®¹øÈ£: ");
+					lblTag.setText("ì°¨ëŸ‰ë²ˆí˜¸: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -284,7 +284,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ºñ    °í: ");
+					lblTag.setText("ë¹„    ê³ : ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -315,7 +315,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 	}
 
 	/**
-	 * ÃÊ±âÈ­ ÇÔ¼ö
+	 * ì´ˆê¸°í™” í•¨ìˆ˜
 	 */
 	private void init() {
 		
@@ -325,9 +325,9 @@ public class CarEditComposite extends Composite implements CallbackIF{
 		if(!validate())
 			return;
 		
-		if(MessageDialog.openConfirm(getShell(), "ÀúÀåÈ®ÀÎ", "ÀúÀåÇÏ½Ã°Ú½À´Ï±î?")){
+		if(MessageDialog.openConfirm(getShell(), "ì €ì¥í™•ì¸", "ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 			try{
-				// µ¥ÀÌÅÍ ÀúÀå
+				// ë°ì´í„° ì €ì¥
 				TsCarMstDTO pdto = (TsCarMstDTO)ObjectUtil.getDefaultObject(TsCarMstDTO.class.getName());
 				pdto.setCar_num(txtCarNum.getText().trim());
 				pdto.setCar_mgt_cd(txtCarMgtCd.getText().trim());
@@ -337,12 +337,12 @@ public class CarEditComposite extends Composite implements CallbackIF{
 				else
 					pdto.setMgt_yn(DTSConstants.FLAG_N);
 				
-				// ½Å±ÔÀÏ °æ¿ì
+				// ì‹ ê·œì¼ ê²½ìš°
 				if(dto == null){
 					pdto.setCar_cd(mgr.selectTsCarMstKey());
 					mgr.insertTsCarMst(pdto);
 				}else{
-				// ¼öÁ¤ÀÏ °æ¿ì
+				// ìˆ˜ì •ì¼ ê²½ìš°
 					pdto.setCar_cd(dto.getCar_cd());
 					pdto.setRgn_dt(null);
 					pdto.setRgn_id(null);
@@ -350,10 +350,10 @@ public class CarEditComposite extends Composite implements CallbackIF{
 				}
 				
 				callback.callback(CallbackIF.CMD_LIST, null);
-				MessageDialog.openInformation(getShell(), "ÀúÀå¿Ï·á", "Á¤»óÀûÀ¸·Î ÀúÀåµÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì €ì¥ì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				btnClearMouseDown(null);
 			}catch(Exception e){
-				MessageDialog.openError(getShell(), "ÀúÀå Error", e.getMessage());
+				MessageDialog.openError(getShell(), "ì €ì¥ Error", e.getMessage());
 				e.printStackTrace();
 				log.error(e.getMessage());
 			}
@@ -362,13 +362,13 @@ public class CarEditComposite extends Composite implements CallbackIF{
 
 	private boolean validate() {
 		if("".equals(txtCarNum.getText().trim())){
-			MessageDialog.openWarning(getShell(), "Â÷·®¹øÈ£ ÀÔ·Â È®ÀÎ", "Â÷·®¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ì°¨ëŸ‰ë²ˆí˜¸ ì…ë ¥ í™•ì¸", "ì°¨ëŸ‰ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtCarNum.setFocus();
 			return false;
 		}
 		
 		if(btnCheck.getSelection() && "".equals(txtCarMgtCd.getText().trim())){
-			MessageDialog.openWarning(getShell(), "°ü¸®¹øÈ£ ÀÔ·Â È®ÀÎ", "°ü¸®¹øÈ£°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n\n°ü¸®ÄÚµå¸¦ ÀÔ·ÂÇÏ°Å³ª, °ü¸® µ¥ÀÌÅÍ¸¦ Ã¼Å©ÇØÁ¦ ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ê´€ë¦¬ë²ˆí˜¸ ì…ë ¥ í™•ì¸", "ê´€ë¦¬ë²ˆí˜¸ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n\nê´€ë¦¬ì½”ë“œë¥¼ ì…ë ¥í•˜ê±°ë‚˜, ê´€ë¦¬ ë°ì´í„°ë¥¼ ì²´í¬í•´ì œ í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.");
 			txtCarMgtCd.setFocus();
 			return false;
 		}
@@ -376,15 +376,15 @@ public class CarEditComposite extends Composite implements CallbackIF{
 		if(dto != null)
 			p.setCar_cd(dto.getCar_cd());
 		if(!"".equals(txtCarMgtCd.getText().trim())){
-			// °ü¸®¹øÈ£ Áßº¹ È®ÀÎ
+			// ê´€ë¦¬ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸
 			p.setCar_mgt_cd(txtCarMgtCd.getText().trim());
 			if(mgr.existTsCarMstMgtCd(p)){
-				MessageDialog.openWarning(getShell(), "°ü¸®¹øÈ£ Áßº¹ È®ÀÎ", "Áßº¹µÈ °ü¸®¹øÈ£ÀÔ´Ï´Ù. ¼öÁ¤ ÈÄ Ã³¸®¹Ù¶ø´Ï´Ù.");
+				MessageDialog.openWarning(getShell(), "ê´€ë¦¬ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸", "ì¤‘ë³µëœ ê´€ë¦¬ë²ˆí˜¸ì…ë‹ˆë‹¤. ìˆ˜ì • í›„ ì²˜ë¦¬ë°”ëë‹ˆë‹¤.");
 				txtCarMgtCd.setFocus();
 				return false;
 			}
 		}
-		// Â÷·®¹øÈ£ Áßº¹ È®ÀÎ : Áßº¹ÀÏ °æ¿ì confirm!
+		// ì°¨ëŸ‰ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸ : ì¤‘ë³µì¼ ê²½ìš° confirm!
 		p.setCar_num(txtCarNum.getText().trim());
 		ArrayList<TsCarMstDTO> list = mgr.selectTsCarMst(p);
 		boolean e = false;
@@ -400,7 +400,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 			}
 		}
 		if(e){
-			return MessageDialog.openConfirm(getShell(), "Â÷·®¹øÈ£ Áßº¹ È®ÀÎ", "µ¿ÀÏÇÑ Â÷·®¹øÈ£°¡ Á¸ÀçÇÕ´Ï´Ù.\n\n°è¼Ó ÁøÇàÇÏ½Ã°Ú½À´Ï±î?");
+			return MessageDialog.openConfirm(getShell(), "ì°¨ëŸ‰ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸", "ë™ì¼í•œ ì°¨ëŸ‰ë²ˆí˜¸ê°€ ì¡´ì¬í•©ë‹ˆë‹¤.\n\nê³„ì† ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		}
 	    return true;
     }
@@ -411,15 +411,15 @@ public class CarEditComposite extends Composite implements CallbackIF{
 				this.btnClearMouseDown(null);
 				return;
 			}
-			if(MessageDialog.openConfirm(getShell(), "»èÁ¦È®ÀÎ", "µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?")){
+			if(MessageDialog.openConfirm(getShell(), "ì‚­ì œí™•ì¸", "ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 				dto = (TsCarMstDTO)ObjectUtil.getUpdateObject(dto);
 				mgr.deleteTsCarMst(dto);
 				callback.callback(CallbackIF.CMD_LIST, null);
 				btnClearMouseDown(null);
-				MessageDialog.openInformation(getShell(), "»èÁ¦¿Ï·á", "Á¤»óÀûÀ¸·Î »èÁ¦µÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì‚­ì œì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 		}catch(Exception e){
-			MessageDialog.openError(getShell(), "»èÁ¦ Error", e.getMessage());
+			MessageDialog.openError(getShell(), "ì‚­ì œ Error", e.getMessage());
 			log.error(e.getMessage());
 		}
 	}
@@ -442,7 +442,7 @@ public class CarEditComposite extends Composite implements CallbackIF{
 	private void select() {
 		ArrayList<TsCarMstDTO> list = mgr.selectTsCarMst(dto);
 		if(list == null || list.size()==0){
-			MessageDialog.openWarning(getShell(), "Á¶È¸ ¿À·ù", "Á¶È¸µÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ì¡°íšŒ ì˜¤ë¥˜", "ì¡°íšŒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		dto = list.get(0);

@@ -61,7 +61,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 	private Button btnSave;
 	private CallbackIF callback;
 
-	private Font defaultLabelFont = SWTResourceManager.getFont("±¼¸²Ã¼", 14, SWT.BOLD);
+	private Font defaultLabelFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 14, SWT.BOLD);
 	private Font defaultInputFont = SWTResourceManager.getFont("Arial", 14, SWT.NORMAL);
 	private Font defaultInputFont2 = SWTResourceManager.getFont("Arial", 12, SWT.NORMAL);
 
@@ -74,9 +74,9 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 	private Text txtLgnPwCfm;
 	private CustomCCombo cboAthGrd;
 	private Button[] btnAuth = new Button[11];
-	private String[] authText = {"¼öÁ¤ - 1Â÷ °è·®ÀÏ½Ã", "¼öÁ¤ - 1Â÷ °è·®Áß·®", "¼öÁ¤ - 2Â÷ °è·®ÀÏ½Ã","¼öÁ¤ - 2Â÷ °è·®Áß·®", "¼öÁ¤ - Â÷·®",
-			"¼öÁ¤ - °¨·®", "¼öÁ¤ - ´Ü°¡/±İ¾×", "¼öÁ¤ - 2Â÷ °è·®Á¤º¸", "µî·Ï - 1È¸ °è·®", "»èÁ¦ - 1Â÷ °è·®Á¤º¸", 
-			"»èÁ¦ - 2Â÷ °è·®Á¤º¸"};
+	private String[] authText = {"ìˆ˜ì • - 1ì°¨ ê³„ëŸ‰ì¼ì‹œ", "ìˆ˜ì • - 1ì°¨ ê³„ëŸ‰ì¤‘ëŸ‰", "ìˆ˜ì • - 2ì°¨ ê³„ëŸ‰ì¼ì‹œ","ìˆ˜ì • - 2ì°¨ ê³„ëŸ‰ì¤‘ëŸ‰", "ìˆ˜ì • - ì°¨ëŸ‰",
+			"ìˆ˜ì • - ê°ëŸ‰", "ìˆ˜ì • - ë‹¨ê°€/ê¸ˆì•¡", "ìˆ˜ì • - 2ì°¨ ê³„ëŸ‰ì •ë³´", "ë“±ë¡ - 1íšŒ ê³„ëŸ‰", "ì‚­ì œ - 1ì°¨ ê³„ëŸ‰ì •ë³´", 
+			"ì‚­ì œ - 2ì°¨ ê³„ëŸ‰ì •ë³´"};
 	private CmUsrInfDTO usr;
 	{
 		// Register as a resource user - SWTResourceManager will
@@ -169,7 +169,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 								btnSaveMouseDown(e);
 							}
 						});
-						btnSave.setText("ÀúÀå");
+						btnSave.setText("ì €ì¥");
 						btnSave.setImage(ImageRepository.getImage(ImageRepository.BTN_SAVE));
 						btnSave.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -177,7 +177,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnDelete = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnDelete.setText("»èÁ¦");
+						btnDelete.setText("ì‚­ì œ");
 						btnDelete.setImage(ImageRepository.getImage(ImageRepository.BTN_DELETE));
 						btnDelete.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -190,7 +190,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 					}
 					{
 						btnClear = new Button(cptButton, SWT.PUSH | SWT.CENTER);
-						btnClear.setText("ÃÊ±âÈ­");
+						btnClear.setText("ì´ˆê¸°í™”");
 						btnClear.setImage(ImageRepository.getImage(ImageRepository.BTN_CLEAR));
 						btnClear.setLayoutData(new GridData(SWT.FILL,
 								SWT.CENTER, true, false));
@@ -219,7 +219,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				round.getControl().setLayout(cptBodyLayout);
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("»ç¿ëÀÚID: ");
+					lblTag.setText("ì‚¬ìš©ìID: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -246,7 +246,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ºñ¹Ğ¹øÈ£: ");
+					lblTag.setText("ë¹„ë°€ë²ˆí˜¸: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -270,7 +270,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ºñ¹øÈ®ÀÎ: ");
+					lblTag.setText("ë¹„ë²ˆí™•ì¸: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -294,7 +294,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("»ç¿ëÀÚ¸í: ");
+					lblTag.setText("ì‚¬ìš©ìëª…: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -315,7 +315,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ÀüÈ­¹øÈ£: ");
+					lblTag.setText("ì „í™”ë²ˆí˜¸: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -339,7 +339,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("±ÇÇÑµî±Ş: ");
+					lblTag.setText("ê¶Œí•œë“±ê¸‰: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -352,7 +352,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				}
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("°³º°±ÇÇÑ: ");
+					lblTag.setText("ê°œë³„ê¶Œí•œ: ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -372,7 +372,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				
 				{
 					final CLabel lblTag = new CLabel(round.getControl(), SWT.RIGHT);
-					lblTag.setText("ºñ    °í: ");
+					lblTag.setText("ë¹„    ê³ : ");
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTag.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 					lblTag.setFont(defaultLabelFont);
@@ -400,7 +400,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 	}
 
 	/**
-	 * ÃÊ±âÈ­ ÇÔ¼ö
+	 * ì´ˆê¸°í™” í•¨ìˆ˜
 	 */
 	private void init() {
 		CommonManager cm = CommonManager.getInstance();
@@ -421,15 +421,15 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 
 	private void btnSaveMouseDown(SelectionEvent evt) {
 		if(DTSConstants.CD_USR_GRD_USER.equals(usr.getAth_grd()) && dto.getUsr_seq() != usr.getUsr_seq() ){
-			MessageDialog.openError(getShell(), "±ÇÇÑ ºÎÁ· ¿À·ù", "Ã³¸® ±ÇÇÑÀÌ ¾ø½À´Ï´Ù. \n\n°ü¸®ÀÚ·Î ·Î±×ÀÎ ÈÄ Ã³¸® ÇÏ¼¼¿ä.");
+			MessageDialog.openError(getShell(), "ê¶Œí•œ ë¶€ì¡± ì˜¤ë¥˜", "ì²˜ë¦¬ ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤. \n\nê´€ë¦¬ìë¡œ ë¡œê·¸ì¸ í›„ ì²˜ë¦¬ í•˜ì„¸ìš”.");
 			return;
 		}
 		if(!validate())
 			return;
 		
-		if(MessageDialog.openConfirm(getShell(), "ÀúÀåÈ®ÀÎ", "ÀúÀåÇÏ½Ã°Ú½À´Ï±î?")){
+		if(MessageDialog.openConfirm(getShell(), "ì €ì¥í™•ì¸", "ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 			try{
-				// µ¥ÀÌÅÍ ÀúÀå
+				// ë°ì´í„° ì €ì¥
 				CmUsrInfDTO pdto = (CmUsrInfDTO)ObjectUtil.getDefaultObject(CmUsrInfDTO.class.getName());
 				pdto.setLgn_id(txtLgnId.getText().trim());
 				pdto.setLgn_pw(txtLgnPw.getText().trim());
@@ -444,12 +444,12 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 				pdto.setNt(txtNt.getText().trim());
 				pdto.setTel(txtTel.getText().trim());
 				
-				// ½Å±ÔÀÏ °æ¿ì
+				// ì‹ ê·œì¼ ê²½ìš°
 				if(dto == null){
 					pdto.setUsr_seq(Integer.parseInt(mgr.selectCmUsrInfKey()));
 					mgr.insertCmUsrInf(pdto);
 				}else{
-				// ¼öÁ¤ÀÏ °æ¿ì
+				// ìˆ˜ì •ì¼ ê²½ìš°
 					pdto.setUsr_seq(dto.getUsr_seq());
 					pdto.setRgn_dt(null);
 					pdto.setRgn_id(null);
@@ -460,10 +460,10 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 					SessionManager.getInstance().getUsr().setAth_grd(pdto.getAth_grd());
 				}
 				callback.callback(CallbackIF.CMD_LIST, null);
-				MessageDialog.openInformation(getShell(), "ÀúÀå¿Ï·á", "Á¤»óÀûÀ¸·Î ÀúÀåµÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì €ì¥ì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				btnClearMouseDown(null);
 			}catch(Exception e){
-				MessageDialog.openError(getShell(), "ÀúÀå Error", e.getMessage());
+				MessageDialog.openError(getShell(), "ì €ì¥ Error", e.getMessage());
 				e.printStackTrace();
 				log.error(e.getMessage());
 			}
@@ -472,37 +472,37 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 
 	private boolean validate() {
 		if("".equals(txtLgnId.getText().trim())){
-			MessageDialog.openWarning(getShell(), "»ç¿ëÀÚID ÀÔ·Â È®ÀÎ", "»ç¿ëÀÚID¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ì‚¬ìš©ìID ì…ë ¥ í™•ì¸", "ì‚¬ìš©ìIDë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtLgnId.setFocus();
 			return false;
 		}
 		if(dto==null){
-			// ½Å±Ôµî·Ï
+			// ì‹ ê·œë“±ë¡
 			if("".equals(txtLgnPw.getText().trim())){
-				MessageDialog.openWarning(getShell(), "ºñ¹Ğ¹øÈ£ ÀÔ·Â È®ÀÎ", "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				MessageDialog.openWarning(getShell(), "ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ í™•ì¸", "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				txtLgnPw.setFocus();
 				return false;
 			}
 		}
 		if(!"".equals(txtLgnPw.getText().trim()) && "".equals(txtLgnPwCfm.getText().trim())){
-			MessageDialog.openWarning(getShell(), "ºñ¹Ğ¹øÈ£ È®ÀÎ ÀÔ·Â È®ÀÎ", "ºñ¹Ğ¹øÈ£ È®ÀÎ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ë¹„ë°€ë²ˆí˜¸ í™•ì¸ ì…ë ¥ í™•ì¸", "ë¹„ë°€ë²ˆí˜¸ í™•ì¸ ê°’ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtLgnPwCfm.setFocus();
 			return false;
 		}
 		if("".equals(txtLgnPw.getText().trim()) && !txtLgnPw.getText().trim().equals(txtLgnPwCfm.getText().trim())){
-			MessageDialog.openWarning(getShell(), "ºñ¹Ğ¹øÈ£ È®ÀÎ ÀÔ·Â È®ÀÎ", "ºñ¹Ğ¹øÈ£¿Í ºñºô¹øÈ£ È®ÀÎ °ªÀÌ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.\n\n´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ë¹„ë°€ë²ˆí˜¸ í™•ì¸ ì…ë ¥ í™•ì¸", "ë¹„ë°€ë²ˆí˜¸ì™€ ë¹„ë¹Œë²ˆí˜¸ í™•ì¸ ê°’ì´ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n\në‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtLgnPwCfm.setText("");
 			txtLgnPw.setFocus();
 			txtLgnPw.selectAll();
 			return false;
 		}
 		if("".equals(txtUsrNm.getText().trim())){
-			MessageDialog.openWarning(getShell(), "»ç¿ëÀÚ¸í ÀÔ·Â È®ÀÎ", "»ç¿ëÀÚ¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ì‚¬ìš©ìëª… ì…ë ¥ í™•ì¸", "ì‚¬ìš©ìëª…ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 			txtUsrNm.setFocus();
 			return false;
 		}
 		if("".equals(cboAthGrd.getText().trim())){
-			MessageDialog.openWarning(getShell(), "»ç¿ëÀÚ µî±Ş ÀÔ·Â È®ÀÎ", "»ç¿ëÀÚµî±ŞÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+			MessageDialog.openWarning(getShell(), "ì‚¬ìš©ì ë“±ê¸‰ ì…ë ¥ í™•ì¸", "ì‚¬ìš©ìë“±ê¸‰ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
 			cboAthGrd.setFocus();
 			return false;
 		}
@@ -510,10 +510,10 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 		CmUsrInfDTO p = new CmUsrInfDTO();
 		if(dto != null)
 		p.setUsr_seq(dto.getUsr_seq());
-		// °ü¸®¹øÈ£ Áßº¹ È®ÀÎ
+		// ê´€ë¦¬ë²ˆí˜¸ ì¤‘ë³µ í™•ì¸
 		p.setLgn_id(txtLgnId.getText().trim());
 		if(mgr.existCmUsrInfLgnId(p)){
-			MessageDialog.openWarning(getShell(), "»ç¿ëÀÚID Áßº¹ È®ÀÎ", "ÀÌ¹Ì »ç¿ëµÈ IDÀÔ´Ï´Ù. ¼öÁ¤ ÈÄ Ã³¸®¹Ù¶ø´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ì‚¬ìš©ìID ì¤‘ë³µ í™•ì¸", "ì´ë¯¸ ì‚¬ìš©ëœ IDì…ë‹ˆë‹¤. ìˆ˜ì • í›„ ì²˜ë¦¬ë°”ëë‹ˆë‹¤.");
 			txtLgnId.setFocus();
 			return false;
 		}
@@ -524,22 +524,22 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 	private void btnDeleteMouseDown(MouseEvent evt) {
 		try{
 			if(DTSConstants.CD_USR_GRD_USER.equals(usr.getAth_grd())){
-				MessageDialog.openError(getShell(), "±ÇÇÑ ºÎÁ· ¿À·ù", "Ã³¸® ±ÇÇÑÀÌ ¾ø½À´Ï´Ù. \n\n°ü¸®ÀÚ·Î ·Î±×ÀÎ ÈÄ Ã³¸® ÇÏ¼¼¿ä.");
+				MessageDialog.openError(getShell(), "ê¶Œí•œ ë¶€ì¡± ì˜¤ë¥˜", "ì²˜ë¦¬ ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤. \n\nê´€ë¦¬ìë¡œ ë¡œê·¸ì¸ í›„ ì²˜ë¦¬ í•˜ì„¸ìš”.");
 				return;
 			}
 			if(dto == null){
 				this.btnClearMouseDown(null);
 				return;
 			}
-			if(MessageDialog.openConfirm(getShell(), "»èÁ¦È®ÀÎ", "µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?")){
+			if(MessageDialog.openConfirm(getShell(), "ì‚­ì œí™•ì¸", "ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?")){
 				dto = (CmUsrInfDTO)ObjectUtil.getUpdateObject(dto);
 				mgr.deleteCmUsrInf(dto);
 				callback.callback(CallbackIF.CMD_LIST, null);
 				btnClearMouseDown(null);
-				MessageDialog.openInformation(getShell(), "»èÁ¦¿Ï·á", "Á¤»óÀûÀ¸·Î »èÁ¦µÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getShell(), "ì‚­ì œì™„ë£Œ", "ì •ìƒì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 		}catch(Exception e){
-			MessageDialog.openError(getShell(), "»èÁ¦ Error", e.getMessage());
+			MessageDialog.openError(getShell(), "ì‚­ì œ Error", e.getMessage());
 			log.error(e.getMessage());
 		}
 	}
@@ -569,7 +569,7 @@ public class UsrInfEditComposite extends Composite implements CallbackIF{
 	private void select() {
 		ArrayList<CmUsrInfDTO> list = mgr.selectUsrInf(dto);
 		if(list == null || list.size()==0){
-			MessageDialog.openWarning(getShell(), "Á¶È¸ ¿À·ù", "Á¶È¸µÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+			MessageDialog.openWarning(getShell(), "ì¡°íšŒ ì˜¤ë¥˜", "ì¡°íšŒëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		dto = list.get(0);

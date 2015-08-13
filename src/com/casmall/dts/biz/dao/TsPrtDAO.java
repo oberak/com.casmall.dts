@@ -6,59 +6,59 @@ import com.casmall.dts.biz.domain.TsPrtAttrDTO;
 import com.casmall.dts.biz.domain.TsPrtInfDTO;
 
 /**
- * ¸¶½ºÅÍ Á¤º¸ °ü¸® DAO
+ * ë§ˆìŠ¤í„° ì •ë³´ ê´€ë¦¬ DAO
  * @author OBERAK
  */
 public interface TsPrtDAO {
 	/**
-	 * Ãâ·ÂÁ¤º¸ Á¶È¸
+	 * ì¶œë ¥ì •ë³´ ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsPrtInfDTO> selectTsPrtInf(TsPrtInfDTO dto);
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ ÀÏ·Ã¹øÈ£ Ã¤¹ø
+	 * ì¶œë ¥ì •ë³´ ì¼ë ¨ë²ˆí˜¸ ì±„ë²ˆ
 	 * @return
 	 */
 	public long selectTsPrtInfKey();
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ µî·Ï
+	 * ì¶œë ¥ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsPrtInf(TsPrtInfDTO dto);
 	
 	/**
-	 * Ãâ·ÂÁ¤º¸ ¼öÁ¤
+	 * ì¶œë ¥ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */
 	public int updateTsPrtInf(TsPrtInfDTO dto);
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ Á¶È¸
+	 * ì¶œë ¥í•­ëª© ì¡°íšŒ
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsPrtAttrDTO> selectTsPrtAttr(TsPrtAttrDTO dto);
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ ÀÏ·Ã¹øÈ£ Ã¤¹ø
+	 * ì¶œë ¥í•­ëª© ì¼ë ¨ë²ˆí˜¸ ì±„ë²ˆ
 	 * @return
 	 */
 	public long selectTsPrtAttrKey(TsPrtAttrDTO dto);
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ µî·Ï
+	 * ì¶œë ¥í•­ëª© ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsPrtAttr(TsPrtAttrDTO dto);
 	
 	/**
-	 * Ãâ·ÂÇ×¸ñ ¼öÁ¤
+	 * ì¶œë ¥í•­ëª© ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */

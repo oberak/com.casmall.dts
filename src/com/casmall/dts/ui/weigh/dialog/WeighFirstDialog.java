@@ -54,11 +54,11 @@ import com.swtdesigner.SWTResourceManager;
 public class WeighFirstDialog extends Dialog {
 	protected static Log logger = LogFactory.getLog(WeighFirstDialog.class);
 			
-	protected final Font titleFont = SWTResourceManager.getFont("±¼¸²Ã¼", 23, SWT.BOLD);
-	protected final Font defaultFont = SWTResourceManager.getFont("±¼¸²Ã¼", 17, SWT.BOLD);
-	protected final Font helpFont = SWTResourceManager.getFont("±¼¸²Ã¼", 12, SWT.NONE);
-	protected final Font btnFont = SWTResourceManager.getFont("±¼¸²Ã¼", 15, SWT.BOLD);
-	protected final Font labelFont = SWTResourceManager.getFont("±¼¸²Ã¼", 14, SWT.NONE);
+	protected final Font titleFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 23, SWT.BOLD);
+	protected final Font defaultFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 17, SWT.BOLD);
+	protected final Font helpFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 12, SWT.NONE);
+	protected final Font btnFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 15, SWT.BOLD);
+	protected final Font labelFont = SWTResourceManager.getFont("êµ´ë¦¼ì²´", 14, SWT.NONE);
 	
 	protected Object result;
 	protected Shell shell;
@@ -87,7 +87,7 @@ public class WeighFirstDialog extends Dialog {
 	 */
 	public WeighFirstDialog(Shell parent, int style) {
 		super(parent, style);
-		setText("1Â÷ °è·®");
+		setText("1ì°¨ ê³„ëŸ‰");
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class WeighFirstDialog extends Dialog {
 		wgtNum.setLayoutData(gd_wgtNum);
 		wgtNum.setFont(defaultFont);
 		wgtNum.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
-		wgtNum.setTitle("°è·® ¹øÈ£: ");
+		wgtNum.setTitle("ê³„ëŸ‰ ë²ˆí˜¸: ");
 		wgtNum.setReadonly();
 		
 		fstDateTime = new DatetimeComposite(compCenter, SWT.NONE);
@@ -188,11 +188,11 @@ public class WeighFirstDialog extends Dialog {
 		fstDateTime.setLayoutData(gd_fstDateTime);
 		fstDateTime.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 		fstDateTime.setFont(defaultFont);
-		fstDateTime.setTitle("°è·® ÀÏ½Ã: ");
+		fstDateTime.setTitle("ê³„ëŸ‰ ì¼ì‹œ: ");
 		new Label(fstDateTime, SWT.NONE);
 		if(!user.hasAuth(DTSConstants.AUTH_EDT_FST_DT))
 			fstDateTime.setReadonly();
-		fstDateTime.addFocusListener(new HelpAdapter("1Â÷ °è·®ÀÏÀÚ ¹× ½Ã°£ ÀÔ·Â ÈÄ Enter."));
+		fstDateTime.addFocusListener(new HelpAdapter("1ì°¨ ê³„ëŸ‰ì¼ì ë° ì‹œê°„ ì…ë ¥ í›„ Enter."));
 		
 		fstWeigh = new WeighInputComposite(compCenter, SWT.NONE);
 		fstWeigh.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
@@ -201,10 +201,10 @@ public class WeighFirstDialog extends Dialog {
 		gd_fstWeigh.heightHint = 40;
 		fstWeigh.setLayoutData(gd_fstWeigh);
 		fstWeigh.setFont(defaultFont, labelFont);
-		fstWeigh.setTitle("ÀÏÂ÷ Áß·®: ");
+		fstWeigh.setTitle("ì¼ì°¨ ì¤‘ëŸ‰: ");
 		if(!user.hasAuth(DTSConstants.AUTH_EDT_FST_WGH))
 			fstWeigh.setReadonly();
-		fstWeigh.addFocusListener(new HelpAdapter("1Â÷ Áß·®À» ÀÔ·ÂÇÏ°Å³ª [Áß·® ÀĞ±â]·Î ¼³Á¤ ÈÄ Enter."));
+		fstWeigh.addFocusListener(new HelpAdapter("1ì°¨ ì¤‘ëŸ‰ì„ ì…ë ¥í•˜ê±°ë‚˜ [ì¤‘ëŸ‰ ì½ê¸°]ë¡œ ì„¤ì • í›„ Enter."));
 		
 		car = new CarComposite(compCenter, SWT.NONE);
 		GridData gd_car = new GridData(SWT.FILL, SWT.FILL, true, true);
@@ -212,8 +212,8 @@ public class WeighFirstDialog extends Dialog {
 		car.setLayoutData(gd_car);
 		car.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 		car.setFont(defaultFont);
-		car.setTitle("Â÷·® ¹øÈ£: ");
-		car.addFocusListener(new HelpAdapter("Â÷·®¹øÈ£¸¦ ÀÔ·ÂÇÏ°Å³ª ¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ Enter."));
+		car.setTitle("ì°¨ëŸ‰ ë²ˆí˜¸: ");
+		car.addFocusListener(new HelpAdapter("ì°¨ëŸ‰ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ê±°ë‚˜ ëª©ë¡ì—ì„œ ì„ íƒ í›„ Enter."));
 		
 		int colorCnt = 0;
 		if(useCust){
@@ -224,8 +224,8 @@ public class WeighFirstDialog extends Dialog {
 			cst.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 			cst.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 			cst.setFont(defaultFont);
-			cst.setTitle("°Å ·¡  Ã³: ");
-			cst.addFocusListener(new HelpAdapter("°Å·¡Ã³¸íÀ» ÀÔ·ÂÇÏ°Å³ª ¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ Enter."));
+			cst.setTitle("ê±° ë˜  ì²˜: ");
+			cst.addFocusListener(new HelpAdapter("ê±°ë˜ì²˜ëª…ì„ ì…ë ¥í•˜ê±°ë‚˜ ëª©ë¡ì—ì„œ ì„ íƒ í›„ Enter."));
 			colorCnt++;
 		}
 		
@@ -240,8 +240,8 @@ public class WeighFirstDialog extends Dialog {
 			else
 				prdt.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 			prdt.setFont(defaultFont);
-			prdt.setTitle("Á¦     Ç°: ");
-			prdt.addFocusListener(new HelpAdapter("Á¦Ç°¸íÀ» ÀÔ·ÂÇÏ°Å³ª ¸ñ·Ï¿¡¼­ ¼±ÅÃ ÈÄ Enter."));
+			prdt.setTitle("ì œ     í’ˆ: ");
+			prdt.addFocusListener(new HelpAdapter("ì œí’ˆëª…ì„ ì…ë ¥í•˜ê±°ë‚˜ ëª©ë¡ì—ì„œ ì„ íƒ í›„ Enter."));
 			colorCnt++;
 		}
 		
@@ -251,8 +251,8 @@ public class WeighFirstDialog extends Dialog {
 		note.setLayoutData(gd_note);
 		note.setForeground(ColorRepository.getColor(ColorRepository.HOME_TITLE));
 		note.setFont(defaultFont);
-		note.setTitle("ºñ     °í: ");
-		note.addFocusListener(new HelpAdapter("ºñ°í ÀÔ·Â ÈÄ Enter."));
+		note.setTitle("ë¹„     ê³ : ");
+		note.addFocusListener(new HelpAdapter("ë¹„ê³  ì…ë ¥ í›„ Enter."));
 		if (colorCnt % 2 == 0)
 			note.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		else
@@ -287,7 +287,7 @@ public class WeighFirstDialog extends Dialog {
 		gd_btnSave.widthHint = 130;
 		btnSave.setLayoutData(gd_btnSave);
 		btnSave.setFont(btnFont);
-		btnSave.setText("Àú  Àå");
+		btnSave.setText("ì €  ì¥");
 		btnSave.setForeground(ColorRepository.getColor(ColorRepository.POPUP_BTN));
 
 		Button btnSaveNPrint = new Button(btn, SWT.NONE);
@@ -305,7 +305,7 @@ public class WeighFirstDialog extends Dialog {
 		gd_btnSaveNPrint.widthHint = 140;
 		btnSaveNPrint.setLayoutData(gd_btnSaveNPrint);
 		btnSaveNPrint.setFont(btnFont);
-		btnSaveNPrint.setText("ÀúÀå/Ãâ·Â");
+		btnSaveNPrint.setText("ì €ì¥/ì¶œë ¥");
 		btnSaveNPrint.setForeground(ColorRepository.getColor(ColorRepository.POPUP_BTN));
 
 		Button btnCancel = new Button(btn, SWT.NONE);
@@ -319,7 +319,7 @@ public class WeighFirstDialog extends Dialog {
 		gd_btnCancel.widthHint = 130;
 		btnCancel.setLayoutData(gd_btnCancel);
 		btnCancel.setFont(btnFont);
-		btnCancel.setText("Ãë  ¼Ò");
+		btnCancel.setText("ì·¨  ì†Œ");
 		btnCancel.setForeground(ColorRepository.getColor(ColorRepository.POPUP_BTN));
 
 		lblHelp = new CLabel(shell, SWT.LEFT);
@@ -327,7 +327,7 @@ public class WeighFirstDialog extends Dialog {
 		GridData gd_lblHelp = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		gd_lblHelp.heightHint = 25;
 		lblHelp.setLayoutData(gd_lblHelp);
-		lblHelp.setText("µµ¿ò¸»:");
+		lblHelp.setText("ë„ì›€ë§:");
 		lblHelp.setFont(helpFont);
 		lblHelp.setBackgroundImage(ImageRepository.getImage(ImageRepository.POPUP_HELP_BG));
 		
@@ -374,20 +374,20 @@ public class WeighFirstDialog extends Dialog {
 		TsWgtInfDTO dto = null;
 		if(!validate())
 			return dto;
-		boolean rtn = MessageDialog.openConfirm(shell, "ÀúÀå È®ÀÎ", "1Â÷ °è·® Á¤º¸¸¦ ÀúÀåÇÏ½Ã°Ú½À´Ï±î?");
+		boolean rtn = MessageDialog.openConfirm(shell, "ì €ì¥ í™•ì¸", "1ì°¨ ê³„ëŸ‰ ì •ë³´ë¥¼ ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		if(rtn){
 			try {
 				dto = saveData();
 				result = new Object();
 				
-				// seq Áõ°¡ ¹× ÀúÀå
+				// seq ì¦ê°€ ë° ì €ì¥
 				preferences.setValue(DTSPreConstants.DATA_WEIGH_CD, ObjectUtil.nextWeighSeq()+1);
 				preferences.setValue(DTSPreConstants.DATA_WEIGH_CD_NEXT, ObjectUtil.nextWeighCd());
 				preferences.save();
 				shell.close();
             } catch (IOException e) {
             	e.printStackTrace();
-            	MessageDialog.openError(shell, "µ¥ÀÌÅÍ ÀúÀå ¿À·ù", "µ¥ÀÌÅÍ ÀúÀå Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n"+e.getMessage());
+            	MessageDialog.openError(shell, "ë°ì´í„° ì €ì¥ ì˜¤ë¥˜", "ë°ì´í„° ì €ì¥ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n"+e.getMessage());
             }
 		}
 		return dto;
@@ -402,33 +402,33 @@ public class WeighFirstDialog extends Dialog {
 		TsMstManager tmm = new TsMstManager();
 		TsWgtInfManager twim = new TsWgtInfManager();
 		
-		// 1Â÷ °è·® Á¤º¸
+		// 1ì°¨ ê³„ëŸ‰ ì •ë³´
 		TsWgtInfDTO wgtDto = (TsWgtInfDTO)ObjectUtil.getDefaultObject(TsWgtInfDTO.class.getName());
 
-		// Â÷·®¹øÈ£ : ÇÊ¼ö°ª
+		// ì°¨ëŸ‰ë²ˆí˜¸ : í•„ìˆ˜ê°’
 		TsCarMstDTO carDto = (TsCarMstDTO)ObjectUtil.getDefaultObject(TsCarMstDTO.class.getName());
 		carDto.setCar_cd(car.getValue(CarComposite.KEY_ID));
 		carDto.setCar_num(car.getValue(CarComposite.KEY_NAME));
 		if(carDto.getCar_cd() == null || carDto.getCar_cd().length() == 0){
-			// Á¸Àç¿©ºÎ È®ÀÎ
+			// ì¡´ì¬ì—¬ë¶€ í™•ì¸
 			carDto.setMgt_yn(DTSConstants.FLAG_N);
 			ArrayList<TsCarMstDTO> list = tmm.selectTsCarMst(carDto);
 			if(list != null && list.size() > 0){
-				// µ¿ÀÏ¸íÀÇ ¹Ì°ü¸® Â÷·®ÀÌ Á¸ÀçÇÏ¸é ÇØ´ç Key »ç¿ë
+				// ë™ì¼ëª…ì˜ ë¯¸ê´€ë¦¬ ì°¨ëŸ‰ì´ ì¡´ì¬í•˜ë©´ í•´ë‹¹ Key ì‚¬ìš©
 				wgtDto.setCar_cd(list.get(0).getCar_cd());
-				carDto = null; // ±âÁ¸ key »ç¿ë
+				carDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 			}else{
-				// Ã¤¹ø - ½Å±Ô »ı¼º
+				// ì±„ë²ˆ - ì‹ ê·œ ìƒì„±
 				carDto.setCar_cd(tmm.selectTsCarMstKey());
 				wgtDto.setCar_cd(carDto.getCar_cd());
 			}
 		}else{
 			wgtDto.setCar_cd(carDto.getCar_cd());
-			carDto = null; // ±âÁ¸ key »ç¿ë
+			carDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 		}
 		
 
-		// °Å·¡Ã³Á¤º¸ : Option
+		// ê±°ë˜ì²˜ì •ë³´ : Option
 		TsCstMstDTO cstDto = null;
 		if(useCust){
 			cstDto = (TsCstMstDTO)ObjectUtil.getDefaultObject(TsCstMstDTO.class.getName());
@@ -436,28 +436,28 @@ public class WeighFirstDialog extends Dialog {
 			cstDto.setCst_nm(cst.getValue(CstComposite.KEY_NAME));
 			if(cstDto.getCst_nm() != null && cstDto.getCst_nm().length()>0){
 				if(cstDto.getCst_cd() == null || cstDto.getCst_cd().length() == 0){
-					// Á¸Àç¿©ºÎ È®ÀÎ
+					// ì¡´ì¬ì—¬ë¶€ í™•ì¸
 					cstDto.setMgt_yn(DTSConstants.FLAG_N);
 					ArrayList<TsCstMstDTO> list = tmm.selectTsCstMst(cstDto);
 					if(list != null && list.size() > 0){
-						// µ¿ÀÏ¸íÀÇ ¹Ì°ü¸® Â÷·®ÀÌ Á¸ÀçÇÏ¸é ÇØ´ç Key »ç¿ë
+						// ë™ì¼ëª…ì˜ ë¯¸ê´€ë¦¬ ì°¨ëŸ‰ì´ ì¡´ì¬í•˜ë©´ í•´ë‹¹ Key ì‚¬ìš©
 						wgtDto.setCst_cd(list.get(0).getCst_cd());
-						cstDto = null; // ±âÁ¸ key »ç¿ë
+						cstDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 					}else{
-						// Ã¤¹ø - ½Å±Ô »ı¼º
+						// ì±„ë²ˆ - ì‹ ê·œ ìƒì„±
 						cstDto.setCst_cd(tmm.selectTsCstMstKey());
 						wgtDto.setCst_cd(cstDto.getCst_cd());
 					}
 				}else{
 					wgtDto.setCst_cd(cstDto.getCst_cd());
-					cstDto = null; // ±âÁ¸ key »ç¿ë
+					cstDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 				}
 			}else{
-				cstDto = null; // °Å·¡Ã³ ¹Ì ¼±ÅÃ
+				cstDto = null; // ê±°ë˜ì²˜ ë¯¸ ì„ íƒ
 			}
 		}
 		
-		// Á¦Ç°Á¤º¸ : Option
+		// ì œí’ˆì •ë³´ : Option
 		TsPrdtMstDTO prdtDto = null;
 		if(usePrdt){
 			prdtDto = (TsPrdtMstDTO)ObjectUtil.getDefaultObject(TsPrdtMstDTO.class.getName());
@@ -465,17 +465,17 @@ public class WeighFirstDialog extends Dialog {
 			prdtDto.setPrdt_nm(prdt.getValue(PrdtComposite.KEY_NAME));
 			if(prdtDto.getPrdt_nm() != null && prdtDto.getPrdt_nm().length() > 0){
 				if(prdtDto.getPrdt_cd() == null || prdtDto.getPrdt_cd().length() == 0){
-					// Á¸Àç¿©ºÎ È®ÀÎ
+					// ì¡´ì¬ì—¬ë¶€ í™•ì¸
 					prdtDto.setMgt_yn(DTSConstants.FLAG_N);
 					ArrayList<TsPrdtMstDTO> list = tmm.selectTsPrdtMst(prdtDto);
 					if(list != null && list.size() > 0){
-						// µ¿ÀÏ¸íÀÇ ¹Ì°ü¸® Â÷·®ÀÌ Á¸ÀçÇÏ¸é ÇØ´ç Key »ç¿ë
+						// ë™ì¼ëª…ì˜ ë¯¸ê´€ë¦¬ ì°¨ëŸ‰ì´ ì¡´ì¬í•˜ë©´ í•´ë‹¹ Key ì‚¬ìš©
 						wgtDto.setPrdt_cd(list.get(0).getPrdt_cd());
 						if(preferences.getBoolean(DTSPreConstants.DATA_PRICE_LOAD))
 							wgtDto.setUnt_prc(list.get(0).getUnt_prc());
-						prdtDto = null; // ±âÁ¸ key »ç¿ë
+						prdtDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 					}else{
-						// Ã¤¹ø - ½Å±Ô »ı¼º
+						// ì±„ë²ˆ - ì‹ ê·œ ìƒì„±
 						prdtDto.setPrdt_cd(tmm.selectTsPrdtMstKey());
 						wgtDto.setPrdt_cd(prdtDto.getPrdt_cd());
 					}
@@ -483,10 +483,10 @@ public class WeighFirstDialog extends Dialog {
 					if(preferences.getBoolean(DTSPreConstants.DATA_PRICE_LOAD))
 						wgtDto.setUnt_prc(Integer.parseInt(prdt.getValue(PrdtComposite.KEY_UP)));
 					wgtDto.setPrdt_cd(prdtDto.getPrdt_cd());
-					prdtDto = null; // ±âÁ¸ key »ç¿ë
+					prdtDto = null; // ê¸°ì¡´ key ì‚¬ìš©
 				}
 			}else{
-				prdtDto = null; // Á¦Ç° ¹Ì ¼±ÅÃ
+				prdtDto = null; // ì œí’ˆ ë¯¸ ì„ íƒ
 			}
 		}
 
@@ -505,12 +505,12 @@ public class WeighFirstDialog extends Dialog {
 		wgtDto.setWgt_stat_cd(DTSConstants.WGT_STAT_FST);
 		
 		if(logger.isDebugEnabled()){
-			logger.debug("1Â÷°è·® ÀúÀå"+wgtDto);
+			logger.debug("1ì°¨ê³„ëŸ‰ ì €ì¥"+wgtDto);
 		}
 		
-	    // ¹Ì°ü¸® ¸¶½ºÅÍ Á¤º¸(Â÷·®,°Å·¡Ã³,Á¦Ç°) ¼± ÀúÀå Ã³¸®
+	    // ë¯¸ê´€ë¦¬ ë§ˆìŠ¤í„° ì •ë³´(ì°¨ëŸ‰,ê±°ë˜ì²˜,ì œí’ˆ) ì„  ì €ì¥ ì²˜ë¦¬
 		tmm.insertTsMst(carDto, cstDto, prdtDto);
-		// °è·®Á¤º¸ µî·Ï
+		// ê³„ëŸ‰ì •ë³´ ë“±ë¡
 		twim.insertTsWgtInf(wgtDto);
 		return wgtDto;
     }
@@ -521,7 +521,7 @@ public class WeighFirstDialog extends Dialog {
 	 */
 	private boolean validate(){
 		if("".equals(car.getValue(CarComposite.KEY_NAME))){
-			MessageDialog.openWarning(shell,"Â÷·® ¼±ÅÃ È®ÀÎ","Â÷·®¹øÈ£°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openWarning(shell,"ì°¨ëŸ‰ ì„ íƒ í™•ì¸","ì°¨ëŸ‰ë²ˆí˜¸ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			car.setFocus();
 			return false;
 		}
@@ -536,7 +536,7 @@ public class WeighFirstDialog extends Dialog {
 	}
 	
 	private void setMessage(String msg){
-		lblHelp.setText("µµ¿ò¸»:"+msg);
+		lblHelp.setText("ë„ì›€ë§:"+msg);
 	}
 	
 	class HelpAdapter extends FocusAdapter{

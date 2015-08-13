@@ -54,7 +54,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
     
     public void preWindowOpen() {
         IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
-        // ¿©µµøÏ √ ±‚ ≈©±‚ ¡ˆ¡§(Full size)
+        // ÏúàÎèÑÏö∞ Ï¥àÍ∏∞ ÌÅ¨Í∏∞ ÏßÄÏ†ï(Full size)
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         configurer.setInitialSize(new Point(dim.width, dim.height));
     }
@@ -120,7 +120,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
         weighListAction.setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.TOOLBAR_REPORT_WEIGH_LIST));
         tbm.add(weighListAction);
 
-        // TODO INFO toolbar ∏ﬁ¥∫ √ﬂ∞°
+        // TODO INFO toolbar Î©îÎâ¥ Ï∂îÍ∞Ä
 
         tbm.update(true);
        

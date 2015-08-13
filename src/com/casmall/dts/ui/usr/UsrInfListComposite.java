@@ -82,7 +82,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 
 	private GridTableViewer gridViewer;
 	private String[] colProp = { "usr_seq", "ath_grd", "no", "lgn_id", "usr_nm", "tel", "ath_grd_nm", "nt"};
-	private String[] colName = { "", "", "No", "ID", "»ç¿ëÀÚ¸í", "¿¬¶ôÃ³", "µî±Ş", "ºñ°í"};
+	private String[] colName = { "", "", "No", "ID", "ì‚¬ìš©ìëª…", "ì—°ë½ì²˜", "ë“±ê¸‰", "ë¹„ê³ "};
 	private int[] colWidth = { 0, 0, 8, 15, 15, 20, 15, 28};
 	private int[] colAlign = { SWT.NONE, SWT.NONE, SWT.CENTER, SWT.LEFT, SWT.LEFT, SWT.CENTER, SWT.CENTER, SWT.LEFT};
 
@@ -151,7 +151,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 			this.setSize(1010, 418);
 			{
 				final CLabel lblTitle = new CLabel(this, SWT.NONE);
-				lblTitle.setText("»ç¿ëÀÚ °ü¸®");
+				lblTitle.setText("ì‚¬ìš©ì ê´€ë¦¬");
 				lblTitle.setImage(ImageRepository.getImage(ImageRepository.ICO_SELECT));
 				lblTitle.setFont(titleFont);
 				lblTitle.setForeground(ColorRepository.getColor(ColorRepository.TEXT_TITLE));
@@ -198,7 +198,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 				{
 					CLabel lblTag = new CLabel(ctTop, SWT.NONE);
 					lblTag.setFont(defaultFont);
-					lblTag.setText("°Ë»ö¾î: ");
+					lblTag.setText("ê²€ìƒ‰ì–´: ");
 					GridData lblTermLData = new GridData(SWT.CENTER, SWT.CENTER, false, true);
 					lblTag.setImage(ImageRepository.getImage(ImageRepository.DOT_SELECT));
 					lblTermLData.heightHint = 17;
@@ -228,7 +228,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 					btnSelect.setLayoutData(btnSelectLData);
 					btnSelect.setImage(ImageRepository.getImage(ImageRepository.BTN_SELECT));
 					btnSelect.setFont(defaultFont);
-					btnSelect.setText("Á¶È¸");
+					btnSelect.setText("ì¡°íšŒ");
 					btnSelect.addMouseListener(new MouseAdapter() {
 						public void mouseDown(MouseEvent evt) {
 							btnSelectMouseDown(evt);
@@ -243,7 +243,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 					btnExport.setLayoutData(btnSelectLData);
 					btnExport.setImage(ImageRepository.getImage(ImageRepository.BTN_EXPORT));
 					btnExport.setFont(defaultFont);
-					btnExport.setText("¿¢¼¿");
+					btnExport.setText("ì—‘ì…€");
 					btnExport.addMouseListener(new MouseAdapter() {
 						public void mouseDown(MouseEvent evt) {
 							btnExportMouseDown(evt);
@@ -258,7 +258,7 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 					btnClose.setLayoutData(btnSelectLData);
 					btnClose.setImage(ImageRepository.getImage(ImageRepository.BTN_CLOSE));
 					btnClose.setFont(defaultFont);
-					btnClose.setText("´İ±â");
+					btnClose.setText("ë‹«ê¸°");
 					btnClose.addMouseListener(new MouseAdapter() {
 						public void mouseDown(MouseEvent evt) {
 							IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
@@ -421,18 +421,18 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 	}
 
 	/**
-	 * Á¶È¸¹öÆ° Å¬¸¯
+	 * ì¡°íšŒë²„íŠ¼ í´ë¦­
 	 * @param evt
 	 */
 	private void btnSelectMouseDown(MouseEvent evt) {
 		selectData();
 		if (listData == null || listData.size() == 0) {
-			MessageDialog.openInformation(getShell(), "Á¶È¸ °á°ú", "Á¶È¸µÈ ÀÚ·á°¡ ¾ø½À´Ï´Ù.");
+			MessageDialog.openInformation(getShell(), "ì¡°íšŒ ê²°ê³¼", "ì¡°íšŒëœ ìë£Œê°€ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
 	
 	/**
-	 * Á¶È¸ Ã³¸®
+	 * ì¡°íšŒ ì²˜ë¦¬
 	 */
 	private void selectData(){
 		try{
@@ -447,13 +447,13 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 		}catch(Exception e){
 			log.error(e.getMessage());
 			e.printStackTrace();
-			MessageDialog.openError(getShell(), "Á¶È¸ Error", e.getMessage());
+			MessageDialog.openError(getShell(), "ì¡°íšŒ Error", e.getMessage());
 		}
 	}
 	
 	private void btnExportMouseDown(MouseEvent evt){
 		if(listData == null){
-			MessageDialog.openInformation(this.getShell(), "¿¢¼¿", "µ¥ÀÌÅÍ°¡ Á¶È¸µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			MessageDialog.openInformation(this.getShell(), "ì—‘ì…€", "ë°ì´í„°ê°€ ì¡°íšŒë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		FileDialog dialog = new FileDialog(this.getShell(), SWT.SAVE);
@@ -464,11 +464,11 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 	    if (saveFile == null) {
 			return;
 		}
-	    saveExport(saveFile, "»ç¿ëÀÚ Á¤º¸");
+	    saveExport(saveFile, "ì‚¬ìš©ì ì •ë³´");
 	}
 	
 	/**
-	 * Excel ÀúÀå
+	 * Excel ì €ì¥
 	 * @param saveFile
 	 */
 	private void saveExport(String saveFile, String... str) {
@@ -485,9 +485,9 @@ public class UsrInfListComposite extends Composite implements CallbackIF{
 
 		try {
 			w.write(export);
-			MessageDialog.openInformation(this.getShell(), "¿¢¼¿", "Excel·Î ÀúÀåµÇ¾ú½À´Ï´Ù.");
+			MessageDialog.openInformation(this.getShell(), "ì—‘ì…€", "Excelë¡œ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (IOException e) {
-			MessageDialog.openError(this.getShell(), "Export Fail", "[Error] ÀúÀåµÇÁö ¾Ê¾Ò½À´Ï´Ù.\n\n"+e.getMessage());
+			MessageDialog.openError(this.getShell(), "Export Fail", "[Error] ì €ì¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n\n"+e.getMessage());
 		}
 	}
 

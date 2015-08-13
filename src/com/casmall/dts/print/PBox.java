@@ -72,7 +72,7 @@ public class PBox {
 	}
 
 	/**
-	 * get Point setParameters ÀÌÈÄ¿¡ È£ÃâµÇ¾î¾ß ÇÔ.
+	 * get Point setParameters ì´í›„ì— í˜¸ì¶œë˜ì–´ì•¼ í•¨.
 	 * 
 	 * @return
 	 */
@@ -103,7 +103,7 @@ public class PBox {
 	}
 
 	/**
-	 * ³ôÀÌ ±¸ÇÏ±â
+	 * ë†’ì´ êµ¬í•˜ê¸°
 	 * 
 	 * @return
 	 */
@@ -114,7 +114,7 @@ public class PBox {
 	}
 
 	/**
-	 * ³Êºñ ±¸ÇÏ±â ÁÖ¾îÁø ³Êºñ°¡ ¾øÀ» °æ¿ì ÃÖ´ë°ª return
+	 * ë„ˆë¹„ êµ¬í•˜ê¸° ì£¼ì–´ì§„ ë„ˆë¹„ê°€ ì—†ì„ ê²½ìš° ìµœëŒ€ê°’ return
 	 * 
 	 * @return
 	 */

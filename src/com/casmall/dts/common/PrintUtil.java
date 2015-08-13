@@ -25,6 +25,7 @@ import com.casmall.dts.biz.mgr.TsPrtManager;
 import com.casmall.dts.print.PBox;
 import com.casmall.dts.print.PDocument;
 import com.casmall.dts.print.PLine;
+import com.casmall.dts.print.PQRCode;
 import com.casmall.dts.print.PTextBox;
 import com.casmall.dts.ui.preferences.DTSPreConstants;
 
@@ -32,8 +33,8 @@ public class PrintUtil {
 	protected static Log logger = LogFactory.getLog(PrintUtil.class);
 	protected static ScopedPreferenceStore preferences = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, DTSConstants.PLUGIN_ID);
 	/**
-	 * String(red|green|blue)À» RGB·Î º¯È¯
-	 * @param src Pipe(|)·Î ±¸ºĞµÈ ¹®ÀÚ¿­
+	 * String(red|green|blue)ì„ RGBë¡œ ë³€í™˜
+	 * @param src Pipe(|)ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´
 	 * @return RGB
 	 */
 	public static RGB getRGB(String src){
@@ -51,14 +52,14 @@ public class PrintUtil {
 	
 	/**
 	 * 
-	 * @param src Pipe(|)·Î ±¸ºĞµÈ ¹®ÀÚ¿­
+	 * @param src Pipe(|)ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´
 	 * @return Rectangle
 	 */
 	/**
-	 * String(x|y|width|height)À» Rectangle·Î º¯È¯
+	 * String(x|y|width|height)ì„ Rectangleë¡œ ë³€í™˜
 	 * 
 	 * @param src
-	 * @param pixelCm pixel º¯È¯ ±âÁØ
+	 * @param pixelCm pixel ë³€í™˜ ê¸°ì¤€
 	 * @return
 	 */
 	public static Rectangle getRectangle(String src, Point pixelCm){
@@ -72,8 +73,8 @@ public class PrintUtil {
 	}
 	
 	/**
-	 * Pipe(|)·Î ±¸ºĞµÈ ¹®ÀÚ¿­À» Double array·Î º¯È¯
-	 * @param src Pipe(|)·Î ±¸ºĞµÈ ¹®ÀÚ¿­
+	 * Pipe(|)ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´ì„ Double arrayë¡œ ë³€í™˜
+	 * @param src Pipe(|)ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´
 	 * @return Double ArrayList
 	 */
 	public static ArrayList<Double> splitWithPipe(String src){
@@ -133,7 +134,7 @@ public class PrintUtil {
 			ArrayList<Double> area = StringUtil.splitWithPipe(dto.getArea());
 			if(area.size() != 4){
 				if(logger.isErrorEnabled())
-					logger.error("Print ¿µ¿ª µ¥ÀÌÅÍ ÀÌ»ó["+dto.getAttr_nm()+"] - size : "+area.size());
+					logger.error("Print ì˜ì—­ ë°ì´í„° ì´ìƒ["+dto.getAttr_nm()+"] - size : "+area.size());
 				for(int i= area.size();i<=4;i++){
 					area.add(0.0);
 				}
@@ -166,13 +167,30 @@ public class PrintUtil {
 				}
 				new PLine(doc, dto.getStyle(),area.get(0)+prtDto.getBss_cdnt_x(), area.get(1)+prtDto.getBss_cdnt_y(), x, y, lineColor);
 			}else if(DTSConstants.CD_ATTR_FLAG_IMAGE.equals(dto.getAttr_flg_cd())){
-				// TODO LOW ÀÌ¹ÌÁö Ãâ·Â ±¸Çö
+				// TODO LOW ì´ë¯¸ì§€ ì¶œë ¥ êµ¬í˜„
 				
 			}else if(DTSConstants.CD_ATTR_FLAG_QRCODE.equals(dto.getAttr_flg_cd())){
-				// TODO QR Code print
-				// °¡·Îx¼¼·Î
-				// µ¥ÀÌÅÍ
-				// À§Ä¡ x,y
+				// QR Code print
+				prtStr = "ì „í‘œë²ˆí˜¸:"+data.getWgt_num();
+				prtStr += "\nì°¨ëŸ‰ë²ˆí˜¸:"+data.getCar_num();
+				if(preferences.getBoolean(DTSPreConstants.DATA_CUST_FLAG))
+					prtStr += "\nê±°ë˜ì²˜ëª…:"+data.getCst_nm();
+				if(preferences.getBoolean(DTSPreConstants.DATA_PRDT_FLAG))
+					prtStr += "\nìƒí’ˆëª…:"+data.getPrdt_nm();
+				prtStr += "\n1ì°¨ê³„ëŸ‰ì¼ì‹œ:"+StringUtil.getString(data.getFst_wgt_dt(), "yyyy-MM-dd HH:mm");
+				prtStr += "\n1ì°¨ê³„ëŸ‰:"+StringUtil.getString(data.getFst_wgh(),"#,##0");
+				prtStr += "\n2ì°¨ê³„ëŸ‰ì¼ì‹œ:"+StringUtil.getString(data.getScnd_wgt_dt(), "yyyy-MM-dd HH:mm");
+				prtStr += "\n2ì°¨ê³„ëŸ‰:"+StringUtil.getString(data.getScnd_wgh(),"#,##0");
+				if(preferences.getBoolean(DTSPreConstants.DATA_PRICE_FLAG)){
+					prtStr += "\në‹¨ê°€:"+StringUtil.getString(data.getUnt_prc(),"#,##0");
+					prtStr += "\nê¸ˆì•¡:"+StringUtil.getString(data.getAmt(),"#,##0");
+				}
+				if(preferences.getBoolean(DTSPreConstants.DATA_MINUS_FLAG))
+					prtStr += "\nê°ëŸ‰:"+StringUtil.getString(data.getDscnt(),"#,##0");
+				prtStr += "\nì‹¤ì¤‘ëŸ‰:"+StringUtil.getString(data.getRl_wgh(),"#,##0");
+				prtStr += "\në¹„ê³ :"+data.getNt();
+				
+				new PQRCode(doc, dto.getStyle(), area.get(0)+prtDto.getBss_cdnt_x(), area.get(1)+prtDto.getBss_cdnt_y(), area.get(2), area.get(3), prtStr);
 			}else{
 				if(logger.isErrorEnabled())
 					logger.error("field type error:"+dto.getAttr_flg_cd());
@@ -180,7 +198,7 @@ public class PrintUtil {
 		}
 		for(int i=0;i<prtCnt;i++){
 			if(printer == null){
-				// °¡·Î/¼¼·Î ÀÎ¼â ¼³Á¤
+				// ê°€ë¡œ/ì„¸ë¡œ ì¸ì‡„ ì„¤ì •
 				if(DTSConstants.FLAG_Y.equals(prtDto.getWdt_prt_yn())){
 					doc.print(PrinterData.LANDSCAPE);
 				}else{
@@ -193,7 +211,7 @@ public class PrintUtil {
 	}
 	
 	/**
-	 * °´Ã¼¿¡¼­ µ¥ÀÌÅÍ ÃßÃâ
+	 * ê°ì²´ì—ì„œ ë°ì´í„° ì¶”ì¶œ
 	 * 
 	 * @param obj
 	 * @param attr

@@ -48,7 +48,7 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 	private Composite compPrtForm;
 	private TsPrtManager pm;
 	
-	private Font defaultLabelFont = SWTResourceManager.getFont("±¼¸²", 12, SWT.NORMAL);
+	private Font defaultLabelFont = SWTResourceManager.getFont("êµ´ë¦¼", 12, SWT.NORMAL);
 	private ArrayList<TsPrtInfDTO> prtList;
 
 	CommonManager cm = CommonManager.getInstance();
@@ -73,23 +73,23 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 
 		Group gGeneral = new Group(container, SWT.NONE);
 		gGeneral.setFont(defaultLabelFont);
-		gGeneral.setText("ÀÏ ¹İ");
+		gGeneral.setText("ì¼ ë°˜");
 		gGeneral.setLayout(new GridLayout(1, false));
 		gGeneral.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		compPrtConfirm = new Composite(gGeneral, SWT.NONE);
 		compPrtConfirm.setFont(defaultLabelFont);
-		addField(new BooleanFieldEditor(DTSPreConstants.GN_PRINT_CONFIRM, "ÀüÇ¥ Ãâ·Â ½Ã È®ÀÎ Ã¢ »ç¿ë", BooleanFieldEditor.DEFAULT,
+		addField(new BooleanFieldEditor(DTSPreConstants.GN_PRINT_CONFIRM, "ì „í‘œ ì¶œë ¥ ì‹œ í™•ì¸ ì°½ ì‚¬ìš©", BooleanFieldEditor.DEFAULT,
 		        compPrtConfirm));
 
 		compPrtCnt = new Composite(gGeneral, SWT.NONE);
 		compPrtCnt.setFont(defaultLabelFont);
-		addField(new IntegerFieldEditor(DTSPreConstants.GN_PRINT_COUNT, "ÀüÇ¥ Ãâ·Â ¸Å¼ö", compPrtCnt));
+		addField(new IntegerFieldEditor(DTSPreConstants.GN_PRINT_COUNT, "ì „í‘œ ì¶œë ¥ ë§¤ìˆ˜", compPrtCnt));
 		
 		compPrtForm = new Composite(gGeneral, SWT.NONE);
 		compPrtForm.setFont(defaultLabelFont );
 		compPrtForm.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 3, 1));
-		prtForm =new ComboFieldEditor(DTSPreConstants.GN_PRINT_FORM, "Ãâ·Â ¾ç½Ä", getPrtType(), 
+		prtForm =new ComboFieldEditor(DTSPreConstants.GN_PRINT_FORM, "ì¶œë ¥ ì–‘ì‹", getPrtType(), 
 		        compPrtForm); 
 		addField(prtForm);
 
@@ -116,7 +116,7 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 
 		copmAutoLogin = new Composite(gAutoLogin, SWT.NONE);
 		copmAutoLogin.setFont(defaultLabelFont);
-		autoLoginFlag = new BooleanFieldEditor(DTSPreConstants.GN_AUTO_LOGIN_FLAG, "ÀÚµ¿ ·Î±×ÀÎ", BooleanFieldEditor.DEFAULT,
+		autoLoginFlag = new BooleanFieldEditor(DTSPreConstants.GN_AUTO_LOGIN_FLAG, "ìë™ ë¡œê·¸ì¸", BooleanFieldEditor.DEFAULT,
 		        copmAutoLogin);
 		copmAutoLogin.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		addField(autoLoginFlag);
@@ -131,12 +131,12 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 
 		Composite compUseSummary = new Composite(gHome, SWT.NONE);
 		compUseSummary.setFont(defaultLabelFont);
-		addField(new BooleanFieldEditor(DTSPreConstants.GN_HOME_SUMMARY, "¸ŞÀÎ(Home) È­¸é¿¡ °è·® ¿ä¾àÁ¤º¸ Ç¥½Ã", BooleanFieldEditor.DEFAULT,
+		addField(new BooleanFieldEditor(DTSPreConstants.GN_HOME_SUMMARY, "ë©”ì¸(Home) í™”ë©´ì— ê³„ëŸ‰ ìš”ì•½ì •ë³´ í‘œì‹œ", BooleanFieldEditor.DEFAULT,
 				compUseSummary));
 
 		Composite compUseScnd = new Composite(gHome, SWT.NONE);
 		compUseScnd.setFont(defaultLabelFont);
-		addField(new BooleanFieldEditor(DTSPreConstants.GN_HOME_SCND, "¸ŞÀÎ(Home) È­¸é¿¡ 2Â÷ °è·® ¸ñ·Ï Ç¥½Ã", BooleanFieldEditor.DEFAULT,
+		addField(new BooleanFieldEditor(DTSPreConstants.GN_HOME_SCND, "ë©”ì¸(Home) í™”ë©´ì— 2ì°¨ ê³„ëŸ‰ ëª©ë¡ í‘œì‹œ", BooleanFieldEditor.DEFAULT,
 				compUseScnd));
 
 		// comInfo ===========================================================
@@ -149,28 +149,28 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 		Composite copmComName = new Composite(gComInfo, SWT.NONE);
 		copmComName.setFont(defaultLabelFont);
 		copmComName.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-		comName = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "È¸»ç¸í:", 20, copmComName);
+		comName = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "íšŒì‚¬ëª…:", 20, copmComName);
 		comName.getTextControl(copmComName).setTextLimit(50);
 		addField(comName);		
 		
 		Composite copmComAdd = new Composite(gComInfo, SWT.NONE);
 		copmComAdd.setFont(defaultLabelFont);
 		copmComAdd.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-		comAdd = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "È¸»çÁÖ¼Ò:", 20, copmComAdd);
+		comAdd = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "íšŒì‚¬ì£¼ì†Œ:", 20, copmComAdd);
 		comAdd.getTextControl(copmComAdd).setTextLimit(100);
 		addField(comAdd);	
 		
 		Composite copmComTel = new Composite(gComInfo, SWT.NONE);
 		copmComTel.setFont(defaultLabelFont);
 		copmComTel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-		comTel = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "È¸»ç Tel:", 20, copmComTel);
+		comTel = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "íšŒì‚¬ Tel:", 20, copmComTel);
 		comTel.getTextControl(copmComTel).setTextLimit(30);
 		addField(comTel);	
 		
 		Composite copmComFax = new Composite(gComInfo, SWT.NONE);
 		copmComFax.setFont(defaultLabelFont);
 		copmComFax.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-		comFax = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "È¸»ç Fax:", 20, copmComFax);
+		comFax = new StringFieldEditor(DTSPreConstants.GN_EXT_COM_NAME, "íšŒì‚¬ Fax:", 20, copmComFax);
 		comFax.getTextControl(copmComFax).setTextLimit(30);
 		addField(comFax);	
 		return container;
@@ -241,7 +241,7 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 	}
 	
 	private boolean saveValue(){
-		// data ÀúÀå
+		// data ì €ì¥
 		ArrayList<CmCdDTO> list = new ArrayList<CmCdDTO>();
 
 		try {
@@ -278,7 +278,7 @@ public class GeneralPrePage extends FieldLayoutPreferencePage implements IWorkbe
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			MessageDialog.openError(this.getShell(), "ÀúÀå¿À·ù", "µ¥ÀÌÅÍ ÀúÀå Áß ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.\n\n" + e.getMessage());
+			MessageDialog.openError(this.getShell(), "ì €ì¥ì˜¤ë¥˜", "ë°ì´í„° ì €ì¥ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.\n\n" + e.getMessage());
 			return false;
 		}
 		

@@ -15,8 +15,8 @@ public class PrdtMgtAction extends Action{
 	public PrdtMgtAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("Á¦Ç° Á¤º¸ °ü¸®");
-		setToolTipText("Á¦Ç° Á¤º¸¸¦ °ü¸®ÇÕ´Ï´Ù.");
+		setText("ì œí’ˆ ì •ë³´ ê´€ë¦¬");
+		setToolTipText("ì œí’ˆ ì •ë³´ë¥¼ ê´€ë¦¬í•©ë‹ˆë‹¤.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_BASIS_PRDTMGT));
 	}
 

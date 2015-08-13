@@ -6,47 +6,47 @@ import com.casmall.dts.biz.domain.TsWgtInfDTO;
 
 public interface TsWgtInfDAO {
 	/**
-	 * °è·® Á¤º¸ Á¶È¸(1Â÷,2Â÷)
+	 * ê³„ëŸ‰ ì •ë³´ ì¡°íšŒ(1ì°¨,2ì°¨)
 	 * @param dto
 	 * @return
 	 */
 	public ArrayList<TsWgtInfDTO> selectTsWgtInf(TsWgtInfDTO dto);
 	
 	/**
-	 * ¿ù°£ °è·® ¿ä¾àÁ¤º¸ Á¶È¸
+	 * ì›”ê°„ ê³„ëŸ‰ ìš”ì•½ì •ë³´ ì¡°íšŒ
 	 * @return
 	 */
 	public TsWgtInfDTO selectTsWgtInfMonth();
 	
 	/**
-	 * °è·®Á¤º¸ µî·Ï
+	 * ê³„ëŸ‰ì •ë³´ ë“±ë¡
 	 * @param dto
 	 * @return
 	 */
 	public int insertTsWgtInf(TsWgtInfDTO dto);
 	
 	/**
-	 * °è·®Á¤º¸ ¼öÁ¤
+	 * ê³„ëŸ‰ì •ë³´ ìˆ˜ì •
 	 * @param dto
 	 * @return
 	 */
 	public int updateTsWgtInf(TsWgtInfDTO dto);
 	
 	/**
-	 * °è·® ÄÚµå Ã¤¹ø
+	 * ê³„ëŸ‰ ì½”ë“œ ì±„ë²ˆ
 	 * @return
 	 */
 	public String selectTsWgtInfKey();
 	
 	/**
-	 * °è·® °ü¸®¹øÈ£ Ã¤¹ø
+	 * ê³„ëŸ‰ ê´€ë¦¬ë²ˆí˜¸ ì±„ë²ˆ
 	 * @param str
 	 * @return
 	 */
 	public String selectTsWgtInfWgtNum(TsWgtInfDTO dto);
 	
 	/**
-	 * °Ç¼ö Á¶È¸
+	 * ê±´ìˆ˜ ì¡°íšŒ
 	 * type : DAY, MONTH, YEAR
 	 * @param type
 	 * @return

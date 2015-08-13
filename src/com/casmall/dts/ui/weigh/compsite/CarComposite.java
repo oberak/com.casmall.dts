@@ -67,7 +67,7 @@ public class CarComposite extends Composite{
 		TableCombo tableCombo = tableComboViewer.getTableCombo();
 		tableCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, true));
 		tableCombo.setShowTableHeader(true);
-		tableCombo.defineColumns(new String[]{"°ü¸®ÄÚµå","Â÷·®¹øÈ£","¼³¸í"});
+		tableCombo.defineColumns(new String[]{"ê´€ë¦¬ì½”ë“œ","ì°¨ëŸ‰ë²ˆí˜¸","ì„¤ëª…"});
 		tableCombo.setDisplayColumnIndex(1);
 		tableCombo.addTextKeyListener(new KeyAdapter() {
 			@Override
@@ -77,7 +77,7 @@ public class CarComposite extends Composite{
 				TableCombo tc = (TableCombo)text.getParent();
 				Table tbl = tc.getTable();
 				
-				/*  // char check : ¹Ì»ç¿ë
+				/*  // char check : ë¯¸ì‚¬ìš©
 				if ((0xAC00 <= c && c <= 0xD7A3) || (0x3131 <= c && c <= 0x318E)) {
 					// korean : one character (consonant or vowel)
 				} else if ((0x61 <= c && c <= 0x7A) || (0x41 <= c && c <= 0x5A)) {
@@ -91,16 +91,16 @@ public class CarComposite extends Composite{
 				}
 				*/
 				if(0x0D == c){
-					// Enter ÀÏ °æ¿ì Tab Ã³¸®
+					// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
-				// ESC³ª °ªÀÌ ¾øÀ» °æ¿ì close
+				// ESCë‚˜ ê°’ì´ ì—†ì„ ê²½ìš° close
 				if(0x1B == c || "".equals(text.getText())){
 					tc.dropDown(false,false);
 					return;
 				}
-				// ÇÑ±ÛÀÏ °æ¿ì ¸¶Áö¸· ¹Ì¿Ï¼º ÇÑ±Û Á¦°Å
+				// í•œê¸€ì¼ ê²½ìš° ë§ˆì§€ë§‰ ë¯¸ì™„ì„± í•œê¸€ ì œê±°
 				String txt = StringUtil.getCompleteHangle(text.getText());
 				if(txt.trim().length()==0){
 					tbl.removeAll();
@@ -194,7 +194,7 @@ public class CarComposite extends Composite{
 	
 	
 	/**
-	 * Selection listener Ãß°¡
+	 * Selection listener ì¶”ê°€
 	 * @param listener
 	 */
 	public void addSelectionListener(SelectionListener listener){
@@ -210,8 +210,8 @@ public class CarComposite extends Composite{
 	}
 	
 	/**
-	 * ¼±ÅÃµÈ Object return<br>
-	 * ¼±ÅÃµÈ °Í ¾øÀ¸¸é ½Å±Ô »ı¼º¿ë Object return
+	 * ì„ íƒëœ Object return<br>
+	 * ì„ íƒëœ ê²ƒ ì—†ìœ¼ë©´ ì‹ ê·œ ìƒì„±ìš© Object return
 	 * @return
 	 */
 	public TsCarMstDTO getSelectionItem(){

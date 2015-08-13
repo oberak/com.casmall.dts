@@ -157,7 +157,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 	 * 
 	 */
 	private void handleButtonOKWidgetSelected() {
-		// ÇÁ·Î±×·¥ ÀÎÁõ Ã¼Å©
+		// í”„ë¡œê·¸ë¨ ì¸ì¦ ì²´í¬
 		String serial = "";
         try {
 	        serial = CryptoUtil.decrypt3DES(preferences.getString(DTSPreConstants.GN_EXT_AUTH_SERIAL));
@@ -166,7 +166,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
         }
 		String chkSerial = AuthUtil.genSerial();
 		if(!chkSerial.equals(serial)){
-			// ÀÎÁõ Ã¢ popup
+			// ì¸ì¦ ì°½ popup
 			AuthDialog auto = new AuthDialog(fCompositeLogin.getShell(), SWT.DIALOG_TRIM|SWT.RESIZE);
 			Object result = auto.open();
 			if(result == null){
@@ -181,7 +181,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 			MessageDialog.openError(
 					getSplash(),
 					"Authentication Failed",  //$NON-NLS-1$
-					"»ç¿ëÀÚ ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");  //$NON-NLS-1$
+					"ì‚¬ìš©ì IDë¥¼ ì…ë ¥í•˜ì„¸ìš”.");  //$NON-NLS-1$
 			fTextUsername.setFocus();
 			return;
 		}
@@ -189,7 +189,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 			MessageDialog.openError(
 					getSplash(),
 					"Authentication Failed",  //$NON-NLS-1$
-					"ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");  //$NON-NLS-1$
+					"ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");  //$NON-NLS-1$
 			fTextPassword.setFocus();
 			return;
 		}
@@ -197,7 +197,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 		try{
 			CmUsrInfMgr mgr = new CmUsrInfMgr();
 			if(!mgr.checkLogin(username.trim(), password.trim())){
-				MessageDialog.openInformation(getSplash(),"Login check","ID°¡ ¾ø°Å³ª ºñ¹Ğ¹øÈ£°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+				MessageDialog.openInformation(getSplash(),"Login check","IDê°€ ì—†ê±°ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				fTextUsername.setText("");
 				fTextPassword.setText("");
 				fTextUsername.setBackgroundImage(ImageRepository.getImage(ImageRepository.BG_LOGIN_ID));
@@ -217,7 +217,7 @@ public class InteractiveSplashHandler extends AbstractSplashHandler {
 			MessageDialog.openError(
 					getSplash(),
 					"Authentication Failed",  //$NON-NLS-1$
-					"ÇÁ·Î±×·¥ ½ÇÇà Áß ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. ±¸ÀÔ¾÷Ã¼¿¡ ¹®ÀÇÇÏ¼¼¿ä. \n\n"+e.getMessage());  //$NON-NLS-1$
+					"í”„ë¡œê·¸ë¨ ì‹¤í–‰ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. êµ¬ì…ì—…ì²´ì— ë¬¸ì˜í•˜ì„¸ìš”. \n\n"+e.getMessage());  //$NON-NLS-1$
 			return;
 		}
 	}

@@ -1,12 +1,12 @@
 
 
 
-* Âü°í
-- jdbc url ºÎºĞ ¼öÁ¤ ÇÊ¿ä(TODO ¼ÕºÁ¾ß ÇÔ)
-  -> »ó´ë°æ·Î¸¦ »ç¿ëÇÏ°Ô²û ¼öÁ¤. 
+* ì°¸ê³ 
+- jdbc url ë¶€ë¶„ ìˆ˜ì • í•„ìš”(TODO ì†ë´ì•¼ í•¨)
+  -> ìƒëŒ€ê²½ë¡œë¥¼ ì‚¬ìš©í•˜ê²Œë” ìˆ˜ì •. 
 * error
   - java.lang.RuntimeException: No application id has been found.
     > Run -> Run Configurations > Plug-ins tab > "Add Required Plug-ins" > Apply
   - java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: CM_OS_MC
-    > db.properties path È®ÀÎ
-    > dts2.db.script ³»¿ëÈ®ÀÎ
+    > db.properties path í™•ì¸
+    > dts2.db.script ë‚´ìš©í™•ì¸

@@ -18,8 +18,8 @@ public class WeighFirstAction extends Action{
 	public WeighFirstAction(IWorkbenchWindow window) {
 		this.window = window;
 		setId(ID);
-		setText("1Â÷ °è·®");
-		setToolTipText("1Â÷ °è·® Ã³¸®.");
+		setText("1ì°¨ ê³„ëŸ‰");
+		setToolTipText("1ì°¨ ê³„ëŸ‰ ì²˜ë¦¬.");
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(DTSConstants.PLUGIN_ID, ImageRepository.MENU_WEIGH_FIRST));
 //		setHoverImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(RVConstants.PLUGIN_ID, IImageKeys.TOOL_01_ON));
 	}

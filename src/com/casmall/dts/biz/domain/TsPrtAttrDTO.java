@@ -3,40 +3,40 @@ package com.casmall.dts.biz.domain;
 import com.casmall.common.BaseObject;
 
 /**
- * Ãâ·Â Ç×¸ñ DTO
+ * ì¶œë ¥ í•­ëª© DTO
  * @author OBERAK
  */
 public class TsPrtAttrDTO extends BaseObject {
     private static final long serialVersionUID = -5995201560606165740L;
-    /** Ãâ·Â ÀÏ·Ã¹øÈ£ key */
+    /** ì¶œë ¥ ì¼ë ¨ë²ˆí˜¸ key */
     private long prt_seq;
-    /** Ãâ·ÂÇ×¸ñ ÀÏ·Ã¹øÈ£ key */
+    /** ì¶œë ¥í•­ëª© ì¼ë ¨ë²ˆí˜¸ key */
     private long attr_seq;
-    /** Ç×¸ñ ±¸ºĞ ÄÚµå : DB-DB field, TX-Text, FX-Fixed Ç×¸ñ(sysdate, °ø±Ş»ç Á¤º¸ µî), BO-Box, LN-Line, IM-Image*/
+    /** í•­ëª© êµ¬ë¶„ ì½”ë“œ : DB-DB field, TX-Text, FX-Fixed í•­ëª©(sysdate, ê³µê¸‰ì‚¬ ì •ë³´ ë“±), BO-Box, LN-Line, IM-Image*/
     private String attr_flg_cd;
-    /** Ç×¸ñ ÄÚµå */
+    /** í•­ëª© ì½”ë“œ */
     private String attr_cd;
-    /** Ç×¸ñ ¸í */
+    /** í•­ëª© ëª… */
     private String attr_nm;
-    /** µ¥ÀÌÅÍ Å¸ÀÔ ÄÚµå : NU-Number, DT-Date, ST-String */
+    /** ë°ì´í„° íƒ€ì… ì½”ë“œ : NU-Number, DT-Date, ST-String */
     private String data_type_cd;
-    /** µ¥ÀÌÅÍ Æ÷¸ä */
+    /** ë°ì´í„° í¬ë©§ */
     private String data_fmt;
-    /** ÆùÆ® : ¸í,Size,Style,Underline,StrikeOut µî */
+    /** í°íŠ¸ : ëª…,Size,Style,Underline,StrikeOut ë“± */
     private String font;
-    /** ÆùÆ® »ö»ó R|G|B*/
+    /** í°íŠ¸ ìƒ‰ìƒ R|G|B*/
     private String font_color;
-    /** ¹è°æ »ö»ó R|G|B*/
+    /** ë°°ê²½ ìƒ‰ìƒ R|G|B*/
     private String bg_color;
-    /** ¶óÀÎ »ö»ó R|G|B*/
+    /** ë¼ì¸ ìƒ‰ìƒ R|G|B*/
     private String line_color;
-    /** ¿µ¿ª : x|y|width|height */
+    /** ì˜ì—­ : x|y|width|height */
     private String area;
-    /** ½ºÅ¸ÀÏ */
+    /** ìŠ¤íƒ€ì¼ */
     private int style;
-    /** µÎ²² */
+    /** ë‘ê»˜ */
     private double tkn;
-    /** ÀÎ¼â ¿©ºÎ */
+    /** ì¸ì‡„ ì—¬ë¶€ */
     private String prt_yn;
     
 	public long getPrt_seq() {

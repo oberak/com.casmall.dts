@@ -68,7 +68,7 @@ public class WeighInputComposite extends Composite{
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ÀÏ °æ¿ì Tab Ã³¸®
+					// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
@@ -81,19 +81,19 @@ public class WeighInputComposite extends Composite{
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				refreshData();
-				// tab Ã³¸®
+				// tab ì²˜ë¦¬
 				Button btn = (Button)e.widget;
 				btn.traverse(SWT.TRAVERSE_TAB_NEXT);
 			}
 		});
-		btnRefresh.setText("Áß·® ÀĞ±â");
+		btnRefresh.setText("ì¤‘ëŸ‰ ì½ê¸°");
 		btnRefresh.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				char c = e.character;
 				Text text = (Text)e.widget;
 				if(0x0D == c){
-					// Enter ÀÏ °æ¿ì Tab Ã³¸®
+					// Enter ì¼ ê²½ìš° Tab ì²˜ë¦¬
 					text.traverse(SWT.TRAVERSE_TAB_NEXT);
 					return;
 				}
