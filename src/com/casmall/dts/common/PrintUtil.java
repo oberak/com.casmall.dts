@@ -171,6 +171,7 @@ public class PrintUtil {
 				
 			}else if(DTSConstants.CD_ATTR_FLAG_QRCODE.equals(dto.getAttr_flg_cd())){
 				// QR Code print
+				/*
 				prtStr = "전표번호:"+data.getWgt_num();
 				prtStr += "\n차량번호:"+data.getCar_num();
 				if(preferences.getBoolean(DTSPreConstants.DATA_CUST_FLAG))
@@ -189,7 +190,15 @@ public class PrintUtil {
 					prtStr += "\n감량:"+StringUtil.getString(data.getDscnt(),"#,##0");
 				prtStr += "\n실중량:"+StringUtil.getString(data.getRl_wgh(),"#,##0");
 				prtStr += "\n비고:"+data.getNt();
-				
+				*/
+				// 동우 양식
+				prtStr = "01$"+StringUtil.getString(data.getFst_wgt_dt(), "yyyyMMdd")+"$"; // 일자
+				prtStr += data.getCar_num() + "$"; // 차량번호
+				prtStr += data.getPrdt_mgt_cd() + "$"; // 제품코드
+				prtStr += data.getPrdt_nm() + "$"; // 제품명
+				prtStr += StringUtil.getString(data.getFull_wgh(),"###0") + "$"; // 짐차중량
+				prtStr += StringUtil.getString(data.getEmpty_wgh(),"###0") + "$"; // 공차중량
+				prtStr += StringUtil.getString(data.getRl_wgh(),"###0"); // 실중량
 				new PQRCode(doc, dto.getStyle(), area.get(0)+prtDto.getBss_cdnt_x(), area.get(1)+prtDto.getBss_cdnt_y(), area.get(2), area.get(3), prtStr);
 			}else{
 				if(logger.isErrorEnabled())

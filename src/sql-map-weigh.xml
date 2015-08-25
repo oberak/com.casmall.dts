@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		       , w.drvr, w.ext_1, w.ext_2, w.ext_3, w.ext_4, 
 		       w.ext_5, w.ext_6
 		       , (SELECT usr_nm FROM cm_usr_inf u WHERE u.lgn_id = w.edt_id) edt_nm
+		       , p.prdt_mgt_cd, cs.cst_mgt_cd, c.car_mgt_cd
 		  FROM ts_wgt_inf w
 		       LEFT OUTER JOIN ts_cst_mst cs ON (cs.cst_cd = w.cst_cd)
 		       LEFT OUTER JOIN ts_prdt_mst p ON (p.prdt_cd = w.prdt_cd),

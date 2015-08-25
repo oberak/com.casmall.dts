@@ -27,3 +27,5 @@ com.casmall.dts/ext.auth.serial=5f690a6664bc420a0582e2c25747bee3
  user / casmall
  
 설치 후 관리자 권한으로 실행!!
+META.INF - java version
+product - update dependencics - update req plugins

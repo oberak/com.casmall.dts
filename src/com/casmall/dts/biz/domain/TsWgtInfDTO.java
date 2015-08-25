@@ -45,7 +45,12 @@ public class TsWgtInfDTO extends BaseObject {
     private String wgt_flg_cd;
     /** 계량 상태 코드 - 10:1차 계량, 50:계량 완료 */
     private String wgt_stat_cd;
-    
+    /** 제품관리코드 */
+    private String prdt_mgt_cd;
+    /** 차량관리코드 */
+    private String car_mgt_cd;
+    /** 거래처관리코드 */
+    private String cst_mgt_cd;
     // 조회용 필드 -------------------------
     /** No */
     private int no;
@@ -324,4 +329,40 @@ public class TsWgtInfDTO extends BaseObject {
 	public void setEdt_nm(String edt_nm) {
     	this.edt_nm = edt_nm;
     }
+	/**
+	 * @return the prdt_mgt_cd
+	 */
+	public String getPrdt_mgt_cd() {
+		return prdt_mgt_cd;
+	}
+	/**
+	 * @param prdt_mgt_cd the prdt_mgt_cd to set
+	 */
+	public void setPrdt_mgt_cd(String prdt_mgt_cd) {
+		this.prdt_mgt_cd = prdt_mgt_cd;
+	}
+	/**
+	 * @return the car_mgt_cd
+	 */
+	public String getCar_mgt_cd() {
+		return car_mgt_cd;
+	}
+	/**
+	 * @param car_mgt_cd the car_mgt_cd to set
+	 */
+	public void setCar_mgt_cd(String car_mgt_cd) {
+		this.car_mgt_cd = car_mgt_cd;
+	}
+	/**
+	 * @return the cst_mgt_cd
+	 */
+	public String getCst_mgt_cd() {
+		return cst_mgt_cd;
+	}
+	/**
+	 * @param cst_mgt_cd the cst_mgt_cd to set
+	 */
+	public void setCst_mgt_cd(String cst_mgt_cd) {
+		this.cst_mgt_cd = cst_mgt_cd;
+	}
 }

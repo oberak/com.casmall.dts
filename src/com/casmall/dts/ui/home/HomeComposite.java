@@ -565,7 +565,9 @@ public class HomeComposite extends org.eclipse.swt.widgets.Composite implements 
 
 				if(useScnd){
 					wsc = new WeighScndInftComposite(cpWeigh, SWT.NONE);
-					wsc.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
+					GridData gd_scnd = new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1);
+					gd_scnd.heightHint = 180;
+					wsc.setLayoutData(gd_scnd);
 				}
 			}
 			
